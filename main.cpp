@@ -5,6 +5,7 @@
 #endif
 
 #include <math.h>
+#include <stdio.h>
 
 float CAM_X = sin(0.0) * 5;
 float CAM_Y = 5.0;

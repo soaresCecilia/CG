@@ -12,6 +12,8 @@
 #include <vector>
 #include "point.h"
 
+
+
 void plane(double dim, std::vector<Point *> *points) {
     
 
@@ -24,11 +26,105 @@ void plane(double dim, std::vector<Point *> *points) {
     
     //push_back - Add element at the end of the vector
     points->push_back(c);
-    points->push_back(d);
-    points->push_back(a);
-    points->push_back(a);
     points->push_back(b);
+    points->push_back(a);
+    points->push_back(a);
+    points->push_back(d);
     points->push_back(c);
+}
+
+
+enum direction {
+    up,
+    down,
+    left,
+    right,
+    front,
+    back
+};
+
+
+std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, std::vector<Point *> *points) {
+    x = x/2;
+    y = y/2;
+    z = z/2;
+    
+    float heigth = 1;
+    float depth = 1;
+    float lateral = 1;
+    
+    
+    switch (dir) {
+        case up:
+            heigth = -1;
+            break;
+        case down:
+            y = -y;
+            heigth = -1;
+            break;
+        case right:
+            lateral = -1;
+            break;
+        case left:
+            lateral = -1;
+            x = -x;
+            break;
+        case front:
+            depth = -1;
+            break;
+        case back:
+            depth = -1;
+            x = -x;
+            z = -z;
+            break;
+    }
+    
+    
+    glBegin(GL_TRIANGLES);
+    
+    glColor3f(0.5,0.5,1);
+    
+    glVertex3f(x, y, lateral * heigth * z);
+    glVertex3f(depth * heigth * x, y, heigth * z);
+    glVertex3f(depth * heigth * x, depth * lateral * y, z);
+    
+    glColor3f(0,0.5,1);
+    
+    glVertex3f(depth * heigth * x, depth * lateral * y, z);
+    glVertex3f(x, depth * lateral * y, lateral * z);
+    glVertex3f(x, y, lateral * heigth * z);
+    
+    
+    Point *a = new Point(x, y, depth * lateral * heigth * z);
+    points->push_back(a);
+    Point *b = new Point(depth * heigth * x, y, heigth * z);
+    points->push_back(b);
+    Point *c = new Point(depth * heigth * x, depth * lateral * y, z);
+    points->push_back(c);
+    Point *d = new Point(depth * heigth * x, depth * lateral * y, z);
+    points->push_back(d);
+    Point *e = new Point(x, depth * lateral * y, lateral * z);
+    points->push_back(e);
+    Point *f = new Point(x, y, lateral * heigth * z);
+    points->push_back(f);
+    
+
+    
+    glEnd();
+    
+    return points;
+    
+    
+    
+}
+
+void box(float x, float y, float z, std::vector<Point *> *points) {
+    genericPlane(x,y,z,up,points);
+    genericPlane(x,y,z,down,points);
+    genericPlane(x,y,z,front,points);
+    genericPlane(x,y,z,back,points);
+    genericPlane(x,y,z,right,points);
+    genericPlane(x,y,z,left,points);
 }
 
 void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
@@ -51,10 +147,26 @@ void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
 
 
 
+void boxToFile(double dimX, double dimY, double dimZ, std::vector<Point *> *points, char *filename) {
+    
+    std::ofstream myfile;
+    myfile.open(filename);
+    box(dimX, dimY, dimZ, points);
+    
+    int vectorLenght = points->size();
+    
+    myfile << vectorLenght << std::endl;
+    for (int i=0; i < vectorLenght; i++){
+        myfile << *(*points)[i];
+    }
+    
+    
+    myfile.close();
+}
 
 
 
-int main(int argc, char** argv) {
+int main(int argc, char* argv[]) {
     
     std::vector<Point *> points;
     
@@ -62,7 +174,12 @@ int main(int argc, char** argv) {
     if (argc > 1 && !strcmp(argv[1], "plane")) {
         planeToFile(atoi(argv[2]), &points, argv[3]);
     }
-
+    
+    /*
+    else if(argc > 1 && !strcmp(argv[1], "box")) {
+        boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
+    }
+    */
 	
 
 	return 1;

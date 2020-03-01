@@ -80,22 +80,8 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
     }
     
     
-    glBegin(GL_TRIANGLES);
     
-    glColor3f(0.5,0.5,1);
-    
-    glVertex3f(x, y, lateral * heigth * z);
-    glVertex3f(depth * heigth * x, y, heigth * z);
-    glVertex3f(depth * heigth * x, depth * lateral * y, z);
-    
-    glColor3f(0,0.5,1);
-    
-    glVertex3f(depth * heigth * x, depth * lateral * y, z);
-    glVertex3f(x, depth * lateral * y, lateral * z);
-    glVertex3f(x, y, lateral * heigth * z);
-    
-    
-    Point *a = new Point(x, y, depth * lateral * heigth * z);
+    Point *a = new Point(x, y, lateral * heigth * z);
     points->push_back(a);
     Point *b = new Point(depth * heigth * x, y, heigth * z);
     points->push_back(b);
@@ -108,9 +94,6 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
     Point *f = new Point(x, y, lateral * heigth * z);
     points->push_back(f);
     
-
-    
-    glEnd();
     
     return points;
     
@@ -175,11 +158,10 @@ int main(int argc, char* argv[]) {
         planeToFile(atoi(argv[2]), &points, argv[3]);
     }
     
-    /*
     else if(argc > 1 && !strcmp(argv[1], "box")) {
         boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
     }
-    */
+    
 	
 
 	return 1;

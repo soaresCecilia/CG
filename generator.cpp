@@ -13,6 +13,15 @@
 #include "point.h"
 
 
+enum direction {
+    up,
+    down,
+    left,
+    right,
+    front,
+    back
+};
+
 
 void plane(double dim, std::vector<Point *> *points) {
     
@@ -34,16 +43,6 @@ void plane(double dim, std::vector<Point *> *points) {
 }
 
 
-enum direction {
-    up,
-    down,
-    left,
-    right,
-    front,
-    back
-};
-
-
 std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, std::vector<Point *> *points) {
     x = x/2;
     y = y/2;
@@ -60,6 +59,7 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
             break;
         case down:
             y = -y;
+            x = -x;
             heigth = -1;
             break;
         case right:
@@ -68,6 +68,7 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
         case left:
             lateral = -1;
             x = -x;
+            z = -z;
             break;
         case front:
             depth = -1;
@@ -78,7 +79,6 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
             z = -z;
             break;
     }
-    
     
     
     Point *a = new Point(x, y, lateral * heigth * z);
@@ -101,14 +101,83 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
     
 }
 
-void box(float x, float y, float z, std::vector<Point *> *points) {
-    genericPlane(x,y,z,up,points);
-    genericPlane(x,y,z,down,points);
-    genericPlane(x,y,z,front,points);
-    genericPlane(x,y,z,back,points);
-    genericPlane(x,y,z,right,points);
-    genericPlane(x,y,z,left,points);
+void box(float dx, float dy, float dz, std::vector<Point *> *points) {
+    
+                genericPlane(dx,dy,dz,up,points);
+                genericPlane(dx,dy,dz,down,points);
+                genericPlane(dx,dy,dz,front,points);
+                genericPlane(dx,dy,dz,back,points);
+                genericPlane(dx,dy,dz,right,points);
+                genericPlane(dx,dy,dz,left,points);
+    
 }
+
+
+void drawSphere(float radius, int slices, int stacks, std::vector<Point *> *points) {
+        
+    float alpha = 0; // da a volta
+    float teta = - (M_PI /2); // pendulo, cima, baixo
+    float incrementoAlpha = (2 * M_PI) / slices;
+    float incrementoTeta = M_PI / stacks;
+    
+    for (int i = 0; i < stacks; i++) {
+        for (int j = 0; j < slices; j++) {
+            
+            // gera pontos
+            // vertice A1
+            float x1 = radius * cos(teta + incrementoTeta) * sin(alpha);
+            float y1 = radius * sin(teta + incrementoTeta);
+            float z1 = radius * cos(teta + incrementoTeta) * cos(alpha);
+            
+            // vertice A2
+            float x2 = radius * cos(teta) * sin(alpha);
+            float y2 = radius * sin(teta);
+            float z2 = radius * cos(teta) * cos(alpha);
+            
+            // vertice A3
+            float x3 = radius * cos(teta + incrementoTeta) * sin(alpha + incrementoAlpha);
+            float y3 = radius * sin(teta + incrementoTeta);
+            float z3 = radius * cos(teta + incrementoTeta) * cos(alpha + incrementoAlpha);
+            
+            // vertice A4
+            float x4 = radius * cos(teta) * sin(alpha + incrementoAlpha);
+            float y4 = radius * sin(teta);
+            float z4 = radius * cos(teta) * cos(alpha + incrementoAlpha);
+            
+            
+            
+        
+            // desenha um quadrado apenas
+            // desenho triangulo baixo
+            Point *a = new Point(x1,y1,z1);
+            points->push_back(a);
+            
+            Point *b = new Point(x2,y2,z2);
+            points->push_back(b);
+            
+            Point *c = new Point(x4,y4,z4);
+            points->push_back(c);
+            
+            // desenho triangulo cima
+            Point *d = new Point(x1,y1,z1);
+            points->push_back(d);
+            
+            Point *e = new Point(x4,y4,z4);
+            points->push_back(e);
+            
+            Point *f = new Point(x3,y3,z3);
+            points->push_back(f);
+            
+            // incremento angulos
+            alpha = alpha + incrementoAlpha;
+        }
+        teta = teta + incrementoTeta;
+        
+    }
+    
+}
+
+
 
 void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
     
@@ -128,8 +197,6 @@ void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
     
 }
 
-
-
 void boxToFile(double dimX, double dimY, double dimZ, std::vector<Point *> *points, char *filename) {
     
     std::ofstream myfile;
@@ -147,6 +214,22 @@ void boxToFile(double dimX, double dimY, double dimZ, std::vector<Point *> *poin
     myfile.close();
 }
 
+void sphereToFile(float radius, int slices, int stacks, std::vector<Point *> *points, char *filename) {
+    
+    std::ofstream myfile;
+    myfile.open(filename);
+    drawSphere(radius, slices, stacks, points);
+    
+    int vectorLenght = points->size();
+    
+    myfile << vectorLenght << std::endl;
+    for (int i=0; i < vectorLenght; i++){
+        myfile << *(*points)[i];
+    }
+    
+    myfile.close();
+    
+}
 
 
 int main(int argc, char* argv[]) {
@@ -162,7 +245,10 @@ int main(int argc, char* argv[]) {
         boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
     }
     
+    else if(argc > 1 && !strcmp(argv[1], "sphere")) {
+        sphereToFile(atoi(argv[3]), atoi(argv[4]), atoi(argv[5]), &points, argv[6]);
+    }
 	
 
-	return 1;
+	return 0;
 }

@@ -181,26 +181,8 @@ void drawSphere(float radius, int slices, int stacks, std::vector<Point *> *poin
     
 }
 
-void drawCone(float radius, float height, int slices, int stacks) {
-	// code to draw the x,y,z 
-	glBegin(GL_LINES);
-
-	// X axis in red
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(-100.0f, 0.0f, 0.0f);
-	glVertex3f(100.0f, 0.0f, 0.0f);
-
-	// Y Axis in Green
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(0.0f, -100.0f, 0.0f);
-	glVertex3f(0.0f, 100.0f, 0.0f);
-
-	// Z Axis in Blue
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(0.0f, 0.0f, -100.0f);
-	glVertex3f(0.0f, 0.0f, 100.0f);
-	glEnd();
-
+void drawCone(float radius, float height, int slices, int stacks, std::vector<Point *> *points) {
+	
 	const float _alpha = (2 * M_PI) / slices;  //angulo de cada slice
 	float alpha = 0.0;                         // angulo acumulativo a cada interacao
 
@@ -247,7 +229,7 @@ void drawCone(float radius, float height, int slices, int stacks) {
 			}
 
 			if (i == stacks - 1) {
-				// desenhar a ultima stack, que é só um triangulo
+				// desenhar a ultima stack, que é so um triangulo
 
 				glColor3f(0.0f, 0.0f, 1.0f);
 				glVertex3f(0.0f, height, 0.0f);
@@ -257,7 +239,7 @@ void drawCone(float radius, float height, int slices, int stacks) {
 			}
 
 			else {
-				// desenhar a ultima stack, que é só um triangulo
+				// desenhar a ultima stack, que é so um triangulo
 
 				glColor3f(0.0f, 0.0f, 1.0f);
 				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));//A
@@ -339,7 +321,7 @@ void sphereToFile(float radius, int slices, int stacks, std::vector<Point *> *po
 void coneToFile(float radius, float height, int slices, int stacks, std::vector<Point*>* points, char* filename) {
 	std::ofstream myfile;
 	myfile.open(filename);
-	drawCone(radius,height,slices, stacks);
+	drawCone(radius,height,slices, stacks, points);
 
 	int vectorLenght = points->size();
 
@@ -364,8 +346,12 @@ int main(int argc, char* argv[]) {
         boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
     }
     
-    else if(argc > 1 && !strcmp(argv[1], "sphere")) {
-        sphereToFile(atoi(argv[3]), atoi(argv[4]), atoi(argv[5]), &points, argv[6]);
+    else if(argc == 6 && !strcmp(argv[1], "sphere")) {
+        sphereToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
+    }
+    
+    else if(argc == 7 && !strcmp(argv[1], "cone")) {
+        coneToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), atoi(argv[5]), &points, argv[6]);
     }
 
 

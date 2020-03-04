@@ -13,6 +13,10 @@
 #include "point.h"
 
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+
 enum direction {
     up,
     down,
@@ -177,7 +181,108 @@ void drawSphere(float radius, int slices, int stacks, std::vector<Point *> *poin
     
 }
 
+void drawCone(float radius, float height, int slices, int stacks) {
+	// code to draw the x,y,z 
+	glBegin(GL_LINES);
 
+	// X axis in red
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(-100.0f, 0.0f, 0.0f);
+	glVertex3f(100.0f, 0.0f, 0.0f);
+
+	// Y Axis in Green
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(0.0f, -100.0f, 0.0f);
+	glVertex3f(0.0f, 100.0f, 0.0f);
+
+	// Z Axis in Blue
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(0.0f, 0.0f, -100.0f);
+	glVertex3f(0.0f, 0.0f, 100.0f);
+	glEnd();
+
+	const float _alpha = (2 * M_PI) / slices;  //angulo de cada slice
+	float alpha = 0.0;                         // angulo acumulativo a cada interacao
+
+	float px_base;					           // ponto x a partir de um ponto e um angulo para base
+	float pz_base;							   // ponto z a partir de um ponto e de um angulo para base		
+
+	float px_base_ant = 0.0;                   // ponto anterior para saber o px
+	float pz_base_ant = radius;                // ponto anterior para saber o pz
+
+	float const _stack = height / stacks;      // a altura de cada stack
+	float _stackIncrement = 0.0;
+
+	float beta = atan(height / radius);        // angulo da inclinaçao do cone
+	const float theta = radius / stacks; // valor do raio a cada stack, começando por cima
+
+
+	float px;
+	float pz;
+
+	float px_ant = 0.0;
+	float pz_ant = theta;
+
+
+	glBegin(GL_TRIANGLES);
+	for (int i = 0; i < stacks; i++) {
+		for (int j = 0; j < slices; j++) {
+			alpha = _alpha * (j + 1);
+
+			px_base = radius * sin(alpha);
+			pz_base = radius * cos(alpha);
+
+			px = (radius - (theta * i)) * sin(_alpha * j);
+			pz = (radius - (theta * i)) * cos(_alpha * j);
+
+
+			if (!i) {
+				// desenhar a base; regra a partir da mao esquerda para nao ter angulo negativo
+
+				glColor3f(0.0f, 0.0f, 1.0f);
+				glVertex3f(px_base_ant, 0.0f, pz_base_ant);
+				glVertex3f(0.0f, 0.0f, 0.0f);
+				glVertex3f(px_base, 0.0f, pz_base);
+
+			}
+
+			if (i == stacks - 1) {
+				// desenhar a ultima stack, que é só um triangulo
+
+				glColor3f(0.0f, 0.0f, 1.0f);
+				glVertex3f(0.0f, height, 0.0f);
+				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));
+				glVertex3f((radius - (theta * i)) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * i)) * cos(_alpha * (j + 1)));
+
+			}
+
+			else {
+				// desenhar a ultima stack, que é só um triangulo
+
+				glColor3f(0.0f, 0.0f, 1.0f);
+				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));//A
+				glVertex3f((radius - (theta * (i))) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * (i))) * cos(_alpha * (j + 1)));//D
+				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));//c
+
+				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * j), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * j));//B
+				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));//A
+				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));//C
+
+
+
+			}
+
+			px_ant = px;
+			pz_ant = pz;
+
+
+			px_base_ant = px_base;
+			pz_base_ant = pz_base;
+		}
+
+	}
+	glEnd();
+}
 
 void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
     
@@ -231,6 +336,20 @@ void sphereToFile(float radius, int slices, int stacks, std::vector<Point *> *po
     
 }
 
+void coneToFile(float radius, float height, int slices, int stacks, std::vector<Point*>* points, char* filename) {
+	std::ofstream myfile;
+	myfile.open(filename);
+	drawCone(radius,height,slices, stacks);
+
+	int vectorLenght = points->size();
+
+	myfile << vectorLenght << std::endl;
+	for (int i = 0; i < vectorLenght; i++) {
+		myfile << *(*points)[i];
+	}
+
+	myfile.close();
+}
 
 int main(int argc, char* argv[]) {
     
@@ -248,7 +367,7 @@ int main(int argc, char* argv[]) {
     else if(argc > 1 && !strcmp(argv[1], "sphere")) {
         sphereToFile(atoi(argv[3]), atoi(argv[4]), atoi(argv[5]), &points, argv[6]);
     }
-	
+
 
 	return 0;
 }

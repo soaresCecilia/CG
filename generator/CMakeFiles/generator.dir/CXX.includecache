@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp
+GLUT/glut.h
+-
+GL/glut.h
+-
+math.h
+-
+string.h
+-
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+../headers/point.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+math.h
+-
+
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
+../headers/point.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+iostream
+-
+

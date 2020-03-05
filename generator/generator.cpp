@@ -11,7 +11,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "point.h"
+#include "../headers/point.h"
 
 
 #define _USE_MATH_DEFINES

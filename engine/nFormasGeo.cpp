@@ -26,3 +26,7 @@ void nFormasGeo::draw() {
                 fg->draw();
 
 }
+
+std::vector<FormaGeo *>* nFormasGeo::getFormaGeo(){
+    return &(this->formaGeo);
+}

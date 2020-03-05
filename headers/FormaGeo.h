@@ -23,6 +23,8 @@ class FormaGeo {
         ~FormaGeo();
         void addVertexPoint(Point *);
         void draw();
+        int getNPoint();
+        std::vector<Point *>* getVector();
 };
 
 #endif

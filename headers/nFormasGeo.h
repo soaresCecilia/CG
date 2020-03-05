@@ -11,11 +11,11 @@ class nFormasGeo {
     private:
         std::vector<FormaGeo *> formaGeo;
 
-
     public:
         nFormasGeo();
         ~nFormasGeo();
         void addFormaGeo(FormaGeo *fg);
         void draw();
+        std::vector<FormaGeo *>* getFormaGeo();
 };
 #endif

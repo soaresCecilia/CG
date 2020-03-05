@@ -17,10 +17,8 @@
 using namespace tinyxml2;
 using namespace std;
 
-
 void parseDoc(nFormasGeo *, XMLNode *);
 FormaGeo *parseFile(const XMLElement *);
-
 
 Parser::Parser() {
 }

@@ -22,9 +22,15 @@ void FormaGeo::addVertexPoint(Point *p) {
         this->vertexPoint.push_back(p);
 }
 
+int FormaGeo::getNPoint(){
+    return this->nPoints;
+}
+
+std::vector<Point *>* FormaGeo::getVector() {
+    return &(this->vertexPoint);
+}
 
 
 void FormaGeo::draw() {
-
 
 }

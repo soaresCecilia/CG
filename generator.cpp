@@ -1,3 +1,4 @@
+#include <stdlib.h> 
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
@@ -47,56 +48,108 @@ void plane(double dim, std::vector<Point *> *points) {
 }
 
 
-std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, std::vector<Point *> *points) {
-    x = x/2;
+std::vector<Point *> * genericPlane(float x, float y, float z,int div, direction dir, std::vector<Point *> *points) {
+	float div_increment_x = x / div;
+	float div_increment_y = y / div;
+	float div_increment_z = y / div;
+	
+	x = x/2;
     y = y/2;
     z = z/2;
     
-    float heigth = 1;
-    float depth = 1;
-    float lateral = 1;
+
+
+    for(int i = 0;i<div;i++){
+		for (int j = 0; j < div; j++) {
+			//up
+				Point* a = new Point(-x+(div_increment_x*i), y, -z+(div_increment_z*j)); //A
+				points->push_back(a);
+				Point* b = new Point(-x+(div_increment_x*i), y,-z+(div_increment_z*(j+1))); //B
+				points->push_back(b);
+				Point* c = new Point(-x + (div_increment_x * (i+1)), y, -z + (div_increment_z* j)); //C
+				points->push_back(c);
+				Point* d = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j)); //C
+				points->push_back(d);
+				Point* e = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1))); //B
+				points->push_back(e);
+				Point* f = new Point(-x + (div_increment_x * (i+1)), y, -z + (div_increment_z * (j + 1))); //D
+				points->push_back(f);
+				
+			// down
+				Point* a2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * j)); //A
+				points->push_back(a2);
+				Point* b2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j)); //C
+				points->push_back(b2);
+				Point* c2 = new Point(-x + (div_increment_x * i),-y, -z + (div_increment_z * (j + 1))); //B
+				points->push_back(c2);
+				Point* d2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * (j + 1))); //B
+				points->push_back(d2);
+				Point* e2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j)); //C
+				points->push_back(e2);
+				Point* f2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * (j + 1))); //D
+				points->push_back(f2);
+				
+			// right:
+				Point* a3 = new Point(x, -y+(div_increment_y*i), -z + (div_increment_z * j)); //D
+				points->push_back(a3);
+				Point* b3 = new Point(x, -y+(div_increment_y*(i+1)), -z + (div_increment_z * j)); //C
+				points->push_back(b3);
+				Point* c3 = new Point(x, -y+(div_increment_y*i), -z + (div_increment_z * (j + 1))); //B
+				points->push_back(c3);
+				Point* d3 = new Point(x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1))); //B
+				points->push_back(d3);
+				Point* e3 = new Point(x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j)); //C
+				points->push_back(e3);
+				Point* f3 = new Point(x, -y+(div_increment_y*(i+1)), -z + (div_increment_z * (j + 1))); //A
+				points->push_back(f3);
+				
+			// left
+				Point* a4 = new Point(-x, -y + (div_increment_y * i), -z + (div_increment_z * j)); //D
+				points->push_back(a4);
+				Point* b4 = new Point(-x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1))); //B
+				points->push_back(b4);
+				Point* c4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j)); //C
+				points->push_back(c4);
+				Point* d4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j)); //C
+				points->push_back(d4);
+				Point* e4 = new Point(-x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1))); //B
+				points->push_back(e4);
+				Point* f4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * (j + 1))); //A
+				points->push_back(f4);
+				
+			// front
+				Point* a5 = new Point(-x+(div_increment_x*i), -y + (div_increment_y * i),z); //C
+				points->push_back(a5);
+				Point* b5 = new Point(-x+(div_increment_x*(i+1)), -y + (div_increment_y * i), z); //D
+				points->push_back(b5);
+				Point* c5 = new Point(-x+(div_increment_x*i), -y + (div_increment_y * (i + 1)),z); //A
+				points->push_back(c5);
+				Point* d5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), z); //A
+				points->push_back(d5);
+				Point* e5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), z); //D
+				points->push_back(e5);
+				Point* f5 = new Point(-x + (div_increment_y * (i + 1)), -y + (div_increment_z * (j + 1)),z); //B
+				points->push_back(f5);
+			
+			// back
+				Point* a6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * i), -z); //C
+				points->push_back(a6);
+				Point* b6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), -z); //A
+				points->push_back(b6);
+				Point* c6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), -z); //D
+				points->push_back(c6);
+				Point* d6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), -z); //D
+				points->push_back(d6);
+				Point* e6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), -z); //A
+				points->push_back(e6);
+				Point* f6 = new Point(-x + (div_increment_y * (i + 1)), -y + (div_increment_z * (j + 1)), -z); //B
+				points->push_back(f6);
+				
+		
+			
+		}
+	}
     
-    
-    switch (dir) {
-        case up:
-            heigth = -1;
-            break;
-        case down:
-            y = -y;
-            x = -x;
-            heigth = -1;
-            break;
-        case right:
-            lateral = -1;
-            break;
-        case left:
-            lateral = -1;
-            x = -x;
-            z = -z;
-            break;
-        case front:
-            depth = -1;
-            break;
-        case back:
-            depth = -1;
-            x = -x;
-            z = -z;
-            break;
-    }
-    
-    
-    Point *a = new Point(x, y, lateral * heigth * z);
-    points->push_back(a);
-    Point *b = new Point(depth * heigth * x, y, heigth * z);
-    points->push_back(b);
-    Point *c = new Point(depth * heigth * x, depth * lateral * y, z);
-    points->push_back(c);
-    Point *d = new Point(depth * heigth * x, depth * lateral * y, z);
-    points->push_back(d);
-    Point *e = new Point(x, depth * lateral * y, lateral * z);
-    points->push_back(e);
-    Point *f = new Point(x, y, lateral * heigth * z);
-    points->push_back(f);
     
     
     return points;
@@ -105,14 +158,10 @@ std::vector<Point *> * genericPlane(float x, float y, float z, direction dir, st
     
 }
 
-void box(float dx, float dy, float dz, std::vector<Point *> *points) {
+void box(float dx, float dy, float dz,int div, std::vector<Point *> *points) {
     
-                genericPlane(dx,dy,dz,up,points);
-                genericPlane(dx,dy,dz,down,points);
-                genericPlane(dx,dy,dz,front,points);
-                genericPlane(dx,dy,dz,back,points);
-                genericPlane(dx,dy,dz,right,points);
-                genericPlane(dx,dy,dz,left,points);
+                genericPlane(dx,dy,dz,div,up,points);
+              
     
 }
 
@@ -206,7 +255,6 @@ void drawCone(float radius, float height, int slices, int stacks, std::vector<Po
 	float pz_ant = theta;
 
 
-	glBegin(GL_TRIANGLES);
 	for (int i = 0; i < stacks; i++) {
 		for (int j = 0; j < slices; j++) {
 			alpha = _alpha * (j + 1);
@@ -219,37 +267,106 @@ void drawCone(float radius, float height, int slices, int stacks, std::vector<Po
 
 
 			if (!i) {
-				// desenhar a base; regra a partir da mao esquerda para nao ter angulo negativo
+				// desenhar a base;
 
-				glColor3f(0.0f, 0.0f, 1.0f);
-				glVertex3f(px_base_ant, 0.0f, pz_base_ant);
-				glVertex3f(0.0f, 0.0f, 0.0f);
-				glVertex3f(px_base, 0.0f, pz_base);
+				float x4 = px_base_ant;
+				float y4 = 0.0;
+				float z4 = pz_base_ant;
 
+				float x5 = 0.0;
+				float y5 = 0.0;
+				float z5 = 0.0;
+
+				float x6 = px_base;
+				float y6 = 0.0;
+				float z6 = pz_base;
+				
+				Point* d = new Point(x4, y4, z4);
+				points->push_back(d);
+
+				Point* e = new Point(x5, y5, z5);
+				points->push_back(e);
+
+
+				Point* f = new Point(x6, y6, z6);
+				points->push_back(f);
 			}
 
 			if (i == stacks - 1) {
 				// desenhar a ultima stack, que é so um triangulo
+				float x1 = 0.0;
+				float y1 = height;
+				float z1 = 0.0;
 
-				glColor3f(0.0f, 0.0f, 1.0f);
-				glVertex3f(0.0f, height, 0.0f);
-				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));
-				glVertex3f((radius - (theta * i)) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * i)) * cos(_alpha * (j + 1)));
+				float x2 = (radius - (theta * i)) * sin(_alpha * j);
+				float y2 = i * _stack;
+				float z2 = (radius - (theta * i)) * cos(_alpha * j);
 
+				float x3 = (radius - (theta * i));
+				float y3 = i * _stack;
+				float z3 = (radius - (theta * i)) * cos(_alpha * (j + 1));
+
+				Point* a = new Point(x1, y1, z1);
+				points->push_back(a);
+
+				Point* b = new Point(x2, y2, z2);
+				points->push_back(b);
+
+
+				Point* c = new Point(x3, y3, z3);
+				points->push_back(c);
 			}
 
 			else {
 				// desenhar a ultima stack, que é so um triangulo
+				//A
+				float x7 = (radius - (theta * i)) * sin(_alpha * j);
+				float y7 = i * _stack;
+				float z7 = (radius - (theta * i)) * cos(_alpha * j);
+				//D
+				float x8 = (radius - (theta * (i))) * sin(_alpha * (j + 1));
+				float y8 = i * _stack;
+				float z8 = (radius - (theta * (i))) * cos(_alpha * (j + 1));
+				//c
+				float x9 = (radius - (theta * (i + 1))) * sin(_alpha * (j + 1));
+				float y9 = (i + 1) * _stack;
+				float z9 = (radius - (theta * (i + 1))) * cos(_alpha * (j + 1));
+				//c
+				float x10 = (radius - (theta * (i + 1))) * sin(_alpha * (j + 1));
+				float y10 = (i + 1) * _stack;
+				float z10 = (radius - (theta * (i + 1))) * cos(_alpha * (j + 1));
+				//B
+				float x11 = (radius - (theta * (i + 1))) * sin(_alpha * (j + 1));
+				float y11 = (i + 1) * _stack;
+				float z11 = (radius - (theta * (i + 1))) * cos(_alpha * (j + 1));
+				//A
+				float x12 = (radius - (theta * i)) * sin(_alpha * j);
+				float y12 = i * _stack;
+				float z12 = (radius - (theta * i)) * cos(_alpha * j);
+			
 
-				glColor3f(0.0f, 0.0f, 1.0f);
-				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));//A
-				glVertex3f((radius - (theta * (i))) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * (i))) * cos(_alpha * (j + 1)));//D
-				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));//c
+				Point* g = new Point(x7, y7, z7);
+				points->push_back(g);
 
-				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * j), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * j));//B
-				glVertex3f((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));//A
-				glVertex3f((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));//C
+				
+				Point* h = new Point(x8, y8, z8);
+				points->push_back(h);
 
+				Point* k = new Point(x9, y9, z9);
+				points->push_back(k);
+			
+				Point* l = new Point(x10, y10, z10);
+				points->push_back(l);
+
+				Point* m = new Point(x11, y11, z11);
+				points->push_back(l);
+
+				Point* n = new Point(x12, y12, z12);
+				points->push_back(l);
+
+
+				// incremento angulos
+				//alpha = alpha + incrementoAlpha;
 
 
 			}
@@ -263,7 +380,6 @@ void drawCone(float radius, float height, int slices, int stacks, std::vector<Po
 		}
 
 	}
-	glEnd();
 }
 
 void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
@@ -284,11 +400,11 @@ void planeToFile(int dim, std::vector<Point *> *points, char *filename) {
     
 }
 
-void boxToFile(double dimX, double dimY, double dimZ, std::vector<Point *> *points, char *filename) {
+void boxToFile(double dimX, double dimY, double dimZ,int div, std::vector<Point *> *points, char *filename) {
     
     std::ofstream myfile;
     myfile.open(filename);
-    box(dimX, dimY, dimZ, points);
+    box(dimX, dimY, dimZ, div,points);
     
     int vectorLenght = points->size();
     
@@ -342,8 +458,8 @@ int main(int argc, char* argv[]) {
         planeToFile(atoi(argv[2]), &points, argv[3]);
     }
     
-    else if(argc > 1 && !strcmp(argv[1], "box")) {
-        boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), &points, argv[5]);
+    else if(argc == 7 && !strcmp(argv[1], "box")) {
+        boxToFile(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), atoi(argv[5]), &points, argv[6]);
     }
     
     else if(argc == 6 && !strcmp(argv[1], "sphere")) {

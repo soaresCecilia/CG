@@ -27,7 +27,7 @@ void changeSize(int w, int h) {
                 h = 1;
 
         // compute window's aspect ratio
-        float ratio {w * 1.0f / h};
+        float ratio = w * 1.0f / h;
         // Set the projection matrix as current
         glMatrixMode(GL_PROJECTION);
         // Load Identity Matrix
@@ -73,29 +73,6 @@ void renderScene() {
 }
 
 
-void initFormaGeo(FormaGeo *f) {
-    GLuint buffers[1];
-    
-    glGenBuffers(1, buffers);
-    glBindBuffer(GL_ARRAY_BUFFER, buffers[0]);
-
-    int numVertexes = f->getNPoint() * 3;
-    size_t vertexesInBytes = sizeof(float) * numVertexes;
-    
-    int nv = 0;
-    float *vertexes = (float *) malloc(sizeof(float) * numVertexes);
-    
-    for (Point *p : *(f->getVector())) {
-        vertexes[nv++] = p->getX();
-        vertexes[nv++] = p->getY();
-        vertexes[nv++] = p->getZ();
-    }
-    
-    glBufferData(GL_ARRAY_BUFFER, vertexesInBytes, vertexes, GL_STATIC_DRAW);
-    glVertexPointer(3, GL_FLOAT, 0, 0);
-    
-    free(vertexes);
-}
 
 
 void initiatingGLUT(int argc, char **argv) {
@@ -119,6 +96,7 @@ void initiatingGLUT(int argc, char **argv) {
 #endif
     
     glEnableClientState(GL_VERTEX_ARRAY);
+    
     
     
     //  OpenGL settings

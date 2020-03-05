@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp
+stdlib.h
+-
 GLUT/glut.h
 -
 GL/glut.h

@@ -21,8 +21,11 @@ class Sphere {
        std::vector<Point *> points;
 
     public:
-        Sphere(float radius,int slices,int stacks):
-        	radius(radius),slices(slices),stacks(stacks){}
+        Sphere(float radius, int slices, int stacks) {
+            radius = radius;
+            slices = slices;
+            stacks = stacks;
+        }
         void drawSphere();
         void sphereToFile(char*);
 };

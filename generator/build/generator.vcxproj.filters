@@ -7,6 +7,18 @@
     <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\cone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Luis\Desktop\CG\generator\CMakeLists.txt" />

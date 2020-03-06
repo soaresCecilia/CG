@@ -318,6 +318,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\generator.cpp" />
     <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\point.cpp" />
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\plane.cpp" />
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\box.cpp" />
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\sphere.cpp" />
+    <ClCompile Include="C:\Users\Luis\Desktop\CG\generator\cone.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Luis\Desktop\CG\generator\build\ZERO_CHECK.vcxproj">

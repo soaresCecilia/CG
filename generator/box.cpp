@@ -73,29 +73,29 @@ void Box::drawBox() {
 			points.push_back(f4);
 
 			// front
-			Point* a5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * i), z); //C
+			Point* a5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * j), z); //C
 			points.push_back(a5);
-			Point* b5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), z); //D
+			Point* b5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z); //D
 			points.push_back(b5);
-			Point* c5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), z); //A
+			Point* c5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z); //A
 			points.push_back(c5);
-			Point* d5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), z); //A
+			Point* d5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z); //A
 			points.push_back(d5);
-			Point* e5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), z); //D
+			Point* e5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z); //D
 			points.push_back(e5);
 			Point* f5 = new Point(-x + (div_increment_y * (i + 1)), -y + (div_increment_z * (j + 1)), z); //B
 			points.push_back(f5);
 
 			// back
-			Point* a6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * i), -z); //C
+			Point* a6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * j), -z); //C
 			points.push_back(a6);
-			Point* b6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), -z); //A
+			Point* b6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), -z); //A
 			points.push_back(b6);
-			Point* c6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), -z); //D
+			Point* c6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), -z); //D
 			points.push_back(c6);
-			Point* d6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * i), -z); //D
+			Point* d6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), -z); //D
 			points.push_back(d6);
-			Point* e6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (i + 1)), -z); //A
+			Point* e6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), -z); //A
 			points.push_back(e6);
 			Point* f6 = new Point(-x + (div_increment_y * (i + 1)), -y + (div_increment_z * (j + 1)), -z); //B
 			points.push_back(f6);

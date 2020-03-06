@@ -47,9 +47,9 @@ void renderScene() {
     
         // set the camera
         glLoadIdentity();
-        gluLookAt(0.0,0.0,0.0,
-                0.0, 0.0, 0.0,
-                0.0f, 1.0f, 0.0f);
+        gluLookAt(0.0,0.0,5.0,
+              0.0,0.0,-1.0,
+              0.0f,1.0f,0.0f);
 
     
         //axis
@@ -95,7 +95,7 @@ void initiatingGLUT(int argc, char **argv) {
     glewInit();
 #endif
     
-    glEnableClientState(GL_VERTEX_ARRAY);
+    //glEnableClientState(GL_VERTEX_ARRAY);
     
     
     
@@ -107,8 +107,8 @@ void initiatingGLUT(int argc, char **argv) {
 
 int main(int argc, char **argv) {
         if (argc == 2) {
-                Parser().ReadXML(&group, argv[1]);
                 initiatingGLUT(argc, argv);
+                Parser().ReadXML(&group, argv[1]);
                 // enter GLUT's main cycle
                 glutMainLoop();
                 return 0;

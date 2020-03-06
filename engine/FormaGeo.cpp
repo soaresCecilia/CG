@@ -34,7 +34,7 @@ void FormaGeo::fillBuffer() {
     glGenBuffers(1, this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
     int n = this->nPoints * 3;
-    float *vertexes =  new float[n];
+    float *vertexes =  (float *) malloc(sizeof(float) * n);
     int nv = 0;
     
     for (auto &point : this->vertexPoint) {
@@ -45,7 +45,6 @@ void FormaGeo::fillBuffer() {
     
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * n, vertexes, GL_STATIC_DRAW);
     
-
     free(vertexes);
 }
 
@@ -53,6 +52,6 @@ void FormaGeo::draw() {
     glGenBuffers(1, this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
     glVertexPointer(3, GL_FLOAT, 0, 0);
-    glDrawArrays(GL_TRIANGLES, 0, this->nPoints * 3);
+    glDrawArrays(GL_TRIANGLES, 0, this->nPoints);
     
 }

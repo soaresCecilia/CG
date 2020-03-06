@@ -6,7 +6,7 @@
 void Box::drawBox() {
 	float div_increment_x = x / div;
 	float div_increment_y = y / div;
-	float div_increment_z = y / div;
+	float div_increment_z = z / div;
 
 	x = x / 2;
 	y = y / 2;

@@ -1,3 +1,6 @@
+#include "../headers/point.h"
+#include "../headers/cone.h"
+
 void drawCone() {
 
 

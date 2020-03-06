@@ -1,0 +1,6 @@
+﻿  generator.cpp
+generator.obj : error LNK2019: unresolved external symbol "public: void __thiscall Plane::planeToFile(char *)" (?planeToFile@Plane@@QAEXPAD@Z) referenced in function "void __cdecl executaComandos(int,char * * const)" (?executaComandos@@YAXHQAPAD@Z)
+generator.obj : error LNK2019: unresolved external symbol "public: void __thiscall Box::boxToFile(char *)" (?boxToFile@Box@@QAEXPAD@Z) referenced in function "void __cdecl executaComandos(int,char * * const)" (?executaComandos@@YAXHQAPAD@Z)
+generator.obj : error LNK2019: unresolved external symbol "public: void __thiscall Cone::coneToFile(char *)" (?coneToFile@Cone@@QAEXPAD@Z) referenced in function "void __cdecl executaComandos(int,char * * const)" (?executaComandos@@YAXHQAPAD@Z)
+generator.obj : error LNK2019: unresolved external symbol "public: void __thiscall Sphere::sphereToFile(char *)" (?sphereToFile@Sphere@@QAEXPAD@Z) referenced in function "void __cdecl executaComandos(int,char * * const)" (?executaComandos@@YAXHQAPAD@Z)
+C:\Users\Luis\Desktop\CG\generator\build\Debug\generator.exe : fatal error LNK1120: 4 unresolved externals

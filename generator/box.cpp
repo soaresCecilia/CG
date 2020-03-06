@@ -1,3 +1,6 @@
+#include "../headers/point.h"
+#include "../headers/box.h"
+
 void drawBox() {
 	float div_increment_x = x / div;
 	float div_increment_y = y / div;

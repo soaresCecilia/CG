@@ -1,4 +1,5 @@
-
+#include "../headers/plane.h"
+#include "../headers/point.h"
 void drawPlane() {
 
 
@@ -18,7 +19,7 @@ void drawPlane() {
 	points->push_back(c);
 }
 
-void coneToFile(char* filename) {
+void planeToFile(char* filename) {
 
 	std::ofstream myfile;
 	myfile.open(filename);

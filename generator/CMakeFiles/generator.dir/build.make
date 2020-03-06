@@ -43,98 +43,206 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
+CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
+CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator
 
 # Include any dependencies generated for this target.
-include generator/CMakeFiles/generator.dir/depend.make
+include CMakeFiles/generator.dir/depend.make
 
 # Include the progress variables for this target.
-include generator/CMakeFiles/generator.dir/progress.make
+include CMakeFiles/generator.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include generator/CMakeFiles/generator.dir/flags.make
+include CMakeFiles/generator.dir/flags.make
 
-generator/CMakeFiles/generator.dir/generator.cpp.o: generator/CMakeFiles/generator.dir/flags.make
-generator/CMakeFiles/generator.dir/generator.cpp.o: generator/generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object generator/CMakeFiles/generator.dir/generator.cpp.o"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/generator.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp
+CMakeFiles/generator.dir/generator.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/generator.cpp.o: generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/generator.dir/generator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/generator.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp
 
-generator/CMakeFiles/generator.dir/generator.cpp.i: cmake_force
+CMakeFiles/generator.dir/generator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/generator.cpp.i"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp > CMakeFiles/generator.dir/generator.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp > CMakeFiles/generator.dir/generator.cpp.i
 
-generator/CMakeFiles/generator.dir/generator.cpp.s: cmake_force
+CMakeFiles/generator.dir/generator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/generator.cpp.s"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp -o CMakeFiles/generator.dir/generator.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp -o CMakeFiles/generator.dir/generator.cpp.s
 
-generator/CMakeFiles/generator.dir/generator.cpp.o.requires:
+CMakeFiles/generator.dir/generator.cpp.o.requires:
 
-.PHONY : generator/CMakeFiles/generator.dir/generator.cpp.o.requires
+.PHONY : CMakeFiles/generator.dir/generator.cpp.o.requires
 
-generator/CMakeFiles/generator.dir/generator.cpp.o.provides: generator/CMakeFiles/generator.dir/generator.cpp.o.requires
-	$(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/generator.cpp.o.provides.build
-.PHONY : generator/CMakeFiles/generator.dir/generator.cpp.o.provides
+CMakeFiles/generator.dir/generator.cpp.o.provides: CMakeFiles/generator.dir/generator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/generator.cpp.o.provides
 
-generator/CMakeFiles/generator.dir/generator.cpp.o.provides.build: generator/CMakeFiles/generator.dir/generator.cpp.o
+CMakeFiles/generator.dir/generator.cpp.o.provides.build: CMakeFiles/generator.dir/generator.cpp.o
 
 
-generator/CMakeFiles/generator.dir/point.cpp.o: generator/CMakeFiles/generator.dir/flags.make
-generator/CMakeFiles/generator.dir/point.cpp.o: generator/point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object generator/CMakeFiles/generator.dir/point.cpp.o"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/point.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
+CMakeFiles/generator.dir/point.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/point.cpp.o: point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/generator.dir/point.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/point.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
 
-generator/CMakeFiles/generator.dir/point.cpp.i: cmake_force
+CMakeFiles/generator.dir/point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/point.cpp.i"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp > CMakeFiles/generator.dir/point.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp > CMakeFiles/generator.dir/point.cpp.i
 
-generator/CMakeFiles/generator.dir/point.cpp.s: cmake_force
+CMakeFiles/generator.dir/point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/point.cpp.s"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp -o CMakeFiles/generator.dir/point.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp -o CMakeFiles/generator.dir/point.cpp.s
 
-generator/CMakeFiles/generator.dir/point.cpp.o.requires:
+CMakeFiles/generator.dir/point.cpp.o.requires:
 
-.PHONY : generator/CMakeFiles/generator.dir/point.cpp.o.requires
+.PHONY : CMakeFiles/generator.dir/point.cpp.o.requires
 
-generator/CMakeFiles/generator.dir/point.cpp.o.provides: generator/CMakeFiles/generator.dir/point.cpp.o.requires
-	$(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/point.cpp.o.provides.build
-.PHONY : generator/CMakeFiles/generator.dir/point.cpp.o.provides
+CMakeFiles/generator.dir/point.cpp.o.provides: CMakeFiles/generator.dir/point.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/point.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/point.cpp.o.provides
 
-generator/CMakeFiles/generator.dir/point.cpp.o.provides.build: generator/CMakeFiles/generator.dir/point.cpp.o
+CMakeFiles/generator.dir/point.cpp.o.provides.build: CMakeFiles/generator.dir/point.cpp.o
+
+
+CMakeFiles/generator.dir/plane.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/plane.cpp.o: plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/generator.dir/plane.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/plane.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/plane.cpp
+
+CMakeFiles/generator.dir/plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/plane.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/plane.cpp > CMakeFiles/generator.dir/plane.cpp.i
+
+CMakeFiles/generator.dir/plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/plane.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/plane.cpp -o CMakeFiles/generator.dir/plane.cpp.s
+
+CMakeFiles/generator.dir/plane.cpp.o.requires:
+
+.PHONY : CMakeFiles/generator.dir/plane.cpp.o.requires
+
+CMakeFiles/generator.dir/plane.cpp.o.provides: CMakeFiles/generator.dir/plane.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/plane.cpp.o.provides
+
+CMakeFiles/generator.dir/plane.cpp.o.provides.build: CMakeFiles/generator.dir/plane.cpp.o
+
+
+CMakeFiles/generator.dir/box.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/box.cpp.o: box.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/generator.dir/box.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/box.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/box.cpp
+
+CMakeFiles/generator.dir/box.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/box.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/box.cpp > CMakeFiles/generator.dir/box.cpp.i
+
+CMakeFiles/generator.dir/box.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/box.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/box.cpp -o CMakeFiles/generator.dir/box.cpp.s
+
+CMakeFiles/generator.dir/box.cpp.o.requires:
+
+.PHONY : CMakeFiles/generator.dir/box.cpp.o.requires
+
+CMakeFiles/generator.dir/box.cpp.o.provides: CMakeFiles/generator.dir/box.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/box.cpp.o.provides
+
+CMakeFiles/generator.dir/box.cpp.o.provides.build: CMakeFiles/generator.dir/box.cpp.o
+
+
+CMakeFiles/generator.dir/sphere.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/sphere.cpp.o: sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/generator.dir/sphere.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/sphere.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/sphere.cpp
+
+CMakeFiles/generator.dir/sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/sphere.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/sphere.cpp > CMakeFiles/generator.dir/sphere.cpp.i
+
+CMakeFiles/generator.dir/sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/sphere.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/sphere.cpp -o CMakeFiles/generator.dir/sphere.cpp.s
+
+CMakeFiles/generator.dir/sphere.cpp.o.requires:
+
+.PHONY : CMakeFiles/generator.dir/sphere.cpp.o.requires
+
+CMakeFiles/generator.dir/sphere.cpp.o.provides: CMakeFiles/generator.dir/sphere.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/sphere.cpp.o.provides
+
+CMakeFiles/generator.dir/sphere.cpp.o.provides.build: CMakeFiles/generator.dir/sphere.cpp.o
+
+
+CMakeFiles/generator.dir/cone.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/cone.cpp.o: cone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/generator.dir/cone.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/generator.dir/cone.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/cone.cpp
+
+CMakeFiles/generator.dir/cone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/cone.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/cone.cpp > CMakeFiles/generator.dir/cone.cpp.i
+
+CMakeFiles/generator.dir/cone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/cone.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/cone.cpp -o CMakeFiles/generator.dir/cone.cpp.s
+
+CMakeFiles/generator.dir/cone.cpp.o.requires:
+
+.PHONY : CMakeFiles/generator.dir/cone.cpp.o.requires
+
+CMakeFiles/generator.dir/cone.cpp.o.provides: CMakeFiles/generator.dir/cone.cpp.o.requires
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.o.provides.build
+.PHONY : CMakeFiles/generator.dir/cone.cpp.o.provides
+
+CMakeFiles/generator.dir/cone.cpp.o.provides.build: CMakeFiles/generator.dir/cone.cpp.o
 
 
 # Object files for target generator
 generator_OBJECTS = \
 "CMakeFiles/generator.dir/generator.cpp.o" \
-"CMakeFiles/generator.dir/point.cpp.o"
+"CMakeFiles/generator.dir/point.cpp.o" \
+"CMakeFiles/generator.dir/plane.cpp.o" \
+"CMakeFiles/generator.dir/box.cpp.o" \
+"CMakeFiles/generator.dir/sphere.cpp.o" \
+"CMakeFiles/generator.dir/cone.cpp.o"
 
 # External object files for target generator
 generator_EXTERNAL_OBJECTS =
 
-generator/generator: generator/CMakeFiles/generator.dir/generator.cpp.o
-generator/generator: generator/CMakeFiles/generator.dir/point.cpp.o
-generator/generator: generator/CMakeFiles/generator.dir/build.make
-generator/generator: generator/CMakeFiles/generator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable generator"
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/generator.dir/link.txt --verbose=$(VERBOSE)
+generator: CMakeFiles/generator.dir/generator.cpp.o
+generator: CMakeFiles/generator.dir/point.cpp.o
+generator: CMakeFiles/generator.dir/plane.cpp.o
+generator: CMakeFiles/generator.dir/box.cpp.o
+generator: CMakeFiles/generator.dir/sphere.cpp.o
+generator: CMakeFiles/generator.dir/cone.cpp.o
+generator: CMakeFiles/generator.dir/build.make
+generator: CMakeFiles/generator.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable generator"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/generator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-generator/CMakeFiles/generator.dir/build: generator/generator
+CMakeFiles/generator.dir/build: generator
 
-.PHONY : generator/CMakeFiles/generator.dir/build
+.PHONY : CMakeFiles/generator.dir/build
 
-generator/CMakeFiles/generator.dir/requires: generator/CMakeFiles/generator.dir/generator.cpp.o.requires
-generator/CMakeFiles/generator.dir/requires: generator/CMakeFiles/generator.dir/point.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/generator.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/point.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/plane.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/box.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/sphere.cpp.o.requires
+CMakeFiles/generator.dir/requires: CMakeFiles/generator.dir/cone.cpp.o.requires
 
-.PHONY : generator/CMakeFiles/generator.dir/requires
+.PHONY : CMakeFiles/generator.dir/requires
 
-generator/CMakeFiles/generator.dir/clean:
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && $(CMAKE_COMMAND) -P CMakeFiles/generator.dir/cmake_clean.cmake
-.PHONY : generator/CMakeFiles/generator.dir/clean
+CMakeFiles/generator.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/generator.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/generator.dir/clean
 
-generator/CMakeFiles/generator.dir/depend:
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : generator/CMakeFiles/generator.dir/depend
+CMakeFiles/generator.dir/depend:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/generator.dir/depend
 

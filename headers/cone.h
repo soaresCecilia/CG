@@ -1,4 +1,4 @@
-#ifndef __CONEE_H__
+#ifndef __CONE_H__
 #define __CONE_H__
 
 #include "point.h"

@@ -1,8 +1,9 @@
 #include "../headers/sphere.h"
-#include "../headers/point.h"
 #include <math.h>
+#include <iostream>
+#include <fstream>
 
-void drawSphere() {
+void Sphere::drawSphere() {
         
     float alpha = 0; // da a volta
     float teta = - (M_PI /2); // pendulo, cima, baixo
@@ -66,17 +67,17 @@ void drawSphere() {
     
 }
 
-void sphereToFile(char *filename) {
+void Sphere::sphereToFile(char *filename) {
     
     std::ofstream myfile;
     myfile.open(filename);
     drawSphere();
     
-    int vectorLenght = this->points->size();
+    int vectorLenght = this->points.size();
     
     myfile << vectorLenght << std::endl;
     for (int i=0; i < vectorLenght; i++){
-        myfile << *(*points)[i]; // duvida aqui.............. no apontador
+        myfile << *(points[i]); 
     }
     
     myfile.close();

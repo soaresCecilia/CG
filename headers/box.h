@@ -16,7 +16,7 @@ private:
 public:
 	Box(float x, float y, float z, int div) :
 		x(x), y(y), z(z), div(div) {}
-	void drawbox();
+	void drawBox();
 	void boxToFile(char*);
 };
 

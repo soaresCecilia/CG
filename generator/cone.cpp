@@ -1,7 +1,9 @@
-#include "../headers/point.h"
 #include "../headers/cone.h"
+#include <iostream>
+#include <fstream>
+#include <math.h>
 
-void drawCone() {
+void Cone::drawCone() {
 
 
 	const float _alpha = (2 * M_PI) / slices;  //angulo de cada slice
@@ -25,63 +27,63 @@ void drawCone() {
 			px_base = radius * sin(alpha);
 			pz_base = radius * cos(alpha);
 
-			px = (radius - (theta * i)) * sin(_alpha * j);
-			pz = (radius - (theta * i)) * cos(_alpha * j);
+			float px = (radius - (theta * i)) * sin(_alpha * j);
+			float pz = (radius - (theta * i)) * cos(_alpha * j);
 
 
 			if (!i) {
 				// desenhar a base;
 
 				Point* d = new Point(px_base_ant, 0.0, pz_base_ant);
-				points->push_back(d);
+				points.push_back(d);
 
 				Point* e = new Point(0.0, 0.0, 0.0);
-				points->push_back(e);
+				points.push_back(e);
 
 
 				Point* f = new Point(px_base, 0.0, pz_base);
-				points->push_back(f);
+				points.push_back(f);
 			}
 
 			if (i == stacks - 1) {
 				// desenhar a ultima stack, que é so um triangulo
 				
 				Point* a = new Point(0.0, height, 0.0);
-				points->push_back(a);
+				points.push_back(a);
 
 				Point* b = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));
-				points->push_back(b);
+				points.push_back(b);
 
 
 				Point* c = new Point((radius - (theta * i)), i * _stack, (radius - (theta * i)) * cos(_alpha * (j + 1)));
-				points->push_back(c);
+				points.push_back(c);
 			}
 
 			else {
 				// desenhar a ultima stack, que é so um triangulo
 				//A
 				Point* g = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));
-				points->push_back(g);
+				points.push_back(g);
 				//D
 				Point* h = new Point((radius - (theta * (i))) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * (i))) * cos(_alpha * (j + 1)));
-				points->push_back(h);
+				points.push_back(h);
 				//c
 				Point* k = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));
-				points->push_back(k);
+				points.push_back(k);
 				//c
 				Point* l = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));
-				points->push_back(l);
+				points.push_back(l);
 				//B
 				Point* m = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)));
-				points->push_back(l);
+				points.push_back(l);
 				//A
 				Point* n = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j));
-				points->push_back(l);
+				points.push_back(l);
 
 			}
 
-			px_ant = px;
-			pz_ant = pz;
+			float px_ant = px;
+			float pz_ant = pz;
 
 
 			px_base_ant = px_base;
@@ -90,17 +92,17 @@ void drawCone() {
 	}
 }
 
-void coneToFile(char* filename) {
+void Cone::coneToFile(char* filename) {
 
 	std::ofstream myfile;
 	myfile.open(filename);
 	drawCone();
 
-	int vectorLenght = this->points->size();
+	int vectorLenght = this->points.size();
 
 	myfile << vectorLenght << std::endl;
 	for (int i = 0; i < vectorLenght; i++) {
-		myfile << *(*points)[i]; 
+		myfile << *(points[i]);
 	}
 
 	myfile.close();

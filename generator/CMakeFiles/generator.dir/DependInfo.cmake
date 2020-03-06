@@ -4,8 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/box.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/box.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/cone.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/cone.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/generator.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/generator.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/plane.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/plane.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/point.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/sphere.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/generator.dir/sphere.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

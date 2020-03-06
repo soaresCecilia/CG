@@ -22,9 +22,9 @@ class Sphere {
 
     public:
         Sphere(float radius, int slices, int stacks) {
-            radius = radius;
-            slices = slices;
-            stacks = stacks;
+            this->radius = radius;
+            this->slices = slices;
+            this->stacks = stacks;
         }
         void drawSphere();
         void sphereToFile(char*);

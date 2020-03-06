@@ -34,9 +34,6 @@ void Sphere::drawSphere() {
             float y4 = radius * sin(teta);
             float z4 = radius * cos(teta) * cos(alpha + incrementoAlpha);
             
-            
-            
-        
             // desenha um quadrado apenas
             // desenho triangulo baixo
             Point *a = new Point(x1,y1,z1);

@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine
+CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine
+CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles 0
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/progress.marks
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 engine/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 engine/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,30 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 engine/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 engine/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named engine
+# Convenience name for target.
+engine/CMakeFiles/engine.dir/rule:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 engine/CMakeFiles/engine.dir/rule
+.PHONY : engine/CMakeFiles/engine.dir/rule
 
-# Build rule for target.
-engine: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 engine
+# Convenience name for target.
+engine: engine/CMakeFiles/engine.dir/rule
+
 .PHONY : engine
 
 # fast build rule for target.
 engine/fast:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
 FormaGeo.o: FormaGeo.cpp.o
@@ -129,7 +131,7 @@ FormaGeo.o: FormaGeo.cpp.o
 
 # target to build an object file
 FormaGeo.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/FormaGeo.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/FormaGeo.cpp.o
 .PHONY : FormaGeo.cpp.o
 
 FormaGeo.i: FormaGeo.cpp.i
@@ -138,7 +140,7 @@ FormaGeo.i: FormaGeo.cpp.i
 
 # target to preprocess a source file
 FormaGeo.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/FormaGeo.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/FormaGeo.cpp.i
 .PHONY : FormaGeo.cpp.i
 
 FormaGeo.s: FormaGeo.cpp.s
@@ -147,35 +149,35 @@ FormaGeo.s: FormaGeo.cpp.s
 
 # target to generate assembly for a file
 FormaGeo.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/FormaGeo.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/FormaGeo.cpp.s
 .PHONY : FormaGeo.cpp.s
 
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.o: Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
+__/generator/point.o: __/generator/point.cpp.o
 
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.o
+.PHONY : __/generator/point.o
 
 # target to build an object file
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
+__/generator/point.cpp.o:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/__/generator/point.cpp.o
+.PHONY : __/generator/point.cpp.o
 
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.i: Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i
+__/generator/point.i: __/generator/point.cpp.i
 
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.i
+.PHONY : __/generator/point.i
 
 # target to preprocess a source file
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i
+__/generator/point.cpp.i:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/__/generator/point.cpp.i
+.PHONY : __/generator/point.cpp.i
 
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.s: Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s
+__/generator/point.s: __/generator/point.cpp.s
 
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.s
+.PHONY : __/generator/point.s
 
 # target to generate assembly for a file
-Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s
-.PHONY : Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s
+__/generator/point.cpp.s:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/__/generator/point.cpp.s
+.PHONY : __/generator/point.cpp.s
 
 engine.o: engine.cpp.o
 
@@ -183,7 +185,7 @@ engine.o: engine.cpp.o
 
 # target to build an object file
 engine.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/engine.cpp.o
 .PHONY : engine.cpp.o
 
 engine.i: engine.cpp.i
@@ -192,7 +194,7 @@ engine.i: engine.cpp.i
 
 # target to preprocess a source file
 engine.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/engine.cpp.i
 .PHONY : engine.cpp.i
 
 engine.s: engine.cpp.s
@@ -201,7 +203,7 @@ engine.s: engine.cpp.s
 
 # target to generate assembly for a file
 engine.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/engine.cpp.s
 .PHONY : engine.cpp.s
 
 nFormasGeo.o: nFormasGeo.cpp.o
@@ -210,7 +212,7 @@ nFormasGeo.o: nFormasGeo.cpp.o
 
 # target to build an object file
 nFormasGeo.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/nFormasGeo.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/nFormasGeo.cpp.o
 .PHONY : nFormasGeo.cpp.o
 
 nFormasGeo.i: nFormasGeo.cpp.i
@@ -219,7 +221,7 @@ nFormasGeo.i: nFormasGeo.cpp.i
 
 # target to preprocess a source file
 nFormasGeo.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/nFormasGeo.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/nFormasGeo.cpp.i
 .PHONY : nFormasGeo.cpp.i
 
 nFormasGeo.s: nFormasGeo.cpp.s
@@ -228,7 +230,7 @@ nFormasGeo.s: nFormasGeo.cpp.s
 
 # target to generate assembly for a file
 nFormasGeo.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/nFormasGeo.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/nFormasGeo.cpp.s
 .PHONY : nFormasGeo.cpp.s
 
 parser.o: parser.cpp.o
@@ -237,7 +239,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/parser.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -246,7 +248,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/parser.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -255,7 +257,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/parser.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 tinyxml2.o: tinyxml2.cpp.o
@@ -264,7 +266,7 @@ tinyxml2.o: tinyxml2.cpp.o
 
 # target to build an object file
 tinyxml2.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/tinyxml2.cpp.o
 .PHONY : tinyxml2.cpp.o
 
 tinyxml2.i: tinyxml2.cpp.i
@@ -273,7 +275,7 @@ tinyxml2.i: tinyxml2.cpp.i
 
 # target to preprocess a source file
 tinyxml2.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/tinyxml2.cpp.i
 .PHONY : tinyxml2.cpp.i
 
 tinyxml2.s: tinyxml2.cpp.s
@@ -282,7 +284,7 @@ tinyxml2.s: tinyxml2.cpp.s
 
 # target to generate assembly for a file
 tinyxml2.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/tinyxml2.cpp.s
 .PHONY : tinyxml2.cpp.s
 
 # Help Target
@@ -297,9 +299,9 @@ help:
 	@echo "... FormaGeo.o"
 	@echo "... FormaGeo.i"
 	@echo "... FormaGeo.s"
-	@echo "... Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.o"
-	@echo "... Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.i"
-	@echo "... Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.s"
+	@echo "... __/generator/point.o"
+	@echo "... __/generator/point.i"
+	@echo "... __/generator/point.s"
 	@echo "... engine.o"
 	@echo "... engine.i"
 	@echo "... engine.s"
@@ -323,6 +325,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

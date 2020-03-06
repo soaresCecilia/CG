@@ -15,7 +15,7 @@
 //em que é que consiste uma forma geometrica
 class FormaGeo {
     private:
-        int nPoints;
+        size_t nPoints;
         std::vector<Point *> vertexPoint;
 
     public:
@@ -25,7 +25,7 @@ class FormaGeo {
         void addVertexPoint(Point *);
         void draw();
         void fillBuffer();
-        int getNPoint();
+        size_t getNPoint();
         std::vector<Point *>* getVector();
 };
 

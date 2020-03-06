@@ -15,6 +15,8 @@ GL/glut.h
 -
 ../headers/FormaGeo.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+math.h
+-
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp
 GLUT/glut.h

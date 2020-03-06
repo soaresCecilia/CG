@@ -32,19 +32,36 @@ void plane(double dim, std::vector<Point *> *points) {
     
 
     //est‡ ainda a divis‹o inteira
-    Point *c = new Point(-dim/2, 0.0f, dim/2); /*1.¼ e œltimo*/
+    Point *c = new Point(-dim/2, 0.0f, dim/2);
     Point *b = new Point(dim/2, 0.0f, dim/2);
-    Point *a = new Point(dim/2, 0.0f, -dim/2); /*2x seguidas*/
+    Point *a = new Point(dim/2, 0.0f, -dim/2);
     Point *d = new Point(-dim/2, 0.0f, -dim/2);
     
     
     //push_back - Add element at the end of the vector
-    points->push_back(c);
-    points->push_back(b);
     points->push_back(a);
-    points->push_back(a);
+    
+    printf("Vetor a: x %f, y %f, z %f,\n", a->getX(), a->getY(), a->getZ());
+    
     points->push_back(d);
+    
+    printf("Vetor d: x %f, y %f, z %f,\n", d->getX(), d->getY(), d->getZ());
+    
+    
     points->push_back(c);
+    
+    printf("Vetor c: x %f, y %f, z %f,\n", c->getX(), c->getY(), c->getZ());
+    
+    points->push_back(c);
+    printf("Vetor c: x %f, y %f, z %f,\n", c->getX(), c->getY(), c->getZ());
+    
+    points->push_back(b);
+    printf("Vetor b: x %f, y %f, z %f,\n", b->getX(), b->getY(), b->getZ());
+    
+    
+    points->push_back(a);
+    printf("Vetor a: x %f, y %f, z %f,\n", a->getX(), a->getY(), a->getZ());
+    
 }
 
 

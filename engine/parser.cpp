@@ -77,39 +77,8 @@ FormaGeo *parseFile(const XMLElement *ptrElement) {
         getline(infile, line);
         int nVertices = stoi(line);
     
-    printf("N vertices %d\n", nVertices);
-    
         FormaGeo *formaGeo = new FormaGeo(nVertices);
-    
 
-    /*
-    while (getline(infile, line)) {
-        
-        printf("Linha %s", line.c_str());
-        
-        vector<string> v;
-        istringstream buf(line);
-        int k = 0;
-        for (string word; buf >> word;){
-            
-            v.push_back(word);
-            
-            printf("Vetor %s", v[k].c_str());
-            k++;
-        }
-        float point[3];
-        int j = 0;
-        
-        for (auto i = v.begin(); i != v.end(); ++i, j++){
-            point[j] = stof(*i);
-            
-            printf("Array de floats %f", point[j]);
-        }
-        
-        formaGeo->addVertexPoint(new Point(point[0], point[1], point[2]));
-}
-
-*/
         while (getline(infile, line)) {
             sscanf(line.c_str(),"(%f, %f, %f)", &x, &y, &z);
             formaGeo->addVertexPoint(new Point(x,y,z));

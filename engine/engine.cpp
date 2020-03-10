@@ -45,6 +45,29 @@ void changeSize(int w, int h)
     glMatrixMode(GL_MODELVIEW);
 }
 
+void axis() {
+    // code to draw the x,y,z
+    glBegin(GL_LINES);
+    
+    // X axis in red
+    glColor3f(1.0f, 0.0f, 1.0f);
+    glVertex3f(-100.0f, 0.0f, 0.0f);
+    glVertex3f( 100.0f, 0.0f, 0.0f);
+    
+    // Y Axis in Green
+    glColor3f(0.0f, 1.0f, 0.0f);
+    glVertex3f(0.0f, -100.0f, 0.0f);
+    glVertex3f(0.0f, 100.0f, 0.0f);
+    
+    // Z Axis in Blue
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glVertex3f(0.0f, 0.0f, -100.0f);
+    glVertex3f(0.0f, 0.0f,  100.0f);
+    
+    glEnd();
+}
+
+
 void renderScene() {
     // clear buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -54,6 +77,8 @@ void renderScene() {
     gluLookAt(5.0,5.0,5.0,
               0.0,0.0,0.0,
               0.0f,1.0f,0.0f);
+    
+    axis();
     
     glColor3f(0.1, 1, 1);
     

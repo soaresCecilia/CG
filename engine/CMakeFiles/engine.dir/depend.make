@@ -3,6 +3,7 @@
 
 CMakeFiles/engine.dir/FormaGeo.cpp.o: FormaGeo.cpp
 CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/nFormasGeo.h
 CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
 
 CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp

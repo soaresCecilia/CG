@@ -12,10 +12,11 @@ class nFormasGeo {
         std::vector<FormaGeo *> formaGeo;
 
     public:
+        GLuint buffer[1];
         nFormasGeo();
         ~nFormasGeo();
         void addFormaGeo(FormaGeo *fg);
-        void draw();
+        void draw(int);
         std::vector<FormaGeo *>* getFormaGeo();
 };
 #endif

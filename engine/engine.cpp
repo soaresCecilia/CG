@@ -57,7 +57,9 @@ void renderScene() {
     
     glColor3f(0.1, 1, 1);
     
-    group.draw();
+    int tam = group.getFormaGeo()->size();
+    
+    group.draw(tam);
 
     glutSwapBuffers();
 }

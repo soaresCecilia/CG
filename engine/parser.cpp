@@ -35,7 +35,6 @@ void parseDoc(nFormasGeo *ptrFgeo, XMLNode *ptrN) {
                 if (!strcmp(ptrElement->Name(), "model")) {
                         if (ptrElement->Attribute("file")) {
                                 FormaGeo *formageo = parseFile(ptrElement);
-                                formageo->fillBuffer();
                                 ptrFgeo->addFormaGeo(formageo);
                         }
                 }

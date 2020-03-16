@@ -3,11 +3,11 @@
 #define __PARSER_H__
 
 
-#include "nFormasGeo.h"
+#include "group.h"
 
 class Parser {
     public:
         Parser();
-        void ReadXML(nFormasGeo *, const char *);
+        void ReadXML(Group *, const char *);
 };
 #endif

@@ -43,206 +43,233 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine
+CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine
+CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 # Include any dependencies generated for this target.
-include CMakeFiles/engine.dir/depend.make
+include engine/CMakeFiles/engine.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/engine.dir/progress.make
+include engine/CMakeFiles/engine.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/engine.dir/flags.make
+include engine/CMakeFiles/engine.dir/flags.make
 
-CMakeFiles/engine.dir/engine.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/engine.cpp.o: engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp
+engine/CMakeFiles/engine.dir/engine.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/engine.cpp.o: engine/engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object engine/CMakeFiles/engine.dir/engine.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp
 
-CMakeFiles/engine.dir/engine.cpp.i: cmake_force
+engine/CMakeFiles/engine.dir/engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp > CMakeFiles/engine.dir/engine.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp > CMakeFiles/engine.dir/engine.cpp.i
 
-CMakeFiles/engine.dir/engine.cpp.s: cmake_force
+engine/CMakeFiles/engine.dir/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp -o CMakeFiles/engine.dir/engine.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp -o CMakeFiles/engine.dir/engine.cpp.s
 
-CMakeFiles/engine.dir/engine.cpp.o.requires:
+engine/CMakeFiles/engine.dir/engine.cpp.o.requires:
 
-.PHONY : CMakeFiles/engine.dir/engine.cpp.o.requires
+.PHONY : engine/CMakeFiles/engine.dir/engine.cpp.o.requires
 
-CMakeFiles/engine.dir/engine.cpp.o.provides: CMakeFiles/engine.dir/engine.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/engine.cpp.o.provides
+engine/CMakeFiles/engine.dir/engine.cpp.o.provides: engine/CMakeFiles/engine.dir/engine.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/engine.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/engine.cpp.o.provides
 
-CMakeFiles/engine.dir/engine.cpp.o.provides.build: CMakeFiles/engine.dir/engine.cpp.o
-
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp > CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.i
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp -o CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.s
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.requires:
-
-.PHONY : CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.requires
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.provides: CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.provides
-
-CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.provides.build: CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
+engine/CMakeFiles/engine.dir/engine.cpp.o.provides.build: engine/CMakeFiles/engine.dir/engine.cpp.o
 
 
-CMakeFiles/engine.dir/FormaGeo.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/FormaGeo.cpp.o: FormaGeo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/FormaGeo.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/FormaGeo.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.o: generator/point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object engine/CMakeFiles/engine.dir/__/generator/point.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/generator/point.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp
 
-CMakeFiles/engine.dir/FormaGeo.cpp.i: cmake_force
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/generator/point.cpp.i"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp > CMakeFiles/engine.dir/__/generator/point.cpp.i
+
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/generator/point.cpp.s"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp -o CMakeFiles/engine.dir/__/generator/point.cpp.s
+
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.requires:
+
+.PHONY : engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.requires
+
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.provides: engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.provides
+
+engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.provides.build: engine/CMakeFiles/engine.dir/__/generator/point.cpp.o
+
+
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.o: engine/FormaGeo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object engine/CMakeFiles/engine.dir/FormaGeo.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/FormaGeo.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp
+
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/FormaGeo.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp > CMakeFiles/engine.dir/FormaGeo.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp > CMakeFiles/engine.dir/FormaGeo.cpp.i
 
-CMakeFiles/engine.dir/FormaGeo.cpp.s: cmake_force
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/FormaGeo.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp -o CMakeFiles/engine.dir/FormaGeo.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp -o CMakeFiles/engine.dir/FormaGeo.cpp.s
 
-CMakeFiles/engine.dir/FormaGeo.cpp.o.requires:
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.requires:
 
-.PHONY : CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
+.PHONY : engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
 
-CMakeFiles/engine.dir/FormaGeo.cpp.o.provides: CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/FormaGeo.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/FormaGeo.cpp.o.provides
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.provides: engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.provides
 
-CMakeFiles/engine.dir/FormaGeo.cpp.o.provides.build: CMakeFiles/engine.dir/FormaGeo.cpp.o
-
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/nFormasGeo.cpp.o: nFormasGeo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/nFormasGeo.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/nFormasGeo.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/nFormasGeo.cpp
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/nFormasGeo.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/nFormasGeo.cpp > CMakeFiles/engine.dir/nFormasGeo.cpp.i
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/nFormasGeo.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/nFormasGeo.cpp -o CMakeFiles/engine.dir/nFormasGeo.cpp.s
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.o.requires:
-
-.PHONY : CMakeFiles/engine.dir/nFormasGeo.cpp.o.requires
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.o.provides: CMakeFiles/engine.dir/nFormasGeo.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/nFormasGeo.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/nFormasGeo.cpp.o.provides
-
-CMakeFiles/engine.dir/nFormasGeo.cpp.o.provides.build: CMakeFiles/engine.dir/nFormasGeo.cpp.o
+engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.provides.build: engine/CMakeFiles/engine.dir/FormaGeo.cpp.o
 
 
-CMakeFiles/engine.dir/parser.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/parser.cpp.o: parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/parser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/parser.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp
+engine/CMakeFiles/engine.dir/group.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/group.cpp.o: engine/group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object engine/CMakeFiles/engine.dir/group.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/group.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp
 
-CMakeFiles/engine.dir/parser.cpp.i: cmake_force
+engine/CMakeFiles/engine.dir/group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/group.cpp.i"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp > CMakeFiles/engine.dir/group.cpp.i
+
+engine/CMakeFiles/engine.dir/group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/group.cpp.s"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp -o CMakeFiles/engine.dir/group.cpp.s
+
+engine/CMakeFiles/engine.dir/group.cpp.o.requires:
+
+.PHONY : engine/CMakeFiles/engine.dir/group.cpp.o.requires
+
+engine/CMakeFiles/engine.dir/group.cpp.o.provides: engine/CMakeFiles/engine.dir/group.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/group.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/group.cpp.o.provides
+
+engine/CMakeFiles/engine.dir/group.cpp.o.provides.build: engine/CMakeFiles/engine.dir/group.cpp.o
+
+
+engine/CMakeFiles/engine.dir/parser.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/parser.cpp.o: engine/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object engine/CMakeFiles/engine.dir/parser.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/parser.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp
+
+engine/CMakeFiles/engine.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/parser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp > CMakeFiles/engine.dir/parser.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp > CMakeFiles/engine.dir/parser.cpp.i
 
-CMakeFiles/engine.dir/parser.cpp.s: cmake_force
+engine/CMakeFiles/engine.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/parser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp -o CMakeFiles/engine.dir/parser.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp -o CMakeFiles/engine.dir/parser.cpp.s
 
-CMakeFiles/engine.dir/parser.cpp.o.requires:
+engine/CMakeFiles/engine.dir/parser.cpp.o.requires:
 
-.PHONY : CMakeFiles/engine.dir/parser.cpp.o.requires
+.PHONY : engine/CMakeFiles/engine.dir/parser.cpp.o.requires
 
-CMakeFiles/engine.dir/parser.cpp.o.provides: CMakeFiles/engine.dir/parser.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/parser.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/parser.cpp.o.provides
+engine/CMakeFiles/engine.dir/parser.cpp.o.provides: engine/CMakeFiles/engine.dir/parser.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/parser.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/parser.cpp.o.provides
 
-CMakeFiles/engine.dir/parser.cpp.o.provides.build: CMakeFiles/engine.dir/parser.cpp.o
+engine/CMakeFiles/engine.dir/parser.cpp.o.provides.build: engine/CMakeFiles/engine.dir/parser.cpp.o
 
 
-CMakeFiles/engine.dir/tinyxml2.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/tinyxml2.cpp.o: tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/tinyxml2.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/tinyxml2.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp
+engine/CMakeFiles/engine.dir/translation.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/translation.cpp.o: engine/translation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object engine/CMakeFiles/engine.dir/translation.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/translation.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp
 
-CMakeFiles/engine.dir/tinyxml2.cpp.i: cmake_force
+engine/CMakeFiles/engine.dir/translation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/translation.cpp.i"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp > CMakeFiles/engine.dir/translation.cpp.i
+
+engine/CMakeFiles/engine.dir/translation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/translation.cpp.s"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp -o CMakeFiles/engine.dir/translation.cpp.s
+
+engine/CMakeFiles/engine.dir/translation.cpp.o.requires:
+
+.PHONY : engine/CMakeFiles/engine.dir/translation.cpp.o.requires
+
+engine/CMakeFiles/engine.dir/translation.cpp.o.provides: engine/CMakeFiles/engine.dir/translation.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/translation.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/translation.cpp.o.provides
+
+engine/CMakeFiles/engine.dir/translation.cpp.o.provides.build: engine/CMakeFiles/engine.dir/translation.cpp.o
+
+
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.o: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.o: engine/tinyxml2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object engine/CMakeFiles/engine.dir/tinyxml2.cpp.o"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/tinyxml2.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp
+
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/tinyxml2.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp > CMakeFiles/engine.dir/tinyxml2.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp > CMakeFiles/engine.dir/tinyxml2.cpp.i
 
-CMakeFiles/engine.dir/tinyxml2.cpp.s: cmake_force
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/tinyxml2.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp -o CMakeFiles/engine.dir/tinyxml2.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp -o CMakeFiles/engine.dir/tinyxml2.cpp.s
 
-CMakeFiles/engine.dir/tinyxml2.cpp.o.requires:
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.requires:
 
-.PHONY : CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
+.PHONY : engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
 
-CMakeFiles/engine.dir/tinyxml2.cpp.o.provides: CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.o.provides.build
-.PHONY : CMakeFiles/engine.dir/tinyxml2.cpp.o.provides
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.provides: engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
+	$(MAKE) -f engine/CMakeFiles/engine.dir/build.make engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.provides.build
+.PHONY : engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.provides
 
-CMakeFiles/engine.dir/tinyxml2.cpp.o.provides.build: CMakeFiles/engine.dir/tinyxml2.cpp.o
+engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.provides.build: engine/CMakeFiles/engine.dir/tinyxml2.cpp.o
 
 
 # Object files for target engine
 engine_OBJECTS = \
 "CMakeFiles/engine.dir/engine.cpp.o" \
-"CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o" \
+"CMakeFiles/engine.dir/__/generator/point.cpp.o" \
 "CMakeFiles/engine.dir/FormaGeo.cpp.o" \
-"CMakeFiles/engine.dir/nFormasGeo.cpp.o" \
+"CMakeFiles/engine.dir/group.cpp.o" \
 "CMakeFiles/engine.dir/parser.cpp.o" \
+"CMakeFiles/engine.dir/translation.cpp.o" \
 "CMakeFiles/engine.dir/tinyxml2.cpp.o"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
-engine: CMakeFiles/engine.dir/engine.cpp.o
-engine: CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
-engine: CMakeFiles/engine.dir/FormaGeo.cpp.o
-engine: CMakeFiles/engine.dir/nFormasGeo.cpp.o
-engine: CMakeFiles/engine.dir/parser.cpp.o
-engine: CMakeFiles/engine.dir/tinyxml2.cpp.o
-engine: CMakeFiles/engine.dir/build.make
-engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable engine"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
+engine/engine: engine/CMakeFiles/engine.dir/engine.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/__/generator/point.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/FormaGeo.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/group.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/parser.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/translation.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/tinyxml2.cpp.o
+engine/engine: engine/CMakeFiles/engine.dir/build.make
+engine/engine: engine/CMakeFiles/engine.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable engine"
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/engine.dir/build: engine
+engine/CMakeFiles/engine.dir/build: engine/engine
 
-.PHONY : CMakeFiles/engine.dir/build
+.PHONY : engine/CMakeFiles/engine.dir/build
 
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/engine.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/nFormasGeo.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/parser.cpp.o.requires
-CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/engine.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/__/generator/point.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/group.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/parser.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/translation.cpp.o.requires
+engine/CMakeFiles/engine.dir/requires: engine/CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
 
-.PHONY : CMakeFiles/engine.dir/requires
+.PHONY : engine/CMakeFiles/engine.dir/requires
 
-CMakeFiles/engine.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/engine.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/engine.dir/clean
+engine/CMakeFiles/engine.dir/clean:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && $(CMAKE_COMMAND) -P CMakeFiles/engine.dir/cmake_clean.cmake
+.PHONY : engine/CMakeFiles/engine.dir/clean
 
-CMakeFiles/engine.dir/depend:
-	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/engine.dir/depend
+engine/CMakeFiles/engine.dir/depend:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : engine/CMakeFiles/engine.dir/depend
 

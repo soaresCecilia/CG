@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator
+CMAKE_SOURCE_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator
+CMAKE_BINARY_DIR = /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles 0
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/CMakeFiles/progress.marks
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 generator/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 generator/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,30 +97,32 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 generator/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 generator/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named generator
+# Convenience name for target.
+generator/CMakeFiles/generator.dir/rule:
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f CMakeFiles/Makefile2 generator/CMakeFiles/generator.dir/rule
+.PHONY : generator/CMakeFiles/generator.dir/rule
 
-# Build rule for target.
-generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 generator
+# Convenience name for target.
+generator: generator/CMakeFiles/generator.dir/rule
+
 .PHONY : generator
 
 # fast build rule for target.
 generator/fast:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
 box.o: box.cpp.o
@@ -129,7 +131,7 @@ box.o: box.cpp.o
 
 # target to build an object file
 box.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/box.cpp.o
 .PHONY : box.cpp.o
 
 box.i: box.cpp.i
@@ -138,7 +140,7 @@ box.i: box.cpp.i
 
 # target to preprocess a source file
 box.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/box.cpp.i
 .PHONY : box.cpp.i
 
 box.s: box.cpp.s
@@ -147,7 +149,7 @@ box.s: box.cpp.s
 
 # target to generate assembly for a file
 box.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/box.cpp.s
 .PHONY : box.cpp.s
 
 cone.o: cone.cpp.o
@@ -156,7 +158,7 @@ cone.o: cone.cpp.o
 
 # target to build an object file
 cone.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/cone.cpp.o
 .PHONY : cone.cpp.o
 
 cone.i: cone.cpp.i
@@ -165,7 +167,7 @@ cone.i: cone.cpp.i
 
 # target to preprocess a source file
 cone.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/cone.cpp.i
 .PHONY : cone.cpp.i
 
 cone.s: cone.cpp.s
@@ -174,7 +176,7 @@ cone.s: cone.cpp.s
 
 # target to generate assembly for a file
 cone.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/cone.cpp.s
 .PHONY : cone.cpp.s
 
 generator.o: generator.cpp.o
@@ -183,7 +185,7 @@ generator.o: generator.cpp.o
 
 # target to build an object file
 generator.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/generator.cpp.o
 .PHONY : generator.cpp.o
 
 generator.i: generator.cpp.i
@@ -192,7 +194,7 @@ generator.i: generator.cpp.i
 
 # target to preprocess a source file
 generator.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/generator.cpp.i
 .PHONY : generator.cpp.i
 
 generator.s: generator.cpp.s
@@ -201,7 +203,7 @@ generator.s: generator.cpp.s
 
 # target to generate assembly for a file
 generator.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/generator.cpp.s
 .PHONY : generator.cpp.s
 
 plane.o: plane.cpp.o
@@ -210,7 +212,7 @@ plane.o: plane.cpp.o
 
 # target to build an object file
 plane.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/plane.cpp.o
 .PHONY : plane.cpp.o
 
 plane.i: plane.cpp.i
@@ -219,7 +221,7 @@ plane.i: plane.cpp.i
 
 # target to preprocess a source file
 plane.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/plane.cpp.i
 .PHONY : plane.cpp.i
 
 plane.s: plane.cpp.s
@@ -228,7 +230,7 @@ plane.s: plane.cpp.s
 
 # target to generate assembly for a file
 plane.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/plane.cpp.s
 .PHONY : plane.cpp.s
 
 point.o: point.cpp.o
@@ -237,7 +239,7 @@ point.o: point.cpp.o
 
 # target to build an object file
 point.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/point.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/point.cpp.o
 .PHONY : point.cpp.o
 
 point.i: point.cpp.i
@@ -246,7 +248,7 @@ point.i: point.cpp.i
 
 # target to preprocess a source file
 point.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/point.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/point.cpp.i
 .PHONY : point.cpp.i
 
 point.s: point.cpp.s
@@ -255,7 +257,7 @@ point.s: point.cpp.s
 
 # target to generate assembly for a file
 point.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/point.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/point.cpp.s
 .PHONY : point.cpp.s
 
 sphere.o: sphere.cpp.o
@@ -264,7 +266,7 @@ sphere.o: sphere.cpp.o
 
 # target to build an object file
 sphere.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.o
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/sphere.cpp.o
 .PHONY : sphere.cpp.o
 
 sphere.i: sphere.cpp.i
@@ -273,7 +275,7 @@ sphere.i: sphere.cpp.i
 
 # target to preprocess a source file
 sphere.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.i
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/sphere.cpp.i
 .PHONY : sphere.cpp.i
 
 sphere.s: sphere.cpp.s
@@ -282,7 +284,7 @@ sphere.s: sphere.cpp.s
 
 # target to generate assembly for a file
 sphere.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.s
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(MAKE) -f generator/CMakeFiles/generator.dir/build.make generator/CMakeFiles/generator.dir/sphere.cpp.s
 .PHONY : sphere.cpp.s
 
 # Help Target
@@ -323,6 +325,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

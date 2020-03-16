@@ -10,6 +10,7 @@
 #endif
 
 #include "point.h"
+#include "translation.h"
 #include <vector>
 
 //em que é que consiste uma forma geometrica
@@ -25,5 +26,6 @@ class FormaGeo {
         size_t getNPoint();
         std::vector<Point *>* getVector();
 };
+
 
 #endif

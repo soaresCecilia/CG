@@ -5,11 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/FormaGeo.cpp.o"
-  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/__/generator/point.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/engine.cpp.o"
-  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/nFormasGeo.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/nFormasGeo.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/group.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/parser.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/tinyxml2.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/translation.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

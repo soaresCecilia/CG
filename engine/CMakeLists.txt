@@ -5,7 +5,7 @@ PROJECT(engine)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} engine.cpp ../generator/point.cpp FormaGeo.cpp nFormasGeo.cpp parser.cpp tinyxml2.cpp)
+add_executable(${PROJECT_NAME} engine.cpp ../generator/point.cpp FormaGeo.cpp group.cpp parser.cpp translation.cpp tinyxml2.cpp)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})

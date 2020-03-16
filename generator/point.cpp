@@ -25,6 +25,17 @@ float Point::getZ() const {
     return z;
 }
 
+void Point::setX(float x) {
+    this->x = x;
+}
+void Point::setY(float y) {
+    this->y = y;
+}
+void Point::setZ(float z) {
+    this->z = z;
+}
+
+
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {
     os << '(' << pt.getX() << ',' << pt.getY() << ',' << pt.getZ() << ')' << std::endl;

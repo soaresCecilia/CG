@@ -23,6 +23,9 @@ public:
     float getX() const;
     float getY() const;
     float getZ() const;
+    void setX(float x);
+    void setY(float y);
+    void setZ(float z);
     friend std::ostream& operator<<(std::ostream& os, const Point& dt);
 };
 

@@ -7,7 +7,6 @@
 #endif
 
 #include "../headers/FormaGeo.h"
-#include "../headers/nFormasGeo.h"
 
 
 #define _USE_MATH_DEFINES

@@ -1,5 +1,26 @@
 <scene>
-	<model file="cone.3d" />
-	<model file="sphere.3d" />
-	<model file="plane.3d" />
+	<group>
+		<translate x="1" y="0" z="1" />
+		<models>
+			<model file="box.3d" />
+		</models>
+		<group>
+			<translate y="1" />
+			<models>
+				<model file="sphere.3d" />
+			</models>
+			<group>
+				<translate z="1"/>
+				<models>
+				<model file="cone.3d" />
+				</models>
+			</group>
+		</group>
+		<group>
+			<translate x="1" />
+			<models>
+				<model file="plane.3d" />
+			</models>
+		</group>
+	</group>
 </scene>

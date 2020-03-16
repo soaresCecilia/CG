@@ -13,12 +13,12 @@
 #include <string.h>
 #include <vector>
 #include "../headers/parser.h"
-#include "../headers/nFormasGeo.h"
+#include "../headers/group.h"
 
 
 using namespace std;
 
-nFormasGeo group;
+Group group;
 
 void changeSize(int w, int h)
 {

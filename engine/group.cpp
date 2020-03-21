@@ -62,6 +62,24 @@ void Group::fillArray(Group *group, float *vertexes, int * new_vertex) {
     }
 }
 
+void Group::drawSub() {
+    glPushMatrix();
+    
+    for(auto &form: this->formsOperations)
+        form->transform();
+    
+    for(auto &formGeo: this->formsGeoCollection)
+        formGeo->draw();
+    
+    for(auto &g : this->groups) {
+        g->drawSub();
+    }
+    
+    glPopMatrix();
+
+}
+
+
 void Group::draw() {
     glGenBuffers(1, this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
@@ -87,7 +105,6 @@ void Group::draw() {
     glPopMatrix();
     
     free(vertexes);
-
 }
 
 std::vector<FormaGeo *>* Group::getFormaGeo(){

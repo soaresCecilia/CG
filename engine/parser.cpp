@@ -56,6 +56,7 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
             if (!strcmp(ptrElement->Name(), "model")) {
                 if (ptrElement->Attribute("file")) {
                         FormaGeo *formageo = parseFile(ptrElement);
+                        formageo->buffering();
                         ptrGroup->addFormaGeo(formageo);
                 }
             }

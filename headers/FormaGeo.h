@@ -18,6 +18,7 @@ class FormaGeo {
     private:
         size_t nPoints;
         std::vector<Point *> vertexPoint;
+        GLuint buffer[1];
 
     public:
         FormaGeo(int);
@@ -25,6 +26,8 @@ class FormaGeo {
         void addVertexPoint(Point *);
         size_t getNPoint();
         std::vector<Point *>* getVector();
+        void draw();
+        void buffering();
 };
 
 

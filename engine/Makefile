@@ -231,6 +231,33 @@ group.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/group.cpp.s
 .PHONY : group.cpp.s
 
+operation.o: operation.cpp.o
+
+.PHONY : operation.o
+
+# target to build an object file
+operation.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/operation.cpp.o
+.PHONY : operation.cpp.o
+
+operation.i: operation.cpp.i
+
+.PHONY : operation.i
+
+# target to preprocess a source file
+operation.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/operation.cpp.i
+.PHONY : operation.cpp.i
+
+operation.s: operation.cpp.s
+
+.PHONY : operation.s
+
+# target to generate assembly for a file
+operation.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/operation.cpp.s
+.PHONY : operation.cpp.s
+
 parser.o: parser.cpp.o
 
 .PHONY : parser.o
@@ -333,6 +360,9 @@ help:
 	@echo "... group.o"
 	@echo "... group.i"
 	@echo "... group.s"
+	@echo "... operation.o"
+	@echo "... operation.i"
+	@echo "... operation.s"
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"

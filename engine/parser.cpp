@@ -13,7 +13,9 @@
 #include "../headers/group.h"
 #include "../headers/tinyxml2.h"
 #include "../headers/point.h"
+#include "../headers/Operation.h"
 #include "../headers/translation.h"
+
 
 using namespace tinyxml2;
 using namespace std;
@@ -43,7 +45,7 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
     
             if (!strcmp(ptrElement->Name(), "translate")) {
                     Translation *trans = parseTranslate(ptrElement);
-                    ptrGroup->saveTranslation(trans);
+                    ptrGroup->saveOperation(trans);
             }
             
 
@@ -78,7 +80,7 @@ void Parser::ReadXML(Group *ptrGroup, const char *xml) {
                 exit(1);
         }
         else {
-           
+           /*
             //Aqui estou no group
             XMLNode *ptrNode = ptrRoot->FirstChild();
             
@@ -87,7 +89,8 @@ void Parser::ReadXML(Group *ptrGroup, const char *xml) {
                 exit(1);
             }
             else
-                parseDoc(ptrGroup, ptrNode);
+            */
+                parseDoc(ptrGroup, ptrRoot);
         }
 }
 
@@ -122,18 +125,15 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
 Translation * parseTranslate(XMLElement *ptrElement) {
     float x = 0, y = 0, z = 0;
     
+    if (ptrElement->Attribute("x"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
     
+    if (ptrElement->Attribute("y"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
     
-    if (ptrElement->Attribute("X"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("X"), &x);
+    if (ptrElement->Attribute("z"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
     
-    if (ptrElement->Attribute("Y"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("Y"), &y);
-    
-    if (ptrElement->Attribute("Z"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("Z"), &z);
-    
-    
-    Translation *trans = new Translation(Point(x, y, z));
+    Translation *trans = new Translation(new Point(x, y, z));
     return trans;
 }

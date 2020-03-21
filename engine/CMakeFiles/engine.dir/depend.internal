@@ -4,6 +4,7 @@
 CMakeFiles/engine.dir/FormaGeo.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o
@@ -12,6 +13,7 @@ CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Tra
 CMakeFiles/engine.dir/engine.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/parser.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
@@ -19,12 +21,18 @@ CMakeFiles/engine.dir/engine.cpp.o
 CMakeFiles/engine.dir/group.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
+CMakeFiles/engine.dir/operation.cpp.o
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
 CMakeFiles/engine.dir/parser.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/parser.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
@@ -35,5 +43,6 @@ CMakeFiles/engine.dir/tinyxml2.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/tinyxml2.h
 CMakeFiles/engine.dir/translation.cpp.o
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp
+ /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
  /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h

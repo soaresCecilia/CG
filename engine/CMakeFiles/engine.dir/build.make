@@ -177,9 +177,33 @@ CMakeFiles/engine.dir/parser.cpp.o.provides: CMakeFiles/engine.dir/parser.cpp.o.
 CMakeFiles/engine.dir/parser.cpp.o.provides.build: CMakeFiles/engine.dir/parser.cpp.o
 
 
+CMakeFiles/engine.dir/operation.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/operation.cpp.o: operation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/operation.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/operation.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp
+
+CMakeFiles/engine.dir/operation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/operation.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp > CMakeFiles/engine.dir/operation.cpp.i
+
+CMakeFiles/engine.dir/operation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/operation.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp -o CMakeFiles/engine.dir/operation.cpp.s
+
+CMakeFiles/engine.dir/operation.cpp.o.requires:
+
+.PHONY : CMakeFiles/engine.dir/operation.cpp.o.requires
+
+CMakeFiles/engine.dir/operation.cpp.o.provides: CMakeFiles/engine.dir/operation.cpp.o.requires
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/operation.cpp.o.provides.build
+.PHONY : CMakeFiles/engine.dir/operation.cpp.o.provides
+
+CMakeFiles/engine.dir/operation.cpp.o.provides.build: CMakeFiles/engine.dir/operation.cpp.o
+
+
 CMakeFiles/engine.dir/translation.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/translation.cpp.o: translation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/translation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/translation.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/translation.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp
 
 CMakeFiles/engine.dir/translation.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/engine.dir/translation.cpp.o.provides.build: CMakeFiles/engine.dir/tr
 
 CMakeFiles/engine.dir/tinyxml2.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/tinyxml2.cpp.o: tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/tinyxml2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/tinyxml2.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/tinyxml2.cpp.o -c /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp
 
 CMakeFiles/engine.dir/tinyxml2.cpp.i: cmake_force
@@ -232,6 +256,7 @@ engine_OBJECTS = \
 "CMakeFiles/engine.dir/FormaGeo.cpp.o" \
 "CMakeFiles/engine.dir/group.cpp.o" \
 "CMakeFiles/engine.dir/parser.cpp.o" \
+"CMakeFiles/engine.dir/operation.cpp.o" \
 "CMakeFiles/engine.dir/translation.cpp.o" \
 "CMakeFiles/engine.dir/tinyxml2.cpp.o"
 
@@ -243,11 +268,12 @@ engine: CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestr
 engine: CMakeFiles/engine.dir/FormaGeo.cpp.o
 engine: CMakeFiles/engine.dir/group.cpp.o
 engine: CMakeFiles/engine.dir/parser.cpp.o
+engine: CMakeFiles/engine.dir/operation.cpp.o
 engine: CMakeFiles/engine.dir/translation.cpp.o
 engine: CMakeFiles/engine.dir/tinyxml2.cpp.o
 engine: CMakeFiles/engine.dir/build.make
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -260,6 +286,7 @@ CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/Users/cecilia/Documents/Un
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/FormaGeo.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/group.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/parser.cpp.o.requires
+CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/operation.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/translation.cpp.o.requires
 CMakeFiles/engine.dir/requires: CMakeFiles/engine.dir/tinyxml2.cpp.o.requires
 

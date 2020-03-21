@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/FormaGeo.cpp.o"
   "CMakeFiles/engine.dir/group.cpp.o"
   "CMakeFiles/engine.dir/parser.cpp.o"
+  "CMakeFiles/engine.dir/operation.cpp.o"
   "CMakeFiles/engine.dir/translation.cpp.o"
   "CMakeFiles/engine.dir/tinyxml2.cpp.o"
   "engine.pdb"

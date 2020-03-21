@@ -12,14 +12,20 @@ Group::Group() {
 Group::~Group() {
     for (auto &fg : this->formsGeoCollection)
             delete fg;
+    
+    for (auto &op : this->formsOperations)
+            delete op;
+    
+    for (auto &grps : this->groups)
+            delete grps;
 }
 
 void Group::addFormaGeo(FormaGeo *fg) {
         formsGeoCollection.push_back(fg);
 }
 
-void Group::saveTranslation(Translation *translate) {
-    formsTranslations.push_back(translate);
+void Group::saveOperation(Operation *op) {
+    formsOperations.push_back(op);
 }
 
 int Group::countAllFormsPoints(Group *group){
@@ -28,6 +34,7 @@ int Group::countAllFormsPoints(Group *group){
         int pointsForm = fg->getNPoint();
         n = n + pointsForm * 3;
     }
+    
     
     int result = n;
     for (auto &g : group->groups) {
@@ -38,6 +45,9 @@ int Group::countAllFormsPoints(Group *group){
 
 
 void Group::fillArray(Group *group, float *vertexes, int * new_vertex) {
+    
+    for(auto &form: group->formsOperations)
+        form->transform();
     
     for (auto &fg : group->formsGeoCollection) {
         for (auto &point : *(fg->getVector())) {
@@ -52,7 +62,7 @@ void Group::fillArray(Group *group, float *vertexes, int * new_vertex) {
     }
 }
 
-void Group::draw(int tam) {
+void Group::draw() {
     glGenBuffers(1, this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
     size_t n = 0;
@@ -63,6 +73,9 @@ void Group::draw(int tam) {
     
     int new_vertex = 0;
     
+    glPushMatrix();
+
+    
     fillArray(this, vertexes, &new_vertex);
          
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * allpoints , vertexes, GL_STATIC_DRAW);
@@ -70,6 +83,8 @@ void Group::draw(int tam) {
     glVertexPointer(3, GL_FLOAT, 0, 0);
     
     glDrawArrays(GL_TRIANGLES, 0, allpoints);
+    
+    glPopMatrix();
     
     free(vertexes);
 

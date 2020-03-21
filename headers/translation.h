@@ -9,21 +9,13 @@
 #define translation_h
 
 #include <stdio.h>
-#include "../headers/point.h"
+#include "Operation.h"
 
-class Translation{
-    private:
-    float x;
-    float y;
-    float z;
-    
+class Translation: public Operation {
     public:
-    Translation();
-    Translation(Point p);
+    Translation(Point *p);
     ~Translation();
-    float getX() const;
-    float getY() const;
-    float getZ() const;
+    void transform();
 };
 
 #endif /* translation_h */

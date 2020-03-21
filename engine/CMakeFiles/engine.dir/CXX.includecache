@@ -48,6 +48,10 @@ vector
 vector
 -
 
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp
+../headers/Operation.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
+
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp
 iostream
 -
@@ -73,6 +77,8 @@ cstdio
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/tinyxml2.h
 ../headers/point.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+../headers/Operation.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 ../headers/translation.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 
@@ -91,6 +97,12 @@ cstdarg
 -
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp
+GLUT/glut.h
+-
+GL/glew.h
+-
+GL/glut.h
+-
 ../headers/translation.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 
@@ -112,6 +124,12 @@ translation.h
 vector
 -
 
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
+stdio.h
+-
+../headers/point.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
 string
 -
@@ -119,6 +137,8 @@ vector
 -
 FormaGeo.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+Operation.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/parser.h
 group.h
@@ -161,6 +181,6 @@ assert.h
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 stdio.h
 -
-../headers/point.h
-/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+Operation.h
+/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 

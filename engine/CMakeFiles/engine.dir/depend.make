@@ -3,6 +3,7 @@
 
 CMakeFiles/engine.dir/FormaGeo.cpp.o: FormaGeo.cpp
 CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
 CMakeFiles/engine.dir/FormaGeo.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 
@@ -11,6 +12,7 @@ CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Tra
 
 CMakeFiles/engine.dir/engine.cpp.o: engine.cpp
 CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
 CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/parser.h
 CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
@@ -18,12 +20,18 @@ CMakeFiles/engine.dir/engine.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2
 
 CMakeFiles/engine.dir/group.cpp.o: group.cpp
 CMakeFiles/engine.dir/group.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+CMakeFiles/engine.dir/group.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 CMakeFiles/engine.dir/group.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
 CMakeFiles/engine.dir/group.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
 CMakeFiles/engine.dir/group.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 
+CMakeFiles/engine.dir/operation.cpp.o: operation.cpp
+CMakeFiles/engine.dir/operation.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
+CMakeFiles/engine.dir/operation.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
+
 CMakeFiles/engine.dir/parser.cpp.o: parser.cpp
 CMakeFiles/engine.dir/parser.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/FormaGeo.h
+CMakeFiles/engine.dir/parser.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 CMakeFiles/engine.dir/parser.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/group.h
 CMakeFiles/engine.dir/parser.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/parser.h
 CMakeFiles/engine.dir/parser.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
@@ -34,6 +42,7 @@ CMakeFiles/engine.dir/tinyxml2.cpp.o: tinyxml2.cpp
 CMakeFiles/engine.dir/tinyxml2.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/tinyxml2.h
 
 CMakeFiles/engine.dir/translation.cpp.o: translation.cpp
+CMakeFiles/engine.dir/translation.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/Operation.h
 CMakeFiles/engine.dir/translation.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/point.h
 CMakeFiles/engine.dir/translation.cpp.o: /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/headers/translation.h
 

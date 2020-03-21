@@ -4,13 +4,14 @@
 #include <string>
 #include <vector>
 #include "FormaGeo.h"
+#include "Operation.h"
 
 
 //em que é que consiste um agrupamento de formas geometricas
 class Group {
     private:
         std::vector<FormaGeo *> formsGeoCollection;
-        std::vector<Translation *> formsTranslations;
+        std::vector<Operation *> formsOperations;
         std::vector<Group *> groups;
     
 
@@ -19,9 +20,9 @@ class Group {
         Group();
         ~Group();
         void addFormaGeo(FormaGeo *fg);
-        void draw(int);
+        void draw();
         std::vector<FormaGeo *>* getFormaGeo();
-        void saveTranslation(Translation *translate);
+        void saveOperation(Operation *op);
         void addGroup(Group *newGroup);
     
     private:

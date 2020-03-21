@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/generator/point.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/engine.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/group.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/group.cpp.o"
+  "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/operation.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/operation.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/parser.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/parser.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/tinyxml2.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/tinyxml2.cpp.o"
   "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp" "/Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/CMakeFiles/engine.dir/translation.cpp.o"

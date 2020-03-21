@@ -5,23 +5,20 @@
 //  Created by Cecilia Soares on 15/03/2020.
 //
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glew.h>
+#include <GL/glut.h>
+#endif
+
 #include "../headers/translation.h"
 
-
-Translation::Translation(): x(0.0f), y(0.0f), z(0.0f) {}
+Translation::Translation(Point *p) : Operation(p) {}
 
 Translation::~Translation() {}
 
-Translation::Translation(Point p) : x(p.getX()), y(p.getY()), z(p.getZ()) {}
-
-float Translation::getX() const {
-    return x;
-}
-
-float Translation::getY() const {
-    return y;
-}
-
-float Translation::getZ() const {
-    return z;
+void Translation::transform() {
+    Point *p = getPoint();
+    glTranslatef(p->getX(), p->getY(), p->getZ());
 }

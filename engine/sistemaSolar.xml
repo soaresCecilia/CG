@@ -5,61 +5,61 @@
 		</models>
 	</group>
 	<group>
-		<translate X="5"  />
+		<translate x="5"  />
  		<models>
 			<model file="mercury.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="7" />
+		<translate x="7" />
  		<models>
 			<model file="venus.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="9"  />
+		<translate x="9"  />
  		<models>
 			<model file="earth.3d" />
 		</models>
 		<group>
-			<translate X="1"  />
+			<translate x="1"  />
  			<models>
 				<model file="moon.3d" />
 			</models>
 		</group>
 	</group>
 	<group>
-		<translate X="12"  />
+		<translate x="12"  />
  		<models>
 			<model file="mars.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="15"  />
+		<translate x="15"  />
  		<models>
 			<model file="jupiter.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="17" />
+		<translate x="17" />
  		<models>
 			<model file="saturn.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="19" />
+		<translate x="19" />
  		<models>
 			<model file="uranus.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="21" />
+		<translate x="21" />
  		<models>
 			<model file="mercury.3d" />
 		</models>
 	</group>
 	<group>
-		<translate X="23" />
+		<translate x="23" />
  		<models>
 			<model file="neptune.3d" />
 		</models>

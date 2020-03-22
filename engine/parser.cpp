@@ -27,7 +27,6 @@ Parser::Parser() {
 }
 
 void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
-    //Aqui estou no translate
     XMLNode *ptrNode = ptrN->FirstChild();
 
         if (ptrNode == nullptr)
@@ -48,6 +47,11 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                     ptrGroup->saveOperation(trans);
             }
             
+            if (!strcmp(ptrElement->Name(), "rotate")) {
+                Rotation* rot = parseRotate(ptrElement);
+                ptrGroup->saveOperation(rot);
+            }
+            
 
             if (!strcmp(ptrElement->Name(), "models")) {
                 parseDoc(ptrGroup, ptrNode);
@@ -61,10 +65,6 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 }
             }
 
-			if (!strcmp(ptrElement->Name(), "rotate")) {
-				Rotation* rot = parseRotate(ptrElement);
-				ptrGroup->saveOperation(rot);
-			}
 
         }
 
@@ -87,16 +87,7 @@ void Parser::ReadXML(Group *ptrGroup, const char *xml) {
                 exit(1);
         }
         else {
-           /*
-            //Aqui estou no group
-            XMLNode *ptrNode = ptrRoot->FirstChild();
-            
-            if (ptrNode == nullptr) {
-                cerr << "Warning: No models found" << endl;
-                exit(1);
-            }
-            else
-            */
+        
                 parseDoc(ptrGroup, ptrRoot);
         }
 }

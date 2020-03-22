@@ -12,6 +12,7 @@
 #include "point.h"
 #include <vector>
 
+
 //em que é que consiste uma forma geometrica
 class Sphere {
     private:

@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/FormaGeo.cpp
+stdlib.h
+-
 GLUT/glut.h
 -
 GL/glew.h
@@ -19,6 +21,8 @@ math.h
 -
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/engine.cpp
+stdlib.h
+-
 GLUT/glut.h
 -
 GL/glew.h
@@ -97,6 +101,8 @@ cstdarg
 -
 
 /Users/cecilia/Documents/Universidade/3ANO/2semestre/CG/Trabalho/CG/engine/translation.cpp
+stdlib.h
+-
 GLUT/glut.h
 -
 GL/glew.h

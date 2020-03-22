@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -15,13 +14,14 @@
 #include "../headers/point.h"
 #include "../headers/Operation.h"
 #include "../headers/translation.h"
-
+#include "../headers/rotation.h"
 
 using namespace tinyxml2;
 using namespace std;
 
 FormaGeo * parseFile(const XMLElement *);
 Translation * parseTranslate(XMLElement *pElement);
+Rotation* parseRotate(XMLElement *pElement);
 
 Parser::Parser() {
 }
@@ -60,6 +60,12 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                         ptrGroup->addFormaGeo(formageo);
                 }
             }
+
+			if (!strcmp(ptrElement->Name(), "rotate")) {
+				Rotation* rot = parseRotate(ptrElement);
+				ptrGroup->saveOperation(rot);
+			}
+
         }
 
 }
@@ -134,7 +140,28 @@ Translation * parseTranslate(XMLElement *ptrElement) {
     
     if (ptrElement->Attribute("z"))
         tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
-    
+
+
     Translation *trans = new Translation(new Point(x, y, z));
     return trans;
+}
+
+Rotation* parseRotate(XMLElement* ptrElement) {
+	float angle = 0, x = 0, y = 0, z = 0;
+
+	if (ptrElement->Attribute("angle"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("angle"), &angle);
+
+	if (ptrElement->Attribute("x"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
+
+	if (ptrElement->Attribute("y"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
+
+	if (ptrElement->Attribute("z"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
+
+
+	Rotation* rot = new Rotation(new Point(x, y, z),angle);
+	return rot;
 }

@@ -1,7 +1,12 @@
 #include "../headers/sphere.h"
-#include <math.h>
+
 #include <iostream>
 #include <fstream>
+
+
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <math.h>
 
 void Sphere::drawSphere() {
         

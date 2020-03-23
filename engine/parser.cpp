@@ -15,6 +15,7 @@
 #include "../headers/Operation.h"
 #include "../headers/translation.h"
 #include "../headers/rotation.h"
+#include "../headers/scale.h"
 
 using namespace tinyxml2;
 using namespace std;
@@ -22,6 +23,7 @@ using namespace std;
 FormaGeo * parseFile(const XMLElement *);
 Translation * parseTranslate(XMLElement *pElement);
 Rotation* parseRotate(XMLElement *pElement);
+Scale* parseScale(XMLElement* pElement);
 
 Parser::Parser() {
 }
@@ -52,6 +54,10 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 ptrGroup->saveOperation(rot);
             }
             
+			if (!strcmp(ptrElement->Name(), "scale")) {
+				Scale* scal = parseScale(ptrElement);
+				ptrGroup->saveOperation(scal);
+			}
 
             if (!strcmp(ptrElement->Name(), "models")) {
                 parseDoc(ptrGroup, ptrNode);
@@ -155,4 +161,21 @@ Rotation* parseRotate(XMLElement* ptrElement) {
 
 	Rotation* rot = new Rotation(new Point(x, y, z),angle);
 	return rot;
+}
+
+Scale* parseScale(XMLElement* ptrElement) {
+	float x = 0, y = 0, z = 0;
+
+	if (ptrElement->Attribute("x"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
+
+	if (ptrElement->Attribute("y"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
+
+	if (ptrElement->Attribute("z"))
+		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
+
+
+	Scale* scal = new Scale(new Point(x, y, z));
+	return scal;
 }

@@ -24,6 +24,7 @@ Group group;
 
 float alfa = 0.0f, beta = 0.5f, radius = 100.0f;
 float camX, camY, camZ;
+float mvX = 0.0;
 
 void spherical2Cartesian() {
 
@@ -87,7 +88,7 @@ void renderScene() {
     // set the camera
     glLoadIdentity();
     gluLookAt(camX,camY,camZ,
-              0.0,0.0,0.0,
+              mvX,0.0,0.0,
               0.0f,1.0f,0.0f);
     
     axis();
@@ -99,9 +100,17 @@ void renderScene() {
 
     glutSwapBuffers();
 }
-void processKeys(unsigned char c, int xx, int yy) {
+void processKeys(unsigned char key, int xx, int yy) {
 
-	// put code to process regular keys in here
+	switch (key) {
+
+	case 'a':
+		mvX -= 1; break;
+	case 's':
+		mvX += 1; break;
+	case 'q':
+		exit(0);
+	}
 
 }
 

@@ -22,6 +22,16 @@ using namespace std;
 
 Group group;
 
+float alfa = 0.0f, beta = 0.5f, radius = 100.0f;
+float camX, camY, camZ;
+
+void spherical2Cartesian() {
+
+	camX = radius * cos(beta) * sin(alfa);
+	camY = radius * sin(beta);
+	camZ = radius * cos(beta) * cos(alfa);
+}
+
 void changeSize(int w, int h)
 {
     // Prevent a divide by zero, when window is too short
@@ -76,7 +86,7 @@ void renderScene() {
     
     // set the camera
     glLoadIdentity();
-    gluLookAt(5.0,5.0,5.0,
+    gluLookAt(camX,camY,camZ,
               0.0,0.0,0.0,
               0.0f,1.0f,0.0f);
     
@@ -88,6 +98,57 @@ void renderScene() {
     group.drawSub();
 
     glutSwapBuffers();
+}
+void processKeys(unsigned char c, int xx, int yy) {
+
+	// put code to process regular keys in here
+
+}
+
+
+
+void processSpecialKeys(int key, int xx, int yy) {
+
+	switch (key) {
+
+	case GLUT_KEY_RIGHT:
+		alfa -= 0.1; break;
+
+	case GLUT_KEY_LEFT:
+		alfa += 0.1; break;
+
+	case GLUT_KEY_UP:
+		beta += 0.1f;
+		if (beta > 1.5f)
+			beta = 1.5f;
+		break;
+
+	case GLUT_KEY_DOWN:
+		beta -= 0.1f;
+		if (beta < -1.5f)
+			beta = -1.5f;
+		break;
+
+	case GLUT_KEY_PAGE_DOWN: radius -= 1.0f;
+		if (radius < 1.0f)
+			radius = 1.0f;
+		break;
+
+	case GLUT_KEY_PAGE_UP: radius += 1.0f; break;
+	}
+	spherical2Cartesian();
+	glutPostRedisplay();
+
+}
+
+void printInfo() {
+
+	printf("Vendor: %s\n", glGetString(GL_VENDOR));
+	printf("Renderer: %s\n", glGetString(GL_RENDERER));
+	printf("Version: %s\n", glGetString(GL_VERSION));
+
+	printf("\nUse Arrows to move the camera up/down and left/right\n");
+	printf("Home and End control the distance from the camera to the origin");
 }
 
 void initiatingGLUT(int argc, char **argv) {
@@ -104,8 +165,10 @@ void initiatingGLUT(int argc, char **argv) {
     glutIdleFunc(renderScene);
     
     // Callback registration for keyboard processing
-    //glutKeyboardFunc(processKeys);
-    //glutSpecialFunc(processSpecialKeys);
+    glutKeyboardFunc(processKeys);
+    glutSpecialFunc(processSpecialKeys);
+	spherical2Cartesian();
+	printInfo();
     
 #ifndef __APPLE__
     glewInit();
@@ -115,15 +178,18 @@ void initiatingGLUT(int argc, char **argv) {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glPolygonMode(GL_FRONT, GL_LINE);
+	
     // Setup Buffers
     glEnableClientState(GL_VERTEX_ARRAY);
 }
+
 
 int main(int argc, char **argv) {
         if (argc == 2) {
                 initiatingGLUT(argc, argv);
                 Parser().ReadXML(&group, argv[1]);
                 // enter GLUT's main cycle
+			
                 glutMainLoop();
                 return 0;
         }

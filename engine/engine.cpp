@@ -93,8 +93,6 @@ void renderScene() {
     
     axis();
     
-    glColor3f(0.1, 1, 1);
-    
     
     group.drawSub();
 

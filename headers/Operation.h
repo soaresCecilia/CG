@@ -19,7 +19,7 @@ private:
 public:
     Operation(Point *);
     virtual ~Operation();
-    virtual void transform() = 0; //função polimorfica
+    virtual void transform() = 0; //método abstracto
     Point* getPoint();
 };
 #endif /* Operation_h */

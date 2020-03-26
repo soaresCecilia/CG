@@ -4,6 +4,7 @@
 //
 //  Created by Cecilia Soares on 26/03/2020.
 //
+#include <stdlib.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else

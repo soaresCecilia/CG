@@ -103,9 +103,9 @@ void processKeys(unsigned char key, int xx, int yy) {
 	switch (key) {
 
 	case 'a':
-		mvX -= 1; break;
+		mvX -= 10; break;
 	case 's':
-		mvX += 1; break;
+		mvX += 10; break;
 	case 'q':
 		exit(0);
 	}

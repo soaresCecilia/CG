@@ -1,61 +1,71 @@
 <scene>
-	<group>
-		<models>
-			<model file="sun.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="57.39"  />
- 		<models>
-			<model file="mercury.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="95.35" />
- 		<models>
-			<model file="venus.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="126.11"  />
- 		<models>
-			<model file="earth.3d" />
-		</models>
-		<group>
-			<translate x="1.80"  />
- 			<models>
-				<model file="moon.3d" />
-			</models>
-		</group>
-	</group>
-	<group>
-		<translate x="183.65"  />
- 		<models>
-			<model file="mars.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="304.50"  />
- 		<models>
-			<model file="jupiter.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="585.21" />
- 		<models>
-			<model file="saturn.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="852.52" />
- 		<models>
-			<model file="uranus.3d" />
-		</models>
-	</group>
-	<group>
-		<translate x="1063.4" />
- 		<models>
-			<model file="neptune.3d" />
-		</models>
-	</group>
+    <group>
+        <color R="1" G="1" B="0" />
+        <models>
+            <model file="sun.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0.5" G="0.1" B="0" />
+        <translate x="57.39"  />
+        <models>
+            <model file="mercury.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0.5" G="0.7" B="0.3" />
+        <translate x="95.35" />
+        <models>
+            <model file="venus.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0" G="1" B="0" />
+        <translate x="126.11"  />
+        <models>
+            <model file="earth.3d" />
+        </models>
+        <group>
+            <color R="0" G="0" B="0" />
+            <translate x="1.80"  />
+            <models>
+                <model file="moon.3d" />
+            </models>
+        </group>
+    </group>
+    <group>
+        <color R="1" G="0" B="0" />
+        <translate x="183.65"  />
+        <models>
+            <model file="mars.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0.35" G="0.5" B="0.05" />
+        <translate x="304.50"  />
+        <models>
+            <model file="jupiter.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0" G="1" B="0" />
+        <translate x="585.21" />
+        <models>
+            <model file="saturn.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0" G="0" B="1" />
+        <translate x="852.52" />
+        <models>
+            <model file="uranus.3d" />
+        </models>
+    </group>
+    <group>
+        <color R="0" G="0.2" B="1" />
+        <translate x="1063.4" />
+        <models>
+            <model file="neptune.3d" />
+        </models>
+    </group>
 </scene>

@@ -31,7 +31,7 @@ void Group::saveOperation(Operation *op) {
 
 void Group::drawSub() {
     glPushMatrix();
-    float colour[5] = {0.4,1,0.3,0.2,0.0};
+    //float colour[5] = {0.4,1,0.3,0.2,0.0};
 
     for(auto &form: this->formsOperations)
         form->transform();
@@ -40,7 +40,7 @@ void Group::drawSub() {
         formGeo->draw();
     
     for(auto &g : this->groups) {
-        glColor3f(1, colour[i++%5], colour[i++%5]);
+        //glColor3f(1, colour[i++%5], colour[i++%5]);
 
         g->drawSub();
     }

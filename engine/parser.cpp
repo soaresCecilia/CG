@@ -16,6 +16,8 @@
 #include "../headers/translation.h"
 #include "../headers/rotation.h"
 #include "../headers/scale.h"
+#include "../headers/color.h"
+
 
 using namespace tinyxml2;
 using namespace std;
@@ -24,6 +26,8 @@ FormaGeo * parseFile(const XMLElement *);
 Translation * parseTranslate(XMLElement *pElement);
 Rotation* parseRotate(XMLElement *pElement);
 Scale* parseScale(XMLElement* pElement);
+Color* parseColor(XMLElement* pElement);
+
 
 Parser::Parser() {
 }
@@ -42,6 +46,13 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 parseDoc(newGroup, ptrNode);
                 ptrGroup->addGroup(newGroup);
             }
+            
+            
+            if (!strcmp(ptrElement->Name(), "color")) {
+                Color *cor = parseColor(ptrElement);
+                ptrGroup->saveOperation(cor);
+            }
+            
             
     
             if (!strcmp(ptrElement->Name(), "translate")) {
@@ -178,4 +189,24 @@ Scale* parseScale(XMLElement* ptrElement) {
 
 	Scale* scal = new Scale(new Point(x, y, z));
 	return scal;
+}
+
+
+
+Color* parseColor(XMLElement* ptrElement) {
+    float r = 0, g = 0, b = 0;
+    
+    if (ptrElement->Attribute("R"))
+    tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("R"), &r);
+    
+    if (ptrElement->Attribute("G"))
+    tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("G"), &g);
+    
+    if (ptrElement->Attribute("B"))
+    tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("B"), &b);
+    
+    
+    Color* cor = new Color(new Point(r, g, b));
+    
+    return cor;
 }

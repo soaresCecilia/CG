@@ -22,7 +22,7 @@ using namespace std;
 
 Group group;
 
-float alfa = 0.0f, beta = 0.5f, radius = 100.0f;
+float alfa = 0.0f, beta = 0.5f, radius = 1000.0f;
 float camX, camY, camZ;
 float mvX = 0.0;
 

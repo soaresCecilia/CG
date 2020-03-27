@@ -24,7 +24,8 @@ Group group;
 
 float alfa = 0.0f, beta = 0.5f, radius = 1000.0f;
 float camX, camY, camZ;
-float mvX = 0.0;
+float x,y,z = 0.0;
+float vel = 1.0;
 
 void spherical2Cartesian() {
 
@@ -88,7 +89,7 @@ void renderScene() {
     // set the camera
     glLoadIdentity();
     gluLookAt(camX,camY,camZ,
-              mvX,0.0,0.0,
+              x,y,z,
               0.0f,1.0f,0.0f);
     
     axis();
@@ -101,11 +102,31 @@ void renderScene() {
 void processKeys(unsigned char key, int xx, int yy) {
 
 	switch (key) {
-
+	case 'w':
+		//x += vel * x;
+		z -= vel ;
+		break;
 	case 'a':
-		mvX -= 10; break;
+		x -= vel ;
+		//z += vel * z;
+		break;
+	case 'd':
+		x += vel ;
+		//z += vel * z;
+		break;
 	case 's':
-		mvX += 10; break;
+		//x -= vel * x;
+		z += vel ;
+		break;
+	case '-':
+		vel -= 1.0f;
+		if (vel < 1.0f)
+			vel = 1.0f;
+		break;
+
+	case '+':
+		vel += 1.0f; 
+		break;
 	case 'q':
 		exit(0);
 	}
@@ -135,13 +156,15 @@ void processSpecialKeys(int key, int xx, int yy) {
 		if (beta < -1.5f)
 			beta = -1.5f;
 		break;
-
-	case GLUT_KEY_PAGE_DOWN: radius -= 1.0f;
+	case GLUT_KEY_PAGE_DOWN:
+		radius -= 1.0f;
 		if (radius < 1.0f)
 			radius = 1.0f;
 		break;
 
-	case GLUT_KEY_PAGE_UP: radius += 1.0f; break;
+	case GLUT_KEY_PAGE_UP:
+		radius += 1.0f; break;
+	
 	}
 	spherical2Cartesian();
 	glutPostRedisplay();

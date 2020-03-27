@@ -16,7 +16,7 @@ private:
 public:
 	Cone(float radius,float height, int slices, int stacks) :
 		radius(radius),height(height), slices(slices), stacks(stacks) {}
-	void drawCone();
+	void generateCone();
 	void coneToFile(char*);
 };
 

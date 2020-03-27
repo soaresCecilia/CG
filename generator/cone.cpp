@@ -7,7 +7,7 @@
 #include <cmath>
 #include <math.h>
 
-void Cone::drawCone() {
+void Cone::generateCone() {
 
 
 	const float _alpha = (2 * M_PI) / slices;  //angulo de cada slice
@@ -100,7 +100,7 @@ void Cone::coneToFile(char* filename) {
 
 	std::ofstream myfile;
 	myfile.open(filename);
-	drawCone();
+	generateCone();
 
 	int vectorLenght = this->points.size();
 

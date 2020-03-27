@@ -8,12 +8,12 @@
 class Plane {
 private:
 	float dim;
-	std::vector<Point*> points;
+	std::vector<float> points;
 
 public:
 	Plane(float dim) :
 		dim(dim) {}
-	void drawPlane();
+	void generatePlane();
 	void planeToFile(char*);
 };
 

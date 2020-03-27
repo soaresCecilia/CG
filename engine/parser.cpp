@@ -128,8 +128,8 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
 
         while (getline(infile, line)) {
             sscanf(line.c_str(),"(%f, %f, %f)", &x, &y, &z);
-            formaGeo->addVertexPoint(new Point(x,y,z));
-            printf("Saida %f, %f, %f\n", x, y, z);
+            Point p(x,y,z);
+            formaGeo->addCoordinates(p);
         }
     
         infile.close();

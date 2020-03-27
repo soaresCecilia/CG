@@ -27,7 +27,7 @@ class Sphere {
             this->slices = slices;
             this->stacks = stacks;
         }
-        void drawSphere();
+        void generateSphere();
         void sphereToFile(char*);
 };
 

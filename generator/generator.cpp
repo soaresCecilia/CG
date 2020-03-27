@@ -15,6 +15,8 @@
 #include "../headers/box.h"
 #include "../headers/cone.h"
 #include "../headers/sphere.h"
+#include "../headers/ring.h"
+
 
 
 void executaComandos(int argc, char* argv[]){
@@ -41,7 +43,9 @@ void executaComandos(int argc, char* argv[]){
     		if(argc == 7 && !strcmp(argv[1],"cone")){
     			Cone *c = new Cone(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]), atoi(argv[5]));
         		c->coneToFile(argv[6]);
-        	} 
+        	}
+    
+    
 	}
 
 

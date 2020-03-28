@@ -8,7 +8,7 @@
 #include <cmath>
 #include <math.h>
 
-void Sphere::drawSphere() {
+void Sphere::generateSphere() {
         
     float alpha = 0; // da a volta
     float teta = - (M_PI /2); // pendulo, cima, baixo
@@ -73,7 +73,7 @@ void Sphere::sphereToFile(char *filename) {
     
     std::ofstream myfile;
     myfile.open(filename);
-    drawSphere();
+    generateSphere();
     
     int vectorLenght = this->points.size();
     

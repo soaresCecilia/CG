@@ -6,27 +6,27 @@
         </models>
     </group>
     <group>
-        <color R="0.5" G="0.1" B="0" />
+        <color R="0.647059" G="0.164706" B="0.164706" />
         <translate x="57.39"  z="57.3" />
         <models>
             <model file="mercury.3d" />
         </models>
     </group>
     <group>
-        <color R="0.5" G="0.7" B="0.3" />
+        <color R="1" G="0.25" B="0" />
         <translate x="95.35" z="195.3"/>
         <models>
             <model file="venus.3d" />
         </models>
     </group>
     <group>
-        <color R="0" G="1" B="0" />
+        <color R="0.196078" G="0.6" B="0.8" />
         <translate x="126.11"  z="-126"/>
         <models>
             <model file="earth.3d" />
         </models>
         <group>
-            <color R="0" G="0" B="0" />
+            <color R="0.658824" G="0.658824" B="0.658824" />
             <translate x="1.80"  />
             <models>
                 <model file="moon.3d" />
@@ -41,28 +41,28 @@
         </models>
     </group>
     <group>
-        <color R="0.35" G="0.5" B="0.05" />
+        <color R="0.8" G="0.498039" B="0.196078" />
         <translate x="-304.50" z="300" />
         <models>
             <model file="jupiter.3d" />
         </models>
     </group>
     <group>
-        <color R="0" G="1" B="0" />
+        <color R="0.55" G="0.47" B="0.14" />
         <translate x="585.21"  z="-400"/>
         <models>
             <model file="saturn.3d" />
         </models>
     </group>
     <group>
-        <color R="0" G="0" B="1" />
+        <color R="0.372" G="0.6235" B="0.635229" />
         <translate x="-852.52"  z="-250"/>
         <models>
             <model file="uranus.3d" />
         </models>
     </group>
     <group>
-        <color R="1" G="0" B="1" />
+        <color R="0.196078" G="0.196078" B="0.8" />
         <translate x="1063.4" y="-20" z="200"/>
         <models>
             <model file="neptune.3d" />

@@ -17,15 +17,14 @@
 class FormaGeo {
     private:
         size_t nPoints;
-        std::vector<Point *> vertexPoint;
+        std::vector<float> coordinates;
         GLuint buffer[1];
 
     public:
         FormaGeo(int);
         ~FormaGeo();
-        void addVertexPoint(Point *);
+        void addCoordinates(const Point &p);
         size_t getNPoint();
-        std::vector<Point *>* getVector();
         void draw();
         void buffering();
 };

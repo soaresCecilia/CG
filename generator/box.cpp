@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-void Box::drawBox() {
+void Box::generateBox() {
 	float div_increment_x = x / div;
 	float div_increment_y = y / div;
 	float div_increment_z = z / div;
@@ -110,7 +110,7 @@ void Box::boxToFile(char* filename) {
 
 	std::ofstream myfile;
 	myfile.open(filename);
-	drawBox();
+	generateBox();
 
 	int vectorLenght = this->points.size();
 

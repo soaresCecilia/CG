@@ -1,7 +1,9 @@
 #include "../headers/plane.h"
 #include <iostream>
 #include <fstream>
-void Plane::drawPlane() {
+
+
+void Plane::generatePlane() {
 
     //est‡ ainda a divis‹o inteira
     Point *c = new Point(-dim/2, 0.0f, dim/2);

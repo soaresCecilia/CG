@@ -46,6 +46,11 @@ void executaComandos(int argc, char* argv[]){
         	}
     
     
+            if(argc == 5 && !strcmp(argv[1],"ring")){
+                Ring *r = new Ring(atoi(argv[2]),
+                    atoi(argv[3]));
+                r->ringToFile(argv[4]);
+            }
 	}
 
 

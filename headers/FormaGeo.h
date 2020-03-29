@@ -13,7 +13,6 @@
 #include "translation.h"
 #include <vector>
 
-//em que é que consiste uma forma geometrica
 class FormaGeo {
     private:
         size_t nPoints;

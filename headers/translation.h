@@ -1,10 +1,3 @@
-//
-//  translation.h
-//  
-//
-//  Created by Cecilia Soares on 15/03/2020.
-//
-
 #ifndef translation_h
 #define translation_h
 

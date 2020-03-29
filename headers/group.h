@@ -7,7 +7,7 @@
 #include "Operation.h"
 
 
-//em que é que consiste um agrupamento de formas geometricas
+
 class Group {
     private:
         std::vector<FormaGeo *> formsGeoCollection;

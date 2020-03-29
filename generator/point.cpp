@@ -1,10 +1,3 @@
-//
-//  point.cpp
-//  
-//
-//  Created by Cecilia Soares on 23/02/2020.
-//
-
 #include "../headers/point.h"
 
 Point::Point(): x(0.0f), y(0.0f), z(0.0f) {}

@@ -1,9 +1,3 @@
-//
-//  translation.cpp
-//  
-//
-//  Created by Cecilia Soares on 15/03/2020.
-//
 #include <stdlib.h>
 
 #ifdef __APPLE__

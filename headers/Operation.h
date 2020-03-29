@@ -1,10 +1,3 @@
-//
-//  Operation.h
-//  
-//
-//  Created by Cecilia Soares on 21/03/2020.
-//
-
 #ifndef Operation_h
 #define Operation_h
 
@@ -19,7 +12,7 @@ private:
 public:
     Operation(Point *);
     virtual ~Operation();
-    virtual void transform() = 0; //método abstracto
+    virtual void transform() = 0;
     Point* getPoint();
 };
 #endif /* Operation_h */

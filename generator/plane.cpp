@@ -5,7 +5,6 @@
 
 void Plane::generatePlane() {
 
-    //est‡ ainda a divis‹o inteira
     Point *c = new Point(-dim/2, 0.0f, dim/2);
     Point *b = new Point(dim/2, 0.0f, dim/2);
     Point *a = new Point(dim/2, 0.0f, -dim/2);

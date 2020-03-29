@@ -1,5 +1,3 @@
-
-
 #include "../headers/group.h"
 #include "../headers/FormaGeo.h"
 #include <vector>

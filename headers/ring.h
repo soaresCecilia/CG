@@ -5,7 +5,6 @@
 #include <vector>
 
 
-//em que é que consiste uma forma geometrica
 class Ring {
     private:
        float radius;

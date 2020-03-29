@@ -1,10 +1,3 @@
-//
-//  point.h
-//  
-//
-//  Created by Cecilia Soares on 23/02/2020.
-//
-
 #ifndef point_h
 #define point_h
 

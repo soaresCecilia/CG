@@ -54,7 +54,6 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
             }
             
             
-    
             if (!strcmp(ptrElement->Name(), "translate")) {
                     Translation *trans = parseTranslate(ptrElement);
                     ptrGroup->saveOperation(trans);
@@ -96,7 +95,7 @@ void Parser::ReadXML(Group *ptrGroup, const char *xml) {
                 exit(1);
         }
 
-        //Aqui estou no scene
+    
         XMLNode *ptrRoot = xmlDoc.FirstChild();
 
         if (ptrRoot == nullptr) {

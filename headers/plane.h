@@ -8,7 +8,7 @@
 class Plane {
 private:
 	float dim;
-	std::vector<float> points;
+	std::vector<Point *> points;
 
 public:
 	Plane(float dim) :

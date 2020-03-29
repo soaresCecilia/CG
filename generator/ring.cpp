@@ -27,12 +27,13 @@ void Ring::generateRing(){
 		x2 = radius * sin(alpha + incremento);
 		z2 = radius * cos(alpha + incremento);
 
-		x3 = (radius+25) * sin(alpha);
-		z3 = (radius+25) * cos(alpha);
+		x3 = (radius*1.7) * sin(alpha);
+		z3 = (radius*1.7) * cos(alpha);
 
-		x4 = (radius+25) * sin(alpha + incremento);
-		z4 = (radius+25) * cos(alpha + incremento);
+		x4 = (radius*1.7) * sin(alpha + incremento);
+		z4 = (radius*1.7) * cos(alpha + incremento);
 
+	
 			Point *a = new Point(x1,0,z1);
             points.push_back(a);
             
@@ -51,6 +52,25 @@ void Ring::generateRing(){
             Point *f = new Point(x4,0,z4);
             points.push_back(f);
 
+			//sdown
+			Point * g = new Point(x1, 0, z1);
+			points.push_back(g);
+
+			Point* h = new Point(x2, 0, z2);
+			points.push_back(h);
+
+			Point* m = new Point(x3, 0, z3);
+			points.push_back(m);
+
+			Point* j = new Point(x3, 0, z3);
+			points.push_back(j);
+
+			Point* k = new Point(x2, 0, z2);
+			points.push_back(k);
+
+			Point* l = new Point(x4, 0, z4);
+			points.push_back(l);
+
 		alpha += incremento;
 	}
 
@@ -60,7 +80,7 @@ void Ring::ringToFile(char *filename) {
     
     std::ofstream myfile;
     myfile.open(filename);
-    drawRing();
+    generateRing();
     
     int vectorLenght = this->points.size();
     

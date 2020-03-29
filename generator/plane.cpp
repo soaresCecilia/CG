@@ -31,7 +31,7 @@ void Plane::planeToFile(char* filename) {
 
 	std::ofstream myfile;
 	myfile.open(filename);
-	drawPlane();
+	generatePlane();
 
 	int vectorLenght = this->points.size();
 

@@ -103,19 +103,15 @@ void processKeys(unsigned char key, int xx, int yy) {
 
 	switch (key) {
 	case 'w':
-		//x += vel * x;
 		z -= vel ;
 		break;
 	case 'a':
 		x -= vel ;
-		//z += vel * z;
 		break;
 	case 'd':
 		x += vel ;
-		//z += vel * z;
 		break;
 	case 's':
-		//x -= vel * x;
 		z += vel ;
 		break;
 	case '-':
@@ -157,13 +153,13 @@ void processSpecialKeys(int key, int xx, int yy) {
 			beta = -1.5f;
 		break;
 	case GLUT_KEY_PAGE_DOWN:
-		radius -= 1.0f;
+		radius -=vel;
 		if (radius < 1.0f)
 			radius = 1.0f;
 		break;
 
 	case GLUT_KEY_PAGE_UP:
-		radius += 1.0f; break;
+		radius += vel; break;
 	
 	}
 	spherical2Cartesian();

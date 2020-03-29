@@ -52,12 +52,6 @@
         <translate x="585.21"  z="-400"/>
         <models>
             <model file="saturn.3d" />
-        </models>
-    </group>
-    <group>
-        <color R="0.55" G="0.47" B="0.14" />
-        <translate x="585.21"  z="-400"/>
-        <models>
             <model file="ring.3d" />
         </models>
     </group>

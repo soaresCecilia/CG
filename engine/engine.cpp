@@ -92,7 +92,7 @@ void renderScene() {
               x,y,z,
               0.0f,1.0f,0.0f);
     
-    axis();
+    //axis();
     
     
     group.drawSub();

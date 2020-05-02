@@ -16,6 +16,7 @@
 #include "../headers/cone.h"
 #include "../headers/sphere.h"
 #include "../headers/ring.h"
+#include "../headers/bezierPatch.h"
 
 
 
@@ -50,6 +51,11 @@ void executaComandos(int argc, char* argv[]){
                 Ring *r = new Ring(atoi(argv[2]),
                     atoi(argv[3]));
                 r->ringToFile(argv[4]);
+            }
+
+            if (argc == 4 && !strcmp(argv[1], "curve")) {
+                BezierPatch* p = new BezierPatch(argv[1], atoi(argv[2]));
+                p->curveToFile(argv[3]);
             }
 	}
 

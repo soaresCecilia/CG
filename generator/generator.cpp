@@ -52,10 +52,10 @@ void executaComandos(int argc, char* argv[]){
                     atoi(argv[3]));
                 r->ringToFile(argv[4]);
             }
-
-            if (argc == 4 && !strcmp(argv[1], "curve")) {
-                BezierPatch* p = new BezierPatch(argv[1], atoi(argv[2]));
-                p->curveToFile(argv[3]);
+            // arg[0]=generator, argv[1]=curve, argv[2]=fileInput, argv[3]=tesselation, argv[4]=fileOutput
+            if (argc == 5 && !strcmp(argv[1], "curve")) {
+                BezierPatch* p = new BezierPatch(argv[2], atoi(argv[3]));
+                p->curveToFile(argv[4]);
             }
 	}
 

@@ -8,12 +8,12 @@
 class BezierPatch{
 	
 private:
-	char* patch;
+	char* filename;
 	int tesselation;
 
 public:
-	BezierPatch(char* patch, int t) :
-		patch(patch),tesselation(t) {}
+	BezierPatch(char* patchPath, int t) :
+		filename(patchPath),tesselation(t) {}
 
 	void generateCurve();
 	void curveToFile(char*);

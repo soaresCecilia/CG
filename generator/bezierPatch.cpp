@@ -8,11 +8,22 @@
 #include <math.h>
 #include <sstream>
 
+void BezierPatch::getTrianglesToDraw(int nPatches, int* indicesPatches, int* pontosControlo) {
+
+	std::ostringstream os;
+	
+	float incTesselation = 1 / tesselation;
+
+	// colocar as contas
+
+	// passar para o ficheiro os pontos resultantes das contas
+}
+
 void BezierPatch::generateCurve() {
 
 	//abrir ficheiro e criar stream para ler do ficheiro
 	std::ifstream infile;
-	infile.open(filename);
+	infile.open(filenameIn);
 
 	if (!infile) {
 		std::cerr << "Cannot open input file.\n";
@@ -25,7 +36,7 @@ void BezierPatch::generateCurve() {
 	int nPatches = stoi(line);
 
 	// ler indices dos patches
-	int indices[nPatches][16];
+	int indicesPatches[nPatches][16];
 
 	for (int i = 0; i < nPatches; i++) {
 
@@ -36,7 +47,7 @@ void BezierPatch::generateCurve() {
 		for(int j=0; j<16;j++){
 			std::string subString;
 			getline(ss, subString, ',');
-			indices[i][j] = stoi(subString);
+			indicesPatches[i][j] = stoi(subString);
 		}
 
 	}
@@ -68,7 +79,7 @@ void BezierPatch::generateCurve() {
 	for (int i = 0; i < nPatches; i++) {
 
 		for(int j=0;j<16;j++)
-			std::cout << indices[i][j];
+			std::cout << indicesPatches[i][j];
 	}
 
 	for (int i = 0; i < nPontosControlo; i++) {
@@ -78,11 +89,13 @@ void BezierPatch::generateCurve() {
 	}
 
 	infile.close();
+
+	getTrianglesToDraw(nPatches, indicesPatches, pontosControlo );
 }
 
-void BezierPatch :: curveToFile(char* filename){
+void BezierPatch :: curveToFile(){
 
 	std::ofstream myfile;
-	myfile.open(filename);
+	myfile.open(filenameOut);
 	generateCurve();
 }

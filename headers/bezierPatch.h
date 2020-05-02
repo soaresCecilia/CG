@@ -8,15 +8,19 @@
 class BezierPatch{
 	
 private:
-	char* filename;
+	char* filenameIn;
 	int tesselation;
+	char* filenameOut;
+	std::vector<Point*> points;
+
 
 public:
-	BezierPatch(char* patchPath, int t) :
-		filename(patchPath),tesselation(t) {}
+	BezierPatch(char* patchPath, int t, char* outPath ) :
+		filenameIn(patchPath),tesselation(t), filenameOut(outPath) {}
 
+	void getTrianglesToDraw(int nPatches, int* indicesPatches, int* pontosControlo);
 	void generateCurve();
-	void curveToFile(char*);
+	void curveToFile();
 };
 
 

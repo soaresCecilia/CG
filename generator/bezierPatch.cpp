@@ -8,15 +8,124 @@
 #include <math.h>
 #include <sstream>
 
-void BezierPatch::getTrianglesToDraw(int nPatches, int** indicesPatches, int** pontosControlo) {
 
-	std::ostringstream os;
-	
-	float incTesselation = 1 / tesselation;
+void multMatrixVector(float* m, float* v, float* res) {
 
-	// colocar as contas
+	for (int j = 0; j < 4; ++j) {
+		res[j] = 0;
+		for (int k = 0; k < 4; ++k) {
+			res[j] += v[k] * m[j * 4 + k];
+		}
+	}
 
-	// passar para o ficheiro os pontos resultantes das contas
+}
+
+void multVectorMatrix(float* v, float* m, float* res) {
+
+	for (int j = 0; j < 4; ++j) {
+		res[j] = 0;
+		for (int k = 0; k < 4; ++k) {
+			res[j] += v[k] * m[k * 4 + j];
+		}
+	}
+
+}
+
+void multPointsVector(float points[4][4][4], float* v, float res[4][4]) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			for (int k = 0; k < 4; k++) {
+				res[i][k] += points[i][j][k] * v[j];
+			}
+		}
+	}
+}
+
+void multVectorPoints(float* v, float points[4][4], float res[4]) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			res[i] += points[j][i] * v[j];
+		}
+	}
+}
+
+void BezierPatch ::  calcPoint(float pts[4][4][4], float u, float v, int ts) {
+
+	// bezier matrix
+	float m[4][4] = { {-1.0f,  3.0f, -3.0f,  1.0f},
+					  { 3.0f, -6.0f,  3.0f,  0.0f},
+					  {-3.0f,  3.0f,  0.0f,  0.0f},
+					  { 1.0f,  0.0f,  0.0f,  0.0f} };
+
+	float U[4] = { powf(u,3), powf(u,2), u, 1 };
+	float V[4] = { powf(v,3), powf(v,2), v, 1 };
+
+
+	float vecRes1[4] = { 0,0,0,1 };
+	float vecRes2[4][4] = { {0,0,0,1},{0,0,0,1},{0,0,0,1},{0,0,0,1} };
+	float vecRes3[4] = { 0,0,0,1 };
+	float point[4] = { 0,0,0,1 };
+
+	multMatrixVector(*m, V, vecRes1);
+	multPointsVector(pts, vecRes1, vecRes2);
+	multVectorMatrix(U, *m, vecRes3);
+	multVectorPoints(vecRes3, vecRes2, point);
+
+	//Point 
+	float x = (point[0]);
+	float y = (point[1]);
+	float z = (point[2]);
+
+	Point *a = new Point(x, y, z);
+	points.push_back(a);
+
+}
+
+
+void BezierPatch :: calcPoints2Write(float points[4][4][4], int ts) {
+
+	float inc = (float)1.0f / (float)ts;
+	for (int i = 0; i < ts; i++) {
+		for (int j = 0; j < ts; j++) {
+			float u = (float)inc * i;
+			float v = (float)inc * j;
+
+			calcPoint(points, u, v, ts);
+			calcPoint(points, u, (v + inc), ts);
+			calcPoint(points, (u + inc), (v + inc), ts);
+			calcPoint(points, u, v, ts);
+			calcPoint(points, (u + inc), (v + inc), ts);
+			calcPoint(points, (u + inc), v, ts);
+
+		}
+	}
+}
+
+int BezierPatch :: drawBezier(int tessellation, int nPatches, int nPtsControl, int** indicesPatches, float** ptsControl) {
+
+	int nrPoints2Write = ((tessellation) * (tessellation)*nPatches * 6);
+
+	//Calcula pontos e escreve
+	for (int patch = 0; patch < nPatches; patch++) {
+		float patchCtrlPoints[4][4][4];
+
+		int p = 0;
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				patchCtrlPoints[i][j][0] = ptsControl[indicesPatches[patch][p]][0];
+				patchCtrlPoints[i][j][1] = ptsControl[indicesPatches[patch][p]][1];
+				patchCtrlPoints[i][j][2] = ptsControl[indicesPatches[patch][p]][2];
+				patchCtrlPoints[i][j][3] = 1;
+				p++;
+			}
+		}
+
+		calcPoints2Write(patchCtrlPoints, tessellation);
+
+	}
+
+	return nrPoints2Write;
+
 }
 
 void BezierPatch::readInFile(int* nPatches, int*** indicesPatches, int* nPtsControl, float*** ptsControl) {
@@ -106,10 +215,20 @@ void BezierPatch :: curveToFile(){
 	int nPatches, nPControl;
 	int** indices;
 	float** ptControl;
-
+	int nr;
 	readInFile(&nPatches, &indices, &nPControl, &ptControl);
+	
+	std::ofstream myfile;
 
-	//std::ofstream myfile;
-	//myfile.open(outputFile);
+	myfile.open(outputFile);
+	nr = drawBezier(tesselation, nPatches, nPControl, indices, ptControl);
+	int vectorLenght = this->points.size();
+
+	myfile << nr << std::endl;
+	for (int i = 0; i < vectorLenght; i++) {
+		myfile << *(points[i]) ;
+	}
+
+	myfile.close();
 	
 }

@@ -18,7 +18,7 @@ public:
 	BezierPatch(char* patchPath, int t, char* outPath ) :
 		filenameIn(patchPath),tesselation(t), filenameOut(outPath) {}
 
-	void getTrianglesToDraw(int nPatches, int* indicesPatches, int* pontosControlo);
+	void getTrianglesToDraw(int nPatches, int** indicesPatches, int** pontosControlo);
 	void generateCurve();
 	void curveToFile();
 };

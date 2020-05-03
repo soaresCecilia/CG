@@ -4,22 +4,24 @@
 #include <string>
 #include <vector>
 #include "../headers/point.h"
+#include <string>
 
 class BezierPatch{
 	
 private:
-	char* filenameIn;
+	std::string inputFile;
 	int tesselation;
-	char* filenameOut;
+	std::string outputFile;
 	std::vector<Point*> points;
 
 
 public:
-	BezierPatch(char* patchPath, int t, char* outPath ) :
-		filenameIn(patchPath),tesselation(t), filenameOut(outPath) {}
+	BezierPatch(std::string patchPath, int t, std::string outPath ) :
+		inputFile(patchPath),tesselation(t), outputFile(outPath) {}
 
 	void getTrianglesToDraw(int nPatches, int* indicesPatches, int* pontosControlo);
 	void generateCurve();
+	void readInFile(int* nPatches, int*** indices, int* nPtsControl, float*** ptsControl);
 	void curveToFile();
 };
 

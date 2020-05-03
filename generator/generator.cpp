@@ -54,7 +54,9 @@ void executaComandos(int argc, char* argv[]){
             }
             // arg[0]=generator, argv[1]=curve, argv[2]=fileInput, argv[3]=tesselation, argv[4]=fileOutput
             if (argc == 5 && !strcmp(argv[1], "curve")) {
+
                 BezierPatch* p = new BezierPatch(argv[2], atoi(argv[3]), argv[4]);
+
                 p->curveToFile();
             }
 	}

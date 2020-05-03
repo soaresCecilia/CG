@@ -8,7 +8,7 @@
 #include <math.h>
 #include <sstream>
 
-void BezierPatch::getTrianglesToDraw(int nPatches, int* indicesPatches, int* pontosControlo) {
+void BezierPatch::getTrianglesToDraw(int nPatches, int** indicesPatches, int** pontosControlo) {
 
 	std::ostringstream os;
 	
@@ -39,7 +39,9 @@ void BezierPatch::readInFile(int* nPatches, int*** indicesPatches, int* nPtsCont
 
 	std::cerr << "li numero de patch que existem"<< *nPatches << "\n";
 	// ler indices dos patches
+
 	int** valIndPatches = new int* [*nPatches];
+
 
 	for (int i = 0; i < *nPatches; i++) {
 		valIndPatches[i] = new int[16];

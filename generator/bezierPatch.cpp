@@ -75,7 +75,6 @@ void BezierPatch ::  calcPoint(float pts[4][4][4], float u, float v, int ts) {
 	float x = (point[0]);
 	float y = (point[1]);
 	float z = (point[2]);
-
 	Point *a = new Point(x, y, z);
 	points.push_back(a);
 
@@ -101,20 +100,20 @@ void BezierPatch :: calcPoints2Write(float points[4][4][4], int ts) {
 	}
 }
 
-int BezierPatch :: drawBezier(int tessellation, int nPatches, int nPtsControl, int** indicesPatches, float** ptsControl) {
+int BezierPatch :: drawBezier(int tessellation, int* nPatches, int* nPtsControl, int*** indicesPatches, float*** ptsControl) {
 
-	int nrPoints2Write = ((tessellation) * (tessellation)*nPatches * 6);
+	int nrPoints2Write = ((tessellation) * (tessellation)*(*nPatches) * 6);
 
 	//Calcula pontos e escreve
-	for (int patch = 0; patch < nPatches; patch++) {
+	for (int patch = 0; patch < (*nPatches); patch++) {
 		float patchCtrlPoints[4][4][4];
 
 		int p = 0;
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				patchCtrlPoints[i][j][0] = ptsControl[indicesPatches[patch][p]][0];
-				patchCtrlPoints[i][j][1] = ptsControl[indicesPatches[patch][p]][1];
-				patchCtrlPoints[i][j][2] = ptsControl[indicesPatches[patch][p]][2];
+				patchCtrlPoints[i][j][0] = (*ptsControl)[(*indicesPatches)[patch][p]][0];
+				patchCtrlPoints[i][j][1] = (*ptsControl)[(*indicesPatches)[patch][p]][1];
+				patchCtrlPoints[i][j][2] = (*ptsControl)[(*indicesPatches)[patch][p]][2];
 				patchCtrlPoints[i][j][3] = 1;
 				p++;
 			}
@@ -197,8 +196,8 @@ void BezierPatch::readInFile(int* nPatches, int*** indicesPatches, int* nPtsCont
 		for (int j = 0; j < 3; j++) {
 			std::string subString;
 			getline(ss, subString, ',');
-			pontosControlo[i][j] = stoi(subString);
-			std::cerr << "li o primeiro valor da substring : " << stoi(subString) << "\n";
+			pontosControlo[i][j] = stof(subString);
+			std::cerr << "li o primeiro valor da substring : " << stof(subString) << "\n";
 			std::cerr << "coloquei bem\n";
 		}
 		std::cerr << "sai do ciclo de leitrua da linha de cada ponto controlo\n";
@@ -221,7 +220,7 @@ void BezierPatch :: curveToFile(){
 	std::ofstream myfile;
 
 	myfile.open(outputFile);
-	nr = drawBezier(tesselation, nPatches, nPControl, indices, ptControl);
+	nr = drawBezier(tesselation, &nPatches, &nPControl, &indices, &ptControl);
 	int vectorLenght = this->points.size();
 
 	myfile << nr << std::endl;

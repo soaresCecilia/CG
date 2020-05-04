@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "Operation.h"
 #include <vector>
+#include "FormaGeo.h"
 
 class animateTranslation {
     private:
@@ -12,7 +13,7 @@ class animateTranslation {
         std::vector<float> coordinates;
 
     public:
-        animateTranslation();
+        animateTranslation(float t, FormaGeo* p ): Operation();
         ~animateTranslation();
         void transform();
 };

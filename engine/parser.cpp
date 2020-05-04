@@ -62,6 +62,11 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                     Translation *trans = parseTranslate(ptrElement);
                     ptrGroup->saveOperation(trans);
             }
+
+            if (!strcmp(ptrElement->Name(), "animateTranslate")) {
+                animateTranslation* trans = parseAnimateTranslate(ptrElement);
+                ptrGroup->saveOperation(trans);
+            }
             
             if (!strcmp(ptrElement->Name(), "rotate")) {
                 Rotation* rot = parseRotate(ptrElement);
@@ -162,6 +167,9 @@ animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
     vector<Point> pontos;
     if (ptrElement->Attribute("time"))
         tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
+
+    // fazer parse aos pontos que vêm a seguir.
+
 
     animateTranslation* trans = new animateTranslation(x,pontos);
     return trans;

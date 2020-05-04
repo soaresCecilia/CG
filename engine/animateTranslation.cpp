@@ -10,7 +10,7 @@
 #include "../headers/animateTranslation.h"
 #include <vector>
 
-animateTranslation::animateTranslation(float a,FormaGeo* p): time(a) {};
+animateTranslation::animateTranslation(float a,FormaGeo* p): Operation(), time(a) {};
 
 animateTranslation::~animateTranslation() {}
 

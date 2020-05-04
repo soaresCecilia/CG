@@ -11,7 +11,7 @@
 #include <vector>
 #define T_INCREMENT	0.0001
 
-void Catmull::transform() {
+void Catmull::Operation() {
     float t[3] {0, 1, 0};
     setYAxis(t);
 }
@@ -19,8 +19,6 @@ void Catmull::transform() {
 void Catmull::addTime(float t) {
     this->time = abs(t);
 }
-Catmull::Catmull() {}
-Catmull::~Catmull() {}
 
 void Catmull::addPoint(Point* p) {
     this->contP.push_back(p);
@@ -100,9 +98,9 @@ Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p
 
 // given  global t, returns the point in the curve
 Point Catmull::getGlobalCatmullRomPoint(float gt, float* deriv) {
-    int nP{ (this->contP.size()) };
+    int nP{ static_cast<int>(this->contP.size()) };
     float t{ gt * nP }; // this is the real global t
-    int index{ (floor(t)) };  // which segment
+    int index{ static_cast<int>(floor(t)) };  // which segment
     t = t - index; // where within  the segment
     // indices store the points
     int indices[4];

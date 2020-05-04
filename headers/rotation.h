@@ -9,8 +9,9 @@
 class Rotation: public Operation {
 private:
 	float angle;
+    float time;
 public:
-	Rotation(Point* p,float a);
+	Rotation(Point* p,float angle, float time);
 	~Rotation();
 	void transform();
 };

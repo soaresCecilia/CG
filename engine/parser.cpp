@@ -63,15 +63,26 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                     ptrGroup->saveOperation(trans);
             }
 
-            if (!strcmp(ptrElement->Name(), "animateTranslate")) {
-                animateTranslation* trans = parseAnimateTranslate(ptrElement);
-                ptrGroup->saveOperation(trans);
-            }
             
             if (!strcmp(ptrElement->Name(), "rotate")) {
                 Rotation* rot = parseRotate(ptrElement);
                 ptrGroup->saveOperation(rot);
             }
+
+            ////////////////////////////////
+            // Fazer classe Catmul??? Como no trabalho do Filipe???
+            if (!strcmp(ptrElement->Name(), "animateTranslate")) {
+                animateTranslation* trans = parseAnimateTranslate(ptrElement);
+                ptrGroup->saveOperation(trans);
+            }
+
+
+            if (!strcmp(ptrElement->Name(), "animateRotate")) {
+                animateTranslation* rot = parseAnimateRotate(ptrElement);
+                ptrGroup->saveOperation(rot);
+            }
+
+            //////////////////////
             
 			if (!strcmp(ptrElement->Name(), "scale")) {
 				Scale* scal = parseScale(ptrElement);

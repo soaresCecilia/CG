@@ -179,9 +179,7 @@ animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
         Point ponto(x,y,z);
         trans->addCoordinates(ponto);
         }
-
-    animateTranslation* trans = new animateTranslation();
-    
+ 
     return trans;
 }
 

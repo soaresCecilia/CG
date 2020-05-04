@@ -27,6 +27,8 @@ float camX, camY, camZ;
 float x,y,z = 0.0;
 float vel = 1.0;
 
+float gt;
+
 void spherical2Cartesian() {
 
 	camX = radius * cos(beta) * sin(alfa);

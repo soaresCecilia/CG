@@ -165,11 +165,17 @@ Translation * parseTranslate(XMLElement *ptrElement) {
 animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
     float x = 0, y = 0, z = 0;
     vector<Point> pontos;
+    
     if (ptrElement->Attribute("time"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("time"), &x);
+
+    while (!strcmp(ptrElement->Name(), "point")) {
         tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
-
-    // fazer parse aos pontos que vêm a seguir.
-
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
+        Point ponto(x,y,z);
+        pontos.push_back(ponto);
+        }
 
     animateTranslation* trans = new animateTranslation(x,pontos);
     return trans;

@@ -21,6 +21,6 @@ public:
     Point getCatmullRomPoint(float, Point, Point, Point, Point, float*);
     Point getGlobalCatmullRomPoint(float, float*);
     void renderCatmullRomCurve();
-    void draw();
+    void transform();
 };
 #endif

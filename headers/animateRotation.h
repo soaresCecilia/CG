@@ -8,7 +8,7 @@
 
 class animateRotation : public Operation {
 private:
-	float angle;
+	float time;
 public:
 	animateRotation(Point* p, float a);
 	~animateRotation();

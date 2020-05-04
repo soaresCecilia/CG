@@ -1,6 +1,6 @@
 
-#ifndef translation_h
-#define translation_h
+#ifndef animateTanslation_h
+#define animateTanslation_h
 
 #include <stdio.h>
 #include "Operation.h"

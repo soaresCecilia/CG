@@ -9,11 +9,11 @@
 
 #include "../headers/animateRotation.h"
 
-animateRotation::animateRotation(Point* p, float a) : Operation(p), angle(a) {}
+animateRotation::animateRotation(Point* p, float a) : Operation(p), time(a) {}
 
 animateRotation::~animateRotation() {}
 
 void animateRotation::transform() {
 	Point* p = getPoint();
-	glRotatef(this->angle, p->getX(), p->getY(), p->getZ());
+	glRotatef(this->time, p->getX(), p->getY(), p->getZ());
 }

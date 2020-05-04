@@ -14,7 +14,9 @@
 #include "../headers/point.h"
 #include "../headers/Operation.h"
 #include "../headers/translation.h"
+#include "../headers/animateTranslation.h"
 #include "../headers/rotation.h"
+#include "../headers/animateRotation.h"
 #include "../headers/scale.h"
 #include "../headers/color.h"
 
@@ -24,7 +26,9 @@ using namespace std;
 
 FormaGeo * parseFile(const XMLElement *);
 Translation * parseTranslate(XMLElement *pElement);
+animateTranslation* parseAnimateTranslate(XMLElement* pElement);
 Rotation* parseRotate(XMLElement *pElement);
+animateRotation* parseAnimateRotate(XMLElement* pElement);
 Scale* parseScale(XMLElement* pElement);
 Color* parseColor(XMLElement* pElement);
 
@@ -153,6 +157,16 @@ Translation * parseTranslate(XMLElement *ptrElement) {
     return trans;
 }
 
+animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
+    float x = 0, y = 0, z = 0;
+    vector<Point> pontos;
+    if (ptrElement->Attribute("time"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
+
+    animateTranslation* trans = new animateTranslation(x,pontos);
+    return trans;
+}
+
 Rotation* parseRotate(XMLElement* ptrElement) {
 	float angle = 0, x = 0, y = 0, z = 0;
 
@@ -172,6 +186,29 @@ Rotation* parseRotate(XMLElement* ptrElement) {
 	Rotation* rot = new Rotation(new Point(x, y, z),angle);
 	return rot;
 }
+
+
+animateRotation* parseAnimateRotate(XMLElement* ptrElement) {
+    float time = 0, x = 0, y = 0, z = 0;
+
+    if (ptrElement->Attribute("time"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("time"), &time);
+
+    if (ptrElement->Attribute("x"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
+
+    if (ptrElement->Attribute("y"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
+
+    if (ptrElement->Attribute("z"))
+        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
+
+
+    animateRotation* rot = new animateRotation(new Point(x, y, z), time);
+    return rot;
+}
+
+
 
 Scale* parseScale(XMLElement* ptrElement) {
 	float x = 0, y = 0, z = 0;

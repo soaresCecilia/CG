@@ -10,7 +10,20 @@
 #include "../headers/animateTranslation.h"
 #include <vector>
 
-animateTranslation::animateTranslation(float a,FormaGeo* p): Operation(), time(a) {};
+
+void animateTranslation::addCoordinates(const Point& p) {
+    this->coordinates.push_back(p.getX());
+    this->coordinates.push_back(p.getY());
+    this->coordinates.push_back(p.getZ());
+}
+
+void animateTranslation::addTime(float t) {
+    time = t;
+}
+
+animateTranslation::animateTranslation() {}
+
+
 
 animateTranslation::~animateTranslation() {}
 

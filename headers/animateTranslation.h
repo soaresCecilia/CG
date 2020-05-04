@@ -13,7 +13,10 @@ class animateTranslation {
         std::vector<float> coordinates;
 
     public:
-        animateTranslation(float t, FormaGeo* p ): Operation();
+        animateTranslation();
+        void addCoordinates(const Point& p);
+        void addTime(float t);
+
         ~animateTranslation();
         void transform();
 };

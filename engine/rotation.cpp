@@ -9,11 +9,13 @@
 
 #include "../headers/rotation.h"
 
-Rotation::Rotation(Point *p, float a) : Operation(p), angle(a) {}
+Rotation::Rotation(Point *p, float angle, float time) : Operation(p), angle(angle) time(time) {}
 
 Rotation::~Rotation() {}
 
 void Rotation::transform() {
+    angle = (time == 0 ? angle : glutGet(GLUT_ELAPSED_TIME) * 360 / time);
+    
 	Point* p = getPoint();
 	glRotatef(this->angle, p->getX(), p->getY(), p->getZ());
 }

@@ -19,6 +19,7 @@
 #include "../headers/animateRotation.h"
 #include "../headers/scale.h"
 #include "../headers/color.h"
+#include "../headers/catmull.h"
 
 
 using namespace tinyxml2;
@@ -59,8 +60,13 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
             
             
             if (!strcmp(ptrElement->Name(), "translate")) {
+                if (ptrElement->Attribute("time")) {
+                    Catmull *catm = parseCatmull(ptrElement);
+                    ptrGroup->saveOperation(catm);
+                } else {
                     Translation *trans = parseTranslate(ptrElement);
                     ptrGroup->saveOperation(trans);
+                }
             }
 
             
@@ -69,22 +75,7 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 ptrGroup->saveOperation(rot);
             }
 
-            ////////////////////////////////
-            // Fazer classe Catmul??? Como no trabalho do Filipe???
-            /*
-            if (!strcmp(ptrElement->Name(), "animateTranslate")) {
-                animateTranslation* trans = parseAnimateTranslate(ptrElement);
-                ptrGroup->saveOperation(trans);
-            }
-
-
-            if (!strcmp(ptrElement->Name(), "animateRotate")) {
-                animateTranslation* rot = parseAnimateRotate(ptrElement);
-                ptrGroup->saveOperation(rot);
-            }
-            */
-            //////////////////////
-            
+           
 			if (!strcmp(ptrElement->Name(), "scale")) {
 				Scale* scal = parseScale(ptrElement);
 				ptrGroup->saveOperation(scal);
@@ -174,6 +165,8 @@ Translation * parseTranslate(XMLElement *ptrElement) {
     return trans;
 }
 
+
+/*
 animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
     float x = 0, y = 0, z = 0;
     
@@ -195,46 +188,30 @@ animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
     return trans;
 }
 
+*/
+
 Rotation* parseRotate(XMLElement* ptrElement) {
-	float angle = 0, x = 0, y = 0, z = 0;
+	float angle = 0, x = 0, y = 0, z = 0, time = 0;
 
 	if (ptrElement->Attribute("angle"))
 		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("angle"), &angle);
 
-	if (ptrElement->Attribute("x"))
+	if (ptrElement->Attribute("axisX"))
 		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
 
-	if (ptrElement->Attribute("y"))
+	if (ptrElement->Attribute("axisY"))
 		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
 
-	if (ptrElement->Attribute("z"))
+	if (ptrElement->Attribute("axisZ"))
 		tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
 
+    if(ptrElement->Attribute("time"))
+        time = fabs(stof(ptrElement->Attribute("time")));
 
-	Rotation* rot = new Rotation(new Point(x, y, z),angle);
+	Rotation* rot = new Rotation(new Point(x, y, z),angle, time);
 	return rot;
 }
 
-
-animateRotation* parseAnimateRotate(XMLElement* ptrElement) {
-    float time = 0, x = 0, y = 0, z = 0;
-
-    if (ptrElement->Attribute("time"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("time"), &time);
-
-    if (ptrElement->Attribute("x"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
-
-    if (ptrElement->Attribute("y"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
-
-    if (ptrElement->Attribute("z"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
-
-
-    animateRotation* rot = new animateRotation(new Point(x, y, z), time);
-    return rot;
-}
 
 
 
@@ -273,4 +250,40 @@ Color* parseColor(XMLElement* ptrElement) {
     Color* cor = new Color(new Point(r, g, b));
     
     return cor;
+}
+
+
+Catmull *parseCatmull(XMLElement *ptrElement) {
+    Catmull *t = new Catmull() ;
+    float time;
+    
+    if (ptrElement->Attribute("time")) {
+        float time = fabs(stof(ptrElement->Attribute("time")));
+        t->addTime(time);
+    }
+    
+    XMLNode *ptrNodeFirst = ptrElement->FirstChild();
+    float x = 0;
+    float y = 0;
+    float z = 0;
+    
+    for (; ptrNodeFirst; ptrNodeFirst = ptrNodeFirst->NextSibling()) {
+        XMLElement *ptrElement1 = ptrNodeFirst->ToElement();
+        
+        if (!strcmp(ptrElement1->Name(), "point")) {
+            if (ptrElement1->Attribute("x"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement1->Attribute("x"), &x);
+            
+            if (ptrElement1->Attribute("y"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement1->Attribute("y"), &y);
+            
+            if (ptrElement1->Attribute("z"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement1->Attribute("z"), &z);
+            
+            Point *p = new Point(x, y, z);
+            t->addPoint(p);
+        }
+    }
+    
+    return t;
 }

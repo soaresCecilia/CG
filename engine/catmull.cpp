@@ -128,7 +128,7 @@ void Catmull::renderCatmullRomCurve() {
 
 }
 
-void Catmull::draw() {
+void Catmull::transform() {
     renderCatmullRomCurve();
     float deriv[3];
     float tt{ glutGet(GLUT_ELAPSED_TIME) / this->time };

@@ -149,7 +149,6 @@ void Catmull::transform() {
         normalize(zr);
         normalize(deriv);
         normalize(ty);
-        this->setYAxis(ty);
         float m[16];
         buildRotMatrix(deriv, ty, zr, m);
         glMultMatrixf(m);

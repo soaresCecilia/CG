@@ -9,17 +9,14 @@
 
 #include "../headers/catmull.h"
 #include <vector>
+#include <cmath>
 #define T_INCREMENT	0.0001
 
-void Catmull::transform() {
-    float t[3] {0, 1, 0};
-    setYAxis(t);
-}
 
 void Catmull::addTime(float t) {
     this->time = abs(t);
 }
-Catmull::Catmull() {}
+Catmull::Catmull() : Operation(nullptr) {}
 Catmull::~Catmull() {}
 
 void Catmull::addPoint(Point* p) {
@@ -60,13 +57,13 @@ void multMatrixVector(float* m, float* v, float* res) {
 }
 
 Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p3, float* deriv) {
-    float pp0[3]{ p0.getX(), p0.getY(), p0.getZ() };
-    float pp1[3]{ p1.getX(), p1.getY(), p1.getZ() };
-    float pp2[3]{ p2.getX(), p2.getY(), p2.getZ() };
-    float pp3[3]{ p3.getX(), p3.getY(), p3.getZ() };
+    float pp0[3] = { p0.getX(), p0.getY(), p0.getZ() };
+    float pp1[3] = { p1.getX(), p1.getY(), p1.getZ() };
+    float pp2[3] = { p2.getX(), p2.getY(), p2.getZ() };
+    float pp3[3] = { p3.getX(), p3.getY(), p3.getZ() };
     float ppos[3];
     // catmull-rom matrix
-    float m[4][4]{ {-0.5f,  1.5f, -1.5f,  0.5f},
+    float m[4][4] = { {-0.5f,  1.5f, -1.5f,  0.5f},
                     { 1.0f, -2.5f,  2.0f, -0.5f},
                     {-0.5f,  0.0f,  0.5f,  0.0f},
                     { 0.0f,  1.0f,  0.0f,  0.0f}
@@ -74,24 +71,24 @@ Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p
     // Compute A = M * P
     float A[3][4];
 
-    for (int i{ 0 }; i < 3; i++) {
-        float v[4]{ pp0[i], pp1[i], pp2[i], pp3[i] };
+    for (int i = 0; i < 3; i++) {
+        float v[4] = { pp0[i], pp1[i], pp2[i], pp3[i] };
         multMatrixVector(m[0], v, A[i]);
     }
 
     // Compute pos = T * A
-    float T[4]{ t * t * t, t * t, t, 1 };
+    float T[4] = { t * t * t, t * t, t, 1 };
 
-    for (int i{ 0 }; i < 3; i++) {
-        float v[4]{ A[i][0], A[i][1], A[i][2], A[i][3] };
+    for (int i = 0; i < 3; i++) {
+        float v[4] = { A[i][0], A[i][1], A[i][2], A[i][3] };
         ppos[i] = T[0] * v[0] + T[1] * v[1] + T[2] * v[2] + T[3] * v[3];
     }
 
     // compute deriv = T' * A
-    float TT[4]{ 3 * t * t, 2 * t, 1, 0 };
+    float TT[4] = {3 * t * t, 2 * t, 1, 0 };
 
-    for (int i{ 0 }; i < 3; i++) {
-        float v[4]{ A[i][0], A[i][1], A[i][2], A[i][3] };
+    for (int i=0; i < 3; i++) {
+        float v[4] = { A[i][0], A[i][1], A[i][2], A[i][3] };
         deriv[i] = TT[0] * v[0] + TT[1] * v[1] + TT[2] * v[2] + TT[3] * v[3];
     }
 
@@ -100,9 +97,9 @@ Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p
 
 // given  global t, returns the point in the curve
 Point Catmull::getGlobalCatmullRomPoint(float gt, float* deriv) {
-    int nP{ (this->contP.size()) };
-    float t{ gt * nP }; // this is the real global t
-    int index{ (floor(t)) };  // which segment
+    int nP = (this->contP.size());
+    float t =  gt * nP; // this is the real global t
+    int index = floor(t);  // which segment
     t = t - index; // where within  the segment
     // indices store the points
     int indices[4];
@@ -120,7 +117,7 @@ void Catmull::renderCatmullRomCurve() {
     for (float gt=0; gt < 1 ; gt+=0.01f) {
         
         float deriv[3];
-        Point pos{ this->getGlobalCatmullRomPoint(gt, deriv) };
+        Point pos = this->getGlobalCatmullRomPoint(gt, deriv);
         glVertex3f(pos.getX(), pos.getY(), pos.getZ());
     }
 
@@ -131,8 +128,8 @@ void Catmull::renderCatmullRomCurve() {
 void Catmull::transform() {
     renderCatmullRomCurve();
     float deriv[3];
-    float tt{ glutGet(GLUT_ELAPSED_TIME) / this->time };
-    Point pos{ this->getGlobalCatmullRomPoint(tt, deriv) };
+    float tt = glutGet(GLUT_ELAPSED_TIME) / this->time ;
+    Point pos = this->getGlobalCatmullRomPoint(tt, deriv);
     glTranslatef(pos.getX(), pos.getY(), pos.getZ());
 
         float zr[3];

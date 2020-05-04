@@ -9,7 +9,7 @@
 
 #include "../headers/rotation.h"
 
-Rotation::Rotation(Point *p, float angle, float time) : Operation(p), angle(angle) time(time) {}
+Rotation::Rotation(Point *p, float angle, float time) : Operation(p), angle(angle), time(time) {}
 
 Rotation::~Rotation() {}
 

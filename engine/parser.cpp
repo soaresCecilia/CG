@@ -32,6 +32,7 @@ Rotation* parseRotate(XMLElement *pElement);
 animateRotation* parseAnimateRotate(XMLElement* pElement);
 Scale* parseScale(XMLElement* pElement);
 Color* parseColor(XMLElement* pElement);
+Catmull* parseCatmull(XMLElement *ptrElement);
 
 
 Parser::Parser() {
@@ -253,7 +254,7 @@ Color* parseColor(XMLElement* ptrElement) {
 }
 
 
-Catmull *parseCatmull(XMLElement *ptrElement) {
+Catmull* parseCatmull(XMLElement *ptrElement) {
     Catmull *t = new Catmull() ;
     float time;
     

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "point.h"
-
+#include "Operation.h"
 
 
 class Catmull : public Operation {
@@ -22,5 +22,6 @@ public:
     Point getGlobalCatmullRomPoint(float, float*);
     void renderCatmullRomCurve();
     void draw();
+    void transform();
 };
 #endif

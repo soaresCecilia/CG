@@ -11,6 +11,11 @@
 #include <vector>
 #define T_INCREMENT	0.0001
 
+void Catmull::transform() {
+    float t[3] {0, 1, 0};
+    setYAxis(t);
+}
+
 void Catmull::addTime(float t) {
     this->time = abs(t);
 }

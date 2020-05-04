@@ -81,28 +81,28 @@ void BezierPatch ::  calcPoint(float pts[4][4][4], float u, float v, int ts) {
 }
 
 
-void BezierPatch :: calcPoints2Write(float points[4][4][4], int ts) {
+void BezierPatch :: calcPoints2Write(float points[4][4][4]) {
 
-	float inc = (float)1.0f / (float)ts;
-	for (int i = 0; i < ts; i++) {
-		for (int j = 0; j < ts; j++) {
+	float inc = (float)1.0f / (float)tesselation;
+	for (int i = 0; i < tesselation; i++) {
+		for (int j = 0; j < tesselation; j++) {
 			float u = (float)inc * i;
 			float v = (float)inc * j;
 
-			calcPoint(points, u, v, ts);
-			calcPoint(points, u, (v + inc), ts);
-			calcPoint(points, (u + inc), (v + inc), ts);
-			calcPoint(points, u, v, ts);
-			calcPoint(points, (u + inc), (v + inc), ts);
-			calcPoint(points, (u + inc), v, ts);
+			calcPoint(points, u, v, tesselation);
+			calcPoint(points, u, (v + inc), tesselation);
+			calcPoint(points, (u + inc), (v + inc), tesselation);
+			calcPoint(points, u, v, tesselation);
+			calcPoint(points, (u + inc), (v + inc), tesselation);
+			calcPoint(points, (u + inc), v, tesselation);
 
 		}
 	}
 }
 
-int BezierPatch :: drawBezier(int tessellation, int* nPatches, int* nPtsControl, int*** indicesPatches, float*** ptsControl) {
+int BezierPatch :: drawBezier(int* nPatches, int* nPtsControl, int*** indicesPatches, float*** ptsControl) {
 
-	int nrPoints2Write = ((tessellation) * (tessellation)*(*nPatches) * 6);
+	int nrPoints2Write = ((tesselation) * (tesselation)*(*nPatches) * 6);
 
 	//Calcula pontos e escreve
 	for (int patch = 0; patch < (*nPatches); patch++) {
@@ -119,7 +119,7 @@ int BezierPatch :: drawBezier(int tessellation, int* nPatches, int* nPtsControl,
 			}
 		}
 
-		calcPoints2Write(patchCtrlPoints, tessellation);
+		calcPoints2Write(patchCtrlPoints);
 
 	}
 
@@ -220,7 +220,7 @@ void BezierPatch :: curveToFile(){
 	std::ofstream myfile;
 
 	myfile.open(outputFile);
-	nr = drawBezier(tesselation, &nPatches, &nPControl, &indices, &ptControl);
+	nr = drawBezier(&nPatches, &nPControl, &indices, &ptControl);
 	int vectorLenght = this->points.size();
 
 	myfile << nr << std::endl;

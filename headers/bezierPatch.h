@@ -23,8 +23,8 @@ public:
 	void generateCurve();
 	void readInFile(int* nPatches, int*** indices, int* nPtsControl, float*** ptsControl);
 	void curveToFile();
-	int drawBezier(int tessellation, int* nPatches, int* nPtsControl, int*** indicesPatches, float*** ptsControl);
-	void calcPoints2Write(float points[4][4][4], int ts);
+	int drawBezier( int* nPatches, int* nPtsControl, int*** indicesPatches, float*** ptsControl);
+	void calcPoints2Write(float points[4][4][4]);
 	void calcPoint(float points[4][4][4], float u, float v, int ts);
 };
 

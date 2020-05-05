@@ -10,7 +10,7 @@ class Catmull : public Operation {
 private:
     std::vector<Point*> contP;
     float time;
-    float yAxis[3];
+    float yAxis[3] = { 0,1,0 };
 
 public:
     Catmull();

@@ -8,7 +8,7 @@
     <group>
         <color R="0.647059" G="0.164706" B="0.164706" />
         <translate x="57.39"  z="57.3" />
-	<animateRotate time=10 y="1" />
+	<rotate time="10" y="1" />
         <models>
             <model file="mercury.3d" />
         </models>

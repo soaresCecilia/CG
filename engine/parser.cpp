@@ -40,7 +40,7 @@ Parser::Parser() {
 
 void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
     XMLNode *ptrNode = ptrN->FirstChild();
-
+    std::cerr << "li numero de patch que existem \n";
         if (ptrNode == nullptr)
                 exit(0);
 
@@ -160,7 +160,7 @@ Translation * parseTranslate(XMLElement *ptrElement) {
     
     if (ptrElement->Attribute("z"))
         tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
-
+    std::cerr << "li numero de patch que existem \n";
 
     Translation *trans = new Translation(new Point(x, y, z));
     return trans;
@@ -285,6 +285,7 @@ Catmull* parseCatmull(XMLElement *ptrElement) {
             t->addPoint(p);
         }
     }
+    std::cerr << "li numero de patch que existem\n";
     
     return t;
 }

@@ -7,9 +7,9 @@
     </group>
     <group>
         <color R="0.647059" G="0.164706" B="0.164706" />
+	<rotate time="10000" y="1" />
         <translate x="57.39"  z="57.3" />
-	<rotate time="10" y="1" />
-        <models>
+	<models>
             <model file="mercury.3d" />
         </models>
     </group>
@@ -22,7 +22,8 @@
     </group>
     <group>
         <color R="0.196078" G="0.6" B="0.8" />
-        <translate x="126.11"  z="-126"/>
+        <rotate time="10000" y="1" />
+	<translate x="126.11"  z="-126"/>
         <models>
             <model file="earth.3d" />
         </models>
@@ -43,6 +44,7 @@
     </group>
     <group>
         <color R="0.8" G="0.498039" B="0.196078" />
+	<rotate time="10000" y="1" />
         <translate x="-304.50" z="300" />
         <models>
             <model file="jupiter.3d" />

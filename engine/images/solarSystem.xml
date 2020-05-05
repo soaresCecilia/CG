@@ -1,7 +1,6 @@
 <scene>
      <group>
         <colour R="0.9" G="0.6" B="0.2" />
-        <rotate time="200000" y="1"/>
         <models>
             <model file="sun.3d" />
         </models>

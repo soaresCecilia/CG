@@ -167,30 +167,6 @@ Translation * parseTranslate(XMLElement *ptrElement) {
 }
 
 
-/*
-animateTranslation* parseAnimateTranslate(XMLElement* ptrElement) {
-    float x = 0, y = 0, z = 0;
-    
-    animateTranslation* trans = new animateTranslation();
-    
-    if (ptrElement->Attribute("time"))
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("time"), &x);
-    
-    trans->addTime(x);
-    
-    while (!strcmp(ptrElement->Name(), "point")) {
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("x"), &x);
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("y"), &y);
-        tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
-        Point ponto(x,y,z);
-        trans->addCoordinates(ponto);
-        }
- 
-    return trans;
-}
-
-*/
-
 Rotation* parseRotate(XMLElement* ptrElement) {
 	float angle = 0, x = 0, y = 0, z = 0, time = 0;
 

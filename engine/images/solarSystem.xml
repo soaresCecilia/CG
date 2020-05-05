@@ -102,16 +102,16 @@
 
 
   <group>
-         <rotate angle="200" x="0" y="1" z="0" />
+         <rotate angle="123" x="0" y="1" z="0" />
          <translate time="4015" >
-         <point x="630" y="0" z="0" />
-         <point x="445.477" y="0" z="445.477" />
-         <point x="-2.75382e-05" y="0" z="630" />
-         <point x="-445.477" y="0" z="445.477" />
-         <point x="-630" y="0" z="-5.50764e-05" />
-         <point x="-445.477" y="0" z="-445.477" />
-         <point x="7.51267e-06" y="0" z="-630" />
-         <point x="445.477" y="0" z="-445.477" />
+             <point x="445.477" y="0" z="-445.477" />
+             <point x="7.51267e-06" y="0" z="-630" />
+             <point x="-445.477" y="0" z="-445.477" />
+             <point x="-630" y="0" z="-5.50764e-05" />
+             <point x="-445.477" y="0" z="445.477" />
+             <point x="-2.75382e-05" y="0" z="630" />
+             <point x="445.477" y="0" z="445.477" />
+             <point x="630" y="0" z="0" />
          </translate>
          <scale x="2" y="2" z="2" />
          <models>
@@ -184,18 +184,20 @@
 
 
  <group>
-         <scale x="3" y="3" z="3" />
-         <translate time="6000" selfRotate="1" >
-             <point x="202" y="50" z="0" />
-             <point x="150" y="50" z="150" />
-             <point x="75" y="25" z="0" />
-             <point x="0" y="-50" z="-150" />
-             <point x="-75" y="-50" z="0" />
-             <point x="0" y="-50" z="150" />
-             <point x="75" y="-25" z="0" />
-             <point x="150" y="50" z="-150" />
+            <rotate angle="123" x="1" y="0" z="0" />
+       
+         <translate time="6000" >
+             <point x="-500" y="50" z="500" />
+             <point x="0" y="50" z="500" />
+             <point x="500" y="-10" z="500" />
+             <point x="1000" y="-50" z="0" />
+             <point x="500" y="-10" z="-500" />
+             <point x="0" y="0" z="-500" />
+             <point x="-500" y="-25" z="-500" />
+             <point x="-1000" y="-50" z="0" />
          </translate>
-         <rotate angle="-90" x="1" y="0" z="0" />
+
+         <scale x="3" y="3" z="3" />
          <models>
              <model file="teapot.3d" r="0.37" g="0.15" b="0.02" />
          </models>

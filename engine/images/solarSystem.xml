@@ -9,17 +9,17 @@
     <group>
      <color R="0.8" G="0.498039" B="0.196078" />
          <rotate angle="0" x="0" y="1" z="0" />
-         <translate time="88" />
+         <translate time="90" >
         
-	<point x="0.000000" y="0" z="88.000000" />                                                                                    
-	<point x="62.225397" y="0" z="62.225397" />                                                                                   
-	<point x="88.000000" y="0" z="0.000000" />   
-	<point x="62.225397" y="0" z="-62.225397" />                                                                                  
-	<point x="0.000000" y="0" z="-88.000000" />                                                                                   
-	<point x="-62.225397" y="0" z="-62.225397" />
-	<point x="-88.000000" y="0" z="-0.000000" />                                                                                  
-	<point x="-62.225397" y="0" z="62.225397" />
-	
+    <point x="0.000000" y="0" z="88.000000" />                                                                                    
+    <point x="62.225397" y="0" z="62.225397" />                                                                                   
+    <point x="88.000000" y="0" z="0.000000" />   
+    <point x="62.225397" y="0" z="-62.225397" />                                                                                  
+    <point x="0.000000" y="0" z="-88.000000" />                                                                                   
+    <point x="-62.225397" y="0" z="-62.225397" />
+    <point x="-88.000000" y="0" z="-0.000000" />                                                                                  
+    <point x="-62.225397" y="0" z="62.225397" />
+    
          </translate>
 
          <scale x="1.38" y="1.38" z="1.38" />
@@ -29,16 +29,16 @@
      </group>
      <group>
          <rotate angle="40" x="0" y="1" z="0" />
-         <translate time="225" />
+         <translate time="225" >
 
         <point x="0.000000" y="0" z="225.000000" />                                                                                   
-	<point x="159.099026" y="0" z="159.099026" />                                                                                 
-	<point x="225.000000" y="0" z="0.000000" />                                                                                   
-	<point x="159.099026" y="0" z="-159.099026" />                                                                                
-	<point x="0.000000" y="0" z="-225.000000" />                                                                                  
-	<point x="-159.099026" y="0" z="-159.099026" />
-	<point x="-225.000000" y="0" z="-0.000000" />                                                                                 
-	<point x="-159.099026" y="0" z="159.099026" />
+    <point x="159.099026" y="0" z="159.099026" />                                                                                 
+    <point x="225.000000" y="0" z="0.000000" />                                                                                   
+    <point x="159.099026" y="0" z="-159.099026" />                                                                                
+    <point x="0.000000" y="0" z="-225.000000" />                                                                                  
+    <point x="-159.099026" y="0" z="-159.099026" />
+    <point x="-225.000000" y="0" z="-0.000000" />                                                                                 
+    <point x="-159.099026" y="0" z="159.099026" />
 
          </translate>
 
@@ -48,42 +48,62 @@
          </models>
      </group>
     <group>
-        <color R="0.196078" G="0.6" B="0.8" />
-        <rotate time="10000" y="1" />
-	<translate time="365"/>
-		
-		<point x="0.000000" y="0" z="365.000000" />                                                                                   
-		<point x="258.093975" y="0" z="258.093975" />                                                                                 
-		<point x="365.000000" y="0" z="0.000000" />                                                                                   
-		<point x="258.093975" y="0" z="-258.093975" />                                                                                
-		<point x="0.000000" y="0" z="-365.000000" />                                                                                  
-		<point x="-258.093975" y="0" z="-258.093975" />
-	</translate>
-		
-	
-        <models>
-            <model file="earth.3d" />
-        </models>
-        <group>
-            <color R="0.658824" G="0.658824" B="0.658824" />
-            <translate x="1.80"  />
-            <models>
-                <model file="moon.3d" />
-            </models>
-        </group>
-    </group>
-    <group>
-        <color R="1" G="0" B="0" />
-        <translate time="690"/>
-        <models>
-            <model file="mars.3d" />
-        </models>
-    </group>
- 
+         <rotate angle="80" x="0" y="1" z="0" />
+         <translate time="365" selfRotate="0" >
+        <point x="0.000000" y="0" z="365.000000" />
+<point x="258.093975" y="0" z="258.093975" />
+<point x="365.000000" y="0" z="0.000000" />
+<point x="258.093975" y="0" z="-258.093975" />
+<point x="0.000000" y="0" z="-365.000000" />
+<point x="-258.093975" y="0" z="-258.093975" />
+<point x="-365.000000" y="0" z="-0.000000" />
+<point x="-258.093975" y="0" z="258.093975" />
+         </translate>
+         <scale x="2.3" y="2.3" z="2.3" />
+         <models>
+             <model file="earth.3d" r="0.31" g="0.65" b="0.76" />
+         </models>
+             <group>
+                 <rotate angle="60" x="0" y="1" z="0" />
+                 <translate time="6000" selfRotate="0" >
+         <point x="8.69565" y="0" z="0" />
+         <point x="6.14875" y="0" z="6.14875" />
+         <point x="-3.80099e-07" y="0" z="8.69565" />
+         <point x="-6.14875" y="0" z="6.14875" />
+         <point x="-8.69565" y="0" z="-7.60198e-07" />
+         <point x="-6.14875" y="0" z="-6.14876" />
+         <point x="1.03695e-07" y="0" z="-8.69565" />
+         <point x="6.14876" y="0" z="-6.14875" />
+                 </translate>
+                 <scale x="0.304348" y="0.304348" z="0.304348" />
+                 <models>
+                     <model file="moon.3d" r="0.84" g="0.84" b="0.84" />
+                 </models>
+             </group>
+     </group>
+
+      <group>
+         <rotate angle="120" x="0" y="1" z="0" />
+         <translate time="700" >
+        <point x="0.000000" y="0" z="690.000000" />
+<point x="487.903679" y="0" z="487.903679" />
+<point x="690.000000" y="0" z="0.000000" />
+<point x="487.903679" y="0" z="-487.903679" />
+<point x="0.000000" y="0" z="-690.000000" />
+<point x="-487.903679" y="0" z="-487.903679" />
+<point x="-690.000000" y="0" z="-0.000000" />
+<point x="-487.903679" y="0" z="487.903679" />
+         </translate>
+         <scale x="1.53" y="1.53" z="1.53" />
+         <models>
+             <model file="mars.3d" r="0.55" g="0.15" b="0" />
+         </models>
+     </group>
+
 
   <group>
          <rotate angle="200" x="0" y="1" z="0" />
-         <translate time="4330" >
+         <translate time="4015" >
          <point x="630" y="0" z="0" />
          <point x="445.477" y="0" z="445.477" />
          <point x="-2.75382e-05" y="0" z="630" />
@@ -98,26 +118,91 @@
              <model file="jupiter.3d" r="0.93" g="0.8" b="0.38" />
          </models>
         </group>
-    <group>
-        <color R="0.55" G="0.47" B="0.14" />
-        <translate time="10771"/>
-        <models>
-            <model file="saturn.3d" />
-            <model file="ring.3d" />
-        </models>
-    </group>
-    <group>
-        <color R="0.372" G="0.6235" B="0.635229" />
-        <translate time="30660"/>
-        <models>
-            <model file="uranus.3d" />
-        </models>
-    </group>
-    <group>
-        <color R="0.196078" G="0.196078" B="0.8" />
-        <translate time="60225"/>
-        <models>
-            <model file="neptune.3d" />
-        </models>
-    </group>
+
+
+
+        <group>
+         <rotate angle="240" x="0" y="1" z="0" />
+         <translate time="10585" >
+      <point x="0.000000" y="0" z="2000.000000" />
+<point x="1414.213562" y="0" z="1414.213562" />
+<point x="2000.000000" y="0" z="0.000000" />
+<point x="1414.213562" y="0" z="-1414.213562" />
+<point x="0.000000" y="0" z="-2000.000000" />
+<point x="-1414.213562" y="0" z="-1414.213562" />
+<point x="-2000.000000" y="0" z="-0.000000" />
+<point x="-1414.213562" y="0" z="1414.213562" />
+         </translate>
+         <scale x="2.2" y="2.2" z="2.2" />
+         <models>
+             <model file="saturn.3d" r="0.93" g="0.86" b="0.51" />
+         </models>
+         <group>
+             <rotate angle="15" x="1" y="0" z="0" />
+             <models>
+                 <model file="ring.3d" r="0" g="0" b="0.8" />
+             </models>
+         </group>
+   </group>
+
+
+<group>
+         <rotate angle="125" x="0" y="1" z="0" />
+         <translate time="30000" >
+            <point x="0.000000" y="0" z="2500.000000" />
+            <point x="1767.766953" y="0" z="1767.766953" />
+            <point x="2500.000000" y="0" z="0.000000" />
+            <point x="1767.766953" y="0" z="-1767.766953" />
+            <point x="0.000000" y="0" z="-2500.000000" />
+            <point x="-1767.766953" y="0" z="-1767.766953" />
+            <point x="-2500.000000" y="0" z="-0.000000" />
+            <point x="-1767.766953" y="0" z="1767.766953" />
+         </translate>
+         <scale x="1.8" y="1.8" z="1.8" />
+         <models>
+             <model file="uranus.3d" r="0.93" g="0.8" b="0.38" />
+         </models>
+        </group>
+
+<group>
+         <rotate angle="120" x="0" y="1" z="0" />
+         <translate time="60000" >
+<point x="0.000000" y="0" z="3600.000000" />
+<point x="2545.584412" y="0" z="2545.584412" />
+<point x="3600.000000" y="0" z="0.000000" />
+<point x="2545.584412" y="0" z="-2545.584412" />
+<point x="0.000000" y="0" z="-3600.000000" />
+<point x="-2545.584412" y="0" z="-2545.584412" />
+<point x="-3600.000000" y="0" z="-0.000000" />
+<point x="-2545.584412" y="0" z="2545.584412" />
+         </translate>
+         <scale x="1.7" y="1.7" z="1.7" />
+         <models>
+             <model file="neptune.3d" r="0.93" g="0.8" b="0.38" />
+         </models>
+        </group>
+
+
+ <group>
+         <scale x="3" y="3" z="3" />
+         <translate time="6000" selfRotate="1" >
+             <point x="202" y="50" z="0" />
+             <point x="150" y="50" z="150" />
+             <point x="75" y="25" z="0" />
+             <point x="0" y="-50" z="-150" />
+             <point x="-75" y="-50" z="0" />
+             <point x="0" y="-50" z="150" />
+             <point x="75" y="-25" z="0" />
+             <point x="150" y="50" z="-150" />
+         </translate>
+         <rotate angle="-90" x="1" y="0" z="0" />
+         <models>
+             <model file="teapot.3d" r="0.37" g="0.15" b="0.02" />
+         </models>
+     </group>
+
+
+
+
 </scene>
+

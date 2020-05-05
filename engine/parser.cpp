@@ -14,9 +14,7 @@
 #include "../headers/point.h"
 #include "../headers/Operation.h"
 #include "../headers/translation.h"
-#include "../headers/animateTranslation.h"
 #include "../headers/rotation.h"
-#include "../headers/animateRotation.h"
 #include "../headers/scale.h"
 #include "../headers/color.h"
 #include "../headers/catmull.h"
@@ -27,9 +25,7 @@ using namespace std;
 
 FormaGeo * parseFile(const XMLElement *);
 Translation * parseTranslate(XMLElement *pElement);
-animateTranslation* parseAnimateTranslate(XMLElement* pElement);
 Rotation* parseRotate(XMLElement *pElement);
-animateRotation* parseAnimateRotate(XMLElement* pElement);
 Scale* parseScale(XMLElement* pElement);
 Color* parseColor(XMLElement* pElement);
 Catmull* parseCatmull(XMLElement *ptrElement);
@@ -40,7 +36,7 @@ Parser::Parser() {
 
 void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
     XMLNode *ptrNode = ptrN->FirstChild();
-    std::cerr << "li numero de patch que existem \n";
+    
         if (ptrNode == nullptr)
                 exit(0);
 
@@ -160,8 +156,7 @@ Translation * parseTranslate(XMLElement *ptrElement) {
     
     if (ptrElement->Attribute("z"))
         tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("z"), &z);
-    std::cerr << "li numero de patch que existem \n";
-
+   
     Translation *trans = new Translation(new Point(x, y, z));
     return trans;
 }
@@ -222,8 +217,7 @@ Color* parseColor(XMLElement* ptrElement) {
     
     if (ptrElement->Attribute("B"))
     tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("B"), &b);
-    
-    
+        
     Color* cor = new Color(new Point(r, g, b));
     
     return cor;
@@ -261,7 +255,6 @@ Catmull* parseCatmull(XMLElement *ptrElement) {
             t->addPoint(p);
         }
     }
-    std::cerr << "li numero de patch que existem\n";
     
     return t;
 }

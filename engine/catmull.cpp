@@ -25,7 +25,7 @@ Catmull::~Catmull() {}
 
 
 void Catmull::addPoint(Point* p) {
-    this->contP.push_back(p);
+    this->allPoints.push_back(p);
 }
 
 void buildRotMatrix(float* x, float* y, float* z, float* m) {
@@ -70,7 +70,7 @@ void Catmull::setYY(float y[3]) {
 }
 
 
-Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p3, float* deriv) {
+Point Catmull::getCatmullPoint(float t, Point p0, Point p1, Point p2, Point p3, float* deriv) {
     float pp0[3] = { p0.getX(), p0.getY(), p0.getZ() };
     float pp1[3] = { p1.getX(), p1.getY(), p1.getZ() };
     float pp2[3] = { p2.getX(), p2.getY(), p2.getZ() };
@@ -110,36 +110,30 @@ Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p
 }
 
 // given  global t, returns the point in the curve
-Point Catmull::getGlobalCatmullRomPoint(float gt, float* deriv) {
+Point Catmull::getGlobalCatmullPoint(float globalT, float* deriv) {
 
-    int nP = (this->contP.size());
-    float t =  gt * nP; // this is the real global t
+    int nPoints = (this->allPoints.size());
+    float t =  globalT * nPoints; // this is the real global t
     int index = floor(t);  // which segment
 
-    
-    /*
-    int nP{ static_cast<int>(this->contP.size()) };
-    float t{ gt * nP }; // this is the real global t
-    int index{ static_cast<int>(floor(t)) };  // which segment
-*/
     t = t - index; // where within  the segment
     // indices store the points
     int indices[4];
-    indices[0] = (index + nP - 1) % nP;
-    indices[1] = (indices[0] + 1) % nP;
-    indices[2] = (indices[1] + 1) % nP;
-    indices[3] = (indices[2] + 1) % nP;
-    return getCatmullRomPoint(t, *this->contP[indices[0]], *this->contP[indices[1]], *this->contP[indices[2]], *this->contP[indices[3]], deriv);
+    indices[0] = (index + nPoints - 1) % nPoints;
+    indices[1] = (indices[0] + 1) % nPoints;
+    indices[2] = (indices[1] + 1) % nPoints;
+    indices[3] = (indices[2] + 1) % nPoints;
+    return getCatmullPoint(t, *this->allPoints[indices[0]], *this->allPoints[indices[1]], *this->allPoints[indices[2]], *this->allPoints[indices[3]], deriv);
 }
 
-void Catmull::renderCatmullRomCurve() {
+void Catmull::renderCatmull() {
     glColor3f(1, 1, 1);
     glBegin(GL_LINE_LOOP);
 
-    for (float gt=0; gt < 1 ; gt+=0.01f) {
+    for (float globalT=0; globalT < 1 ; globalT+=0.01f) {
         
         float deriv[3];
-        Point pos = this->getGlobalCatmullRomPoint(gt, deriv);
+        Point pos = this->getGlobalCatmullPoint(globalT, deriv);
         glVertex3f(pos.getX(), pos.getY(), pos.getZ());
     }
 
@@ -148,10 +142,10 @@ void Catmull::renderCatmullRomCurve() {
 }
 
 void Catmull::transform() {
-    renderCatmullRomCurve();
+    renderCatmull();
     float deriv[3];
     float tt = glutGet(GLUT_ELAPSED_TIME) / this->time ;
-    Point pos = this->getGlobalCatmullRomPoint(tt, deriv);
+    Point pos = this->getGlobalCatmullPoint(tt, deriv);
     glTranslatef(pos.getX(), pos.getY(), pos.getZ());
 
         float zr[3];

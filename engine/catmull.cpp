@@ -17,7 +17,10 @@
 void Catmull::addTime(float t) {
     this->time = abs(t);
 }
-Catmull::Catmull() : Operation(nullptr) {}
+Catmull::Catmull() : Operation(nullptr) {
+    float t[3] = {0, 1, 0};
+    setYY(t);
+}
 Catmull::~Catmull() {}
 
 
@@ -57,6 +60,15 @@ void multMatrixVector(float* m, float* v, float* res) {
         }
     }
 }
+
+
+
+void Catmull::setYY(float y[3]) {
+    this->yy[0] = y[0];
+    this->yy[1] = y[1];
+    this->yy[2] = y[2];
+}
+
 
 Point Catmull::getCatmullRomPoint(float t, Point p0, Point p1, Point p2, Point p3, float* deriv) {
     float pp0[3] = { p0.getX(), p0.getY(), p0.getZ() };
@@ -143,12 +155,13 @@ void Catmull::transform() {
     glTranslatef(pos.getX(), pos.getY(), pos.getZ());
 
         float zr[3];
-        cross(deriv, this->yAxis, zr);
+        cross(deriv, this->yy, zr);
         float ty[3];
         cross(zr, deriv, ty);
         normalize(zr);
         normalize(deriv);
         normalize(ty);
+        setYY(ty);
         float m[16];
         buildRotMatrix(deriv, ty, zr, m);
         glMultMatrixf(m);

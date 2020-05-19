@@ -1,10 +1,15 @@
 #include "../headers/point.h"
 
+
 Point::Point(): x(0.0f), y(0.0f), z(0.0f) {}
 
 Point::~Point() {} /* destroi um ponto criado */
 
 Point::Point(float x, float y, float z) : x(x), y(y), z(z) {}
+
+Point::Point(float x, float y, float z, std::vector<float> normal, float textureX, float textureY)
+: x(x) , y(y) , z(z) , normal(normal) , textureX(textureX) , textureY(textureY) {}
+
 
 float Point::getX() const {
     return x;
@@ -28,6 +33,22 @@ void Point::setZ(float z) {
     this->z = z;
 }
 
+std::vector<float> Point::getNormal() const {
+    return normal;
+}
+
+std::tuple<float, float> Point::getTexture() const {
+    return std::make_tuple(this->textureX, this->textureY);
+}
+
+void Point::setTexture(float textureX, float textureY) {
+    this->textureX = textureX;
+    this->textureY = textureY;
+}
+
+void Point::setNormal(std::vector<float> n) {
+    this->normal.assign(n.begin(), n.end());
+}
 
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {

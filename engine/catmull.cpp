@@ -36,6 +36,10 @@ void buildRotMatrix(float* x, float* y, float* z, float* m) {
     m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
 }
 
+
+/*The normal vector at any point of the surface is defined as the normalized result of the cross product of the tangent vectors.
+ The most important use of the cross product in computer graphics is to find a vector perpendicular to a plane. The cross product of two vector produces a vector: one that is perpendicular to both of them.
+*/
 void cross(float* a, float* b, float* res) {
 
     res[0] = a[1] * b[2] - a[2] * b[1];
@@ -43,6 +47,10 @@ void cross(float* a, float* b, float* res) {
     res[2] = a[0] * b[1] - a[1] * b[0];
 }
 
+
+//Normalizing a vector involves two steps:
+//1   calculate its length, l = sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2]),
+//2   then, divide each of its (xy or xyz) components by its length.
 void normalize(float* a) {
 
     float l = sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2]);

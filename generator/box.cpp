@@ -13,6 +13,14 @@ void Box::generateBox() {
 	z = z / 2;
 
 
+    std::vector<float> normalFrontV {0.0f, 0.0f, 1.0f};
+    std::vector<float> normalBackV {0.0f, 0.0f, -1.0f};
+    std::vector<float> normalUpV {0.0f, 1.0f, 0.0f};
+    std::vector<float> normalDownV {0.0f, -1.0f, 0.0f};
+    std::vector<float> normalLeftV {-1.0f, 0.0f, 0.0f};
+    std::vector<float> normalRightV {1.0f, 0.0f, 0.0f};
+    
+
 
 	for (int i = 0; i < div; i++) {
 		for (int j = 0; j < div; j++) {

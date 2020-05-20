@@ -37,6 +37,8 @@ void Cone::generateCone() {
 
 			if (!i) {
 				// desenhar a base;
+                
+                std::vector<float> normal {0, -1, 0}; //vetor normal da base
 
 				Point* d = new Point(px_base_ant, 0.0, pz_base_ant);
 				points.push_back(d);

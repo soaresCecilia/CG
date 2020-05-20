@@ -32,8 +32,7 @@ void Sphere::generateSphere() {
     
     for (int i = 0; i < stacks; i++) {
         for (int j = 0; j < slices; j++) {
-            
-            
+        
             // gera pontos
             // vertice A1
             float x1 = radius * cos(teta + incrementoTeta) * sin(alpha);
@@ -58,38 +57,41 @@ void Sphere::generateSphere() {
             
             // desenha um quadrado apenas
             // desenho triangulo baixo
-            Point *a = new Point(x1,y1,z1,vector,0,0);
-            a->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *a = new Point(x1,y1,z1,vector,textureX,textureY);
+            a->normalizeCoordPoint();
             points.push_back(a);
             
-            Point *b = new Point(x2,y2,z2, vector, 0,0);
-            b->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *b = new Point(x2,y2,z2, vector, textureX,textureY);
+            b->normalizeCoordPoint();
             points.push_back(b);
             
-            Point *c = new Point(x4,y4,z4, vector, 0,0);
-            c->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *c = new Point(x4,y4,z4, vector, textureX, textureY);
+            c->normalizeCoordPoint();
             points.push_back(c);
             
             // desenho triangulo cima
             //este ponto é igual ao a -> porque não pôr points.push_back(a)???;
-            Point *d = new Point(x1,y1,z1, vector, 0,0);
-            d->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *d = new Point(x1,y1,z1, vector, textureX,textureY);
+            d->normalizeCoordPoint();
             points.push_back(d);
             
-            Point *e = new Point(x4,y4,z4, vector, 0,0);
-            e->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *e = new Point(x4,y4,z4, vector, textureX, textureY);
+            e->normalizeCoordPoint();
             points.push_back(e);
             
-            Point *f = new Point(x3,y3,z3, vector, 0,0);
-            f->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
+            Point *f = new Point(x3,y3,z3, vector, textureX, textureY);
+            f->normalizeCoordPoint();
+            f->setTexture(textureX,textureY);
             points.push_back(f);
             
             // incremento angulos
             alpha = alpha + incrementoAlpha;
             textureX = j * textureIncX;
+           
         }
         teta = teta + incrementoTeta;
         textureY = i * textureIncY;
+        
     }
     
 }

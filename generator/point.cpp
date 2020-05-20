@@ -59,24 +59,31 @@ void Point::setNormal(std::vector<float> n) {
 }
 
 
-Point Point::normalizeCoordPoint() {
-    float componentX = getX();
-    float componentY = getY();
-    float componentZ = getZ();
+void Point::normalizeCoordPoint() {
     
-    float length = sqrt(componentX * componentX + componentY * componentY + componentZ * componentZ);
+    float length = sqrt(getX() * getX() + getY() * getY() + getZ() * getZ());
     
     
-    componentX = componentX / length;
-    componentY = componentY / length;
-    componentZ = componentZ / length;
+    float componentX = getX() / length;
+    float componentY = getY() / length;
+    float componentZ = getZ() / length;
     
     std::vector<float> normalized {componentX, componentY, componentZ};
     
-    return Point(getX(), getY(), getZ(), normalized, 0, 0);
+    setNormal(normalized);
+ 
     
 }
 
+
+/*
+std::ostream& operator<<(std::ostream& os, const Point& pt)
+{
+    os << '(' << pt.getX() << ' ' << pt.getY() << ' ' << pt.getZ() << ')' << ' ' << '(' << pt.getNormal().at(0) << ' ' << pt.getNormal().at(1) << ' ' << pt.getNormal().at(2) << ')' << ' ' << '(' << pt.getTextureX() << ' ' << pt.getTextureY() << ')' << std::endl;
+    return os;
+}
+
+*/
 
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {

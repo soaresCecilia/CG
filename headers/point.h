@@ -30,7 +30,7 @@ public:
     float getTextureX() const;
     float getTextureY() const;
     void setTexture(float textureX, float textureY);
-    Point normalizeCoordPoint();
+    void normalizeCoordPoint();
     friend std::ostream& operator<<(std::ostream& os, const Point& dt);
 };
 

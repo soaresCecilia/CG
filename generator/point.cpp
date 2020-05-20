@@ -61,9 +61,12 @@ void Point::setNormal(std::vector<float> n) {
 
 void Point::normalizeCoordPoint() {
     
+    //This is the Euclidean norm, which gives the ordinary distance from the origin to a point
     float length = sqrt(getX() * getX() + getY() * getY() + getZ() * getZ());
     
     
+    
+    //O vetor normalizado - divide-se cada componente pela sua norma
     float componentX = getX() / length;
     float componentY = getY() / length;
     float componentZ = getZ() / length;

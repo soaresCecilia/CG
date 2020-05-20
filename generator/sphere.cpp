@@ -30,8 +30,8 @@ void Sphere::generateSphere() {
     
     std::vector<float> vector {0,0,0};
     
-    for (int i = 0; i < stacks; i++) {
-        for (int j = 0; j < slices; j++) {
+    for (int i = 0; i < stacks; i++) { //y
+        for (int j = 0; j < slices; j++) { //x
         
             // gera pontos
             // vertice A1
@@ -81,7 +81,6 @@ void Sphere::generateSphere() {
             
             Point *f = new Point(x3,y3,z3, vector, textureX, textureY);
             f->normalizeCoordPoint();
-            f->setTexture(textureX,textureY);
             points.push_back(f);
             
             // incremento angulos

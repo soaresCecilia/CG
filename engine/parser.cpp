@@ -18,6 +18,7 @@
 #include "../headers/scale.h"
 #include "../headers/color.h"
 #include "../headers/catmull.h"
+#include "../headers/lights.h"
 
 
 using namespace tinyxml2;
@@ -29,6 +30,7 @@ Rotation* parseRotate(XMLElement *pElement);
 Scale* parseScale(XMLElement* pElement);
 Color* parseColor(XMLElement* pElement);
 Catmull* parseCatmull(XMLElement *ptrElement);
+Lights *parseLight(XMLElement *ptrElement);
 
 
 Parser::Parser() {
@@ -89,8 +91,12 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                         ptrGroup->addFormaGeo(formageo);
                 }
             }
-
-
+            
+            
+            if (!strcmp(ptrElement->Name(), "light")) {
+                Lights *light = parseLight(ptrElement);
+                //ptrGroup->addLight(light);
+            }
         }
 
 }
@@ -257,4 +263,32 @@ Catmull* parseCatmull(XMLElement *ptrElement) {
     }
     
     return t;
+}
+
+
+Lights *parseLight(XMLElement *ptrElement) {
+    float posX = 0;
+    float posY = 0;
+    float posZ = 0;
+    
+    if (ptrElement->Attribute("type")) {
+        if(!strcmp(ptrElement->Attribute("type" , "POINT"), "POINT")){
+            if (ptrElement->Attribute("posX"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
+            
+            if (ptrElement->Attribute("posY"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
+            
+            if (ptrElement->Attribute("posZ"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
+        }
+    }
+    
+    Point *pointLight = new Point(posX, posY, posZ);
+    
+    float colour[4] = {0,0,0,0};
+    
+    Lights *light = new Lights(pointLight, colour);
+    
+    return light;
 }

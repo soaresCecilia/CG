@@ -12,11 +12,27 @@ void Sphere::generateSphere() {
         
     float alpha = 0; // da a volta
     float teta = - (M_PI /2); // pendulo, cima, baixo
+    
+    //PI * 2 because it is necessary to go all around to count all of the slices
+
     float incrementoAlpha = (2 * M_PI) / slices;
+    
+    //only PI because it is only necessary to go half the perimeter in the
+    //vertical direction to count all of the stacks;
     float incrementoTeta = M_PI / stacks;
+    
+    
+    //incremento das texturas
+    const float textureIncX = 1.0 / slices;
+    const float textureIncY = 1.0 / stacks;
+    float textureX = 0.0f;
+    float textureY = 0.0f;
+    
+    std::vector<float> vector {0,0,0};
     
     for (int i = 0; i < stacks; i++) {
         for (int j = 0; j < slices; j++) {
+            
             
             // gera pontos
             // vertice A1
@@ -39,32 +55,41 @@ void Sphere::generateSphere() {
             float y4 = radius * sin(teta);
             float z4 = radius * cos(teta) * cos(alpha + incrementoAlpha);
             
+            
             // desenha um quadrado apenas
             // desenho triangulo baixo
-            Point *a = new Point(x1,y1,z1);
+            Point *a = new Point(x1,y1,z1,vector,0,0);
+            a->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(a);
             
-            Point *b = new Point(x2,y2,z2);
+            Point *b = new Point(x2,y2,z2, vector, 0,0);
+            b->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(b);
             
-            Point *c = new Point(x4,y4,z4);
+            Point *c = new Point(x4,y4,z4, vector, 0,0);
+            c->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(c);
             
             // desenho triangulo cima
-            Point *d = new Point(x1,y1,z1);
+            //este ponto é igual ao a -> porque não pôr points.push_back(a)???;
+            Point *d = new Point(x1,y1,z1, vector, 0,0);
+            d->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(d);
             
-            Point *e = new Point(x4,y4,z4);
+            Point *e = new Point(x4,y4,z4, vector, 0,0);
+            e->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(e);
             
-            Point *f = new Point(x3,y3,z3);
+            Point *f = new Point(x3,y3,z3, vector, 0,0);
+            f->normalizeCoordPoint().setTexture(textureIncX,textureIncY);
             points.push_back(f);
             
             // incremento angulos
             alpha = alpha + incrementoAlpha;
+            textureX = j * textureIncX;
         }
         teta = teta + incrementoTeta;
-        
+        textureY = i * textureIncY;
     }
     
 }

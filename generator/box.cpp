@@ -25,16 +25,23 @@ void Box::generateBox() {
 	for (int i = 0; i < div; i++) {
 		for (int j = 0; j < div; j++) {
 			//up
-			Point* a = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * j)); //A
+            
+			Point* a = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * j), normalUpV, (float)(j / div), (float)(i / div)); //A
 			points.push_back(a);
+            
+            
 			Point* b = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1))); //B
 			points.push_back(b);
+            
 			Point* c = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j)); //C
 			points.push_back(c);
+            
 			Point* d = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j)); //C
 			points.push_back(d);
+            
 			Point* e = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1))); //B
 			points.push_back(e);
+            
 			Point* f = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * (j + 1))); //D
 			points.push_back(f);
 

@@ -1,5 +1,5 @@
 #include "../headers/point.h"
-
+#include <cmath>
 
 Point::Point(): x(0.0f), y(0.0f), z(0.0f) {}
 
@@ -49,6 +49,26 @@ void Point::setTexture(float textureX, float textureY) {
 void Point::setNormal(std::vector<float> n) {
     this->normal.assign(n.begin(), n.end());
 }
+
+
+Point Point::normalizeCoordPoint() {
+    float componentX = getX();
+    float componentY = getY();
+    float componentZ = getZ();
+    
+    float length = sqrt(componentX * componentX + componentY * componentY + componentZ * componentZ);
+    
+    
+    componentX = componentX / length;
+    componentY = componentY / length;
+    componentZ = componentZ / length;
+    
+    std::vector<float> normalized {componentX, componentY, componentZ};
+    
+    return Point(getX(), getY(), getZ(), normalized, 0, 0);
+    
+}
+
 
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {

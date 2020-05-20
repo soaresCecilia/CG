@@ -86,11 +86,18 @@ std::ostream& operator<<(std::ostream& os, const Point& pt)
     return os;
 }
 
-*/
+
 
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {
     os << '(' << pt.getX() << ',' << pt.getY() << ',' << pt.getZ() << ',' << pt.getNormal().at(0) << ',' << pt.getNormal().at(1) << ',' << pt.getNormal().at(2) << ',' << pt.getTextureX() << ',' << pt.getTextureY() << ')' << std::endl;
     return os;
 }
+*/
 
+
+std::ostream& operator<<(std::ostream& os, const Point& pt)
+{
+    os << pt.getX() << ' ' << pt.getY() << ' ' << pt.getZ() << ' ' << pt.getNormal().at(0) << ' ' << pt.getNormal().at(1) << ' ' << pt.getNormal().at(2) << ' ' << pt.getTextureX() << ' ' << pt.getTextureY() << std::endl;
+    return os;
+}

@@ -25,9 +25,13 @@ void Group::saveOperation(Operation *op) {
     formsOperations.push_back(op);
 }
 
+void Group::addLights(Lights *light) {
+    lights.push_back(light);
+}
 
 void Group::drawSub() {
     glPushMatrix();
+    
     
     for(auto &form: this->formsOperations)
         form->transform();
@@ -36,7 +40,6 @@ void Group::drawSub() {
         formGeo->draw();
     
     for(auto &g : this->groups) {
-
         g->drawSub();
     }
     

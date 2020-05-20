@@ -17,7 +17,7 @@ class FormaGeo {
     private:
         size_t nPoints;
         std::vector<float> coordinates;
-        GLuint buffer[1];
+        GLuint buffer[3]; //texturas, normais e vertices
 
     public:
         FormaGeo(int);

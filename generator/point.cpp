@@ -41,6 +41,14 @@ std::tuple<float, float> Point::getTexture() const {
     return std::make_tuple(this->textureX, this->textureY);
 }
 
+float Point::getTextureX() const {
+    return textureX;
+}
+
+float Point::getTextureY() const {
+    return textureY;
+}
+
 void Point::setTexture(float textureX, float textureY) {
     this->textureX = textureX;
     this->textureY = textureY;
@@ -72,7 +80,7 @@ Point Point::normalizeCoordPoint() {
 
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {
-    os << '(' << pt.getX() << ',' << pt.getY() << ',' << pt.getZ() << ')' << std::endl;
+    os << '(' << pt.getX() << ',' << pt.getY() << ',' << pt.getZ() << ',' << pt.getNormal().at(0) << ',' << pt.getNormal().at(1) << ',' << pt.getNormal().at(2) << ',' << pt.getTextureX() << ',' << pt.getTextureY() << ')' << std::endl;
     return os;
 }
 

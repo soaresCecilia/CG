@@ -37,9 +37,6 @@ std::vector<float> Point::getNormal() const {
     return normal;
 }
 
-std::tuple<float, float> Point::getTexture() const {
-    return std::make_tuple(this->textureX, this->textureY);
-}
 
 float Point::getTextureX() const {
     return textureX;

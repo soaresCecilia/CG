@@ -26,7 +26,6 @@ public:
     void setZ(float z);
     std::vector<float> getNormal() const;
     void setNormal(std::vector<float> normal);
-    std::tuple<float, float> getTexture() const;
     float getTextureX() const;
     float getTextureY() const;
     void setTexture(float textureX, float textureY);

@@ -92,9 +92,9 @@ std::ostream& operator<<(std::ostream& os, const Point& pt)
 }
 */
 
-
+/* para teste*/
 std::ostream& operator<<(std::ostream& os, const Point& pt)
 {
-    os << pt.getX() << ' ' << pt.getY() << ' ' << pt.getZ() << ' ' << pt.getNormal().at(0) << ' ' << pt.getNormal().at(1) << ' ' << pt.getNormal().at(2) << ' ' << pt.getTextureX() << ' ' << pt.getTextureY() << std::endl;
+    os << pt.getX() << ',' << pt.getY() << ',' << pt.getZ() << std::endl << pt.getNormal().at(0) << ',' << pt.getNormal().at(1) << ',' << pt.getNormal().at(2) << std::endl << pt.getTextureX() << ',' << pt.getTextureY() << std::endl;
     return os;
 }

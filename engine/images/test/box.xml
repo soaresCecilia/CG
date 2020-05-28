@@ -1,0 +1,18 @@
+<scene>
+    <lights>
+            <light type="POINT" posX="0" posY="0" posZ="0" />
+    </lights> 
+
+    <!--Sol-->
+    <group>
+        <colour R="0.9" G="0.6" B="0.2" />
+        <scale X="8" Y="8" Z="8" />
+        <models>
+            <model file="box.3d" texture="box.jpg" emissR="0.2" emissG="0.2" emissB="0.2" shiness = "100" />
+        </models>
+     </group>
+     <group>
+        <colour R="0.9" G="1" B="0.8" />
+     </group>
+
+</scene>

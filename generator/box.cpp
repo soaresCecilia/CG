@@ -22,8 +22,8 @@ void Box::generateBox() {
     
 
 
-	for (int i = 0; i < div; i++) {
-		for (int j = 0; j < div; j++) {
+	for (int i = 0; i < div; i++) { 
+		for (int j = 0; j < div; j++) { 
 			//up
 
 			Point* a = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * j), normalUpV, (float)(i / div), (float)(j / div)); //A
@@ -32,33 +32,33 @@ void Box::generateBox() {
 			Point* b = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1)),normalUpV, (float)(i / div), (float)(j+1 / div)); //B
 			points.push_back(b);
             
-			Point* c = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j),normalUpV, (float)(i+1 / div), (float)(j / div)); //C
+			Point* c = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j),normalUpV, (float)(i +1 / div), (float)(j / div)); //C
 			points.push_back(c);
             
-			Point* d = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j), normalUpV, (float)(i+1 / div), (float)(j / div)); //C
-			points.push_back(d);
+			//Point* d = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * j), normalUpV, (float)(i +1 / div), (float)(j / div)); //C
+			points.push_back(c);
             
-			Point* e = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1)), normalUpV, (float)(i / div), (float)(j+1 / div)); //B
-			points.push_back(e);
+			//Point* e = new Point(-x + (div_increment_x * i), y, -z + (div_increment_z * (j + 1)), normalUpV, (float)(i / div), (float)(j+1 / div)); //B
+			points.push_back(b);
             
-			Point* f = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * (j + 1)), normalUpV, (float)(i+1 / div), (float)(j+1 / div)); //D
+			Point* f = new Point(-x + (div_increment_x * (i + 1)), y, -z + (div_increment_z * (j + 1)), normalUpV, (float)(i +1 / div), (float)(j+1 / div)); //D
 			points.push_back(f);
 
 			// down
 			Point* a2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * j), normalDownV, (float)(i / div), (float)(j / div)); //A
 			points.push_back(a2);
 
-			Point* b2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j), normalDownV, (float)(i+1 / div), (float)(j / div)); //C
+			Point* b2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j), normalDownV, (float)(i +1 / div), (float)(j / div)); //C
 			points.push_back(b2);
 
 			Point* c2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * (j + 1)), normalDownV, (float)(i / div), (float)(j+1 / div)); //B
 			points.push_back(c2);
 
-			Point* d2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * (j + 1)), normalDownV, (float)(i / div), (float)(j+1 / div)); //B
-			points.push_back(d2);
+			//Point* d2 = new Point(-x + (div_increment_x * i), -y, -z + (div_increment_z * (j + 1)), normalDownV, (float)(i / div), (float)(j+1 / div)); //B
+			points.push_back(c2);
 
-			Point* e2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j), normalDownV, (float)(i+1 / div), (float)(j / div)); //C
-			points.push_back(e2);
+			//Point* e2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * j), normalDownV, (float)(i+1 / div), (float)(j / div)); //C
+			points.push_back(b2);
 
 			Point* f2 = new Point(-x + (div_increment_x * (i + 1)), -y, -z + (div_increment_z * (j + 1)), normalDownV, (float)(i+1 / div), (float)(j+1 / div)); //D
 			points.push_back(f2);
@@ -73,11 +73,11 @@ void Box::generateBox() {
 			Point* c3 = new Point(x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1)), normalRightV, (float)(i / div), (float)(j+1 / div)); //B
 			points.push_back(c3);
 
-			Point* d3 = new Point(x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1)), normalRightV, (float)(i / div), (float)(j+1 / div)); //B
-			points.push_back(d3);
+			//Point* d3 = new Point(x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1)), normalRightV, (float)(i / div), (float)(j+1 / div)); //B
+			points.push_back(c3);
 			
-			Point* e3 = new Point(x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j), normalRightV, (float)(i+1 / div), (float)(j / div)); //C
-			points.push_back(e3);
+			//Point* e3 = new Point(x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j), normalRightV, (float)(i+1 / div), (float)(j / div)); //C
+			points.push_back(b3);
 			
 			Point* f3 = new Point(x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * (j + 1)), normalRightV, (float)(i+1 / div), (float)(j+1 / div)); //A
 			points.push_back(f3);
@@ -92,32 +92,32 @@ void Box::generateBox() {
 			Point* c4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j), normalLeftV, (float)(i+1 / div), (float)(j / div)); //C
 			points.push_back(c4);
 			
-			Point* d4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j), normalLeftV, (float)(i+1 / div), (float)(j / div)); //C
-			points.push_back(d4);
+			//Point* d4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * j), normalLeftV, (float)(i+1 / div), (float)(j / div)); //C
+			points.push_back(c4);
 			
-			Point* e4 = new Point(-x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1)), normalLeftV, (float)(i / div), (float)(j+1 / div)); //B
-			points.push_back(e4);
+			//Point* e4 = new Point(-x, -y + (div_increment_y * i), -z + (div_increment_z * (j + 1)), normalLeftV, (float)(i / div), (float)(j+1 / div)); //B
+			points.push_back(b4);
 			
 			Point* f4 = new Point(-x, -y + (div_increment_y * (i + 1)), -z + (div_increment_z * (j + 1)), normalLeftV, (float)(i+1 / div), (float)(j+1 / div)); //A
 			points.push_back(f4);
 
 			// front
-			Point* a5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * j), z,normalFrontV, (float)(j / div), (float)(i / div)); //C
+			Point* a5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * j), z,normalFrontV, (float)(i / div), (float)(j / div)); //C
 			points.push_back(a5);
 			
-			Point* b5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z, normalFrontV, (float)(j / div), (float)(i+1 / div)); //D
+			Point* b5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z, normalFrontV, (float)(i / div), (float)(j +1 / div)); //D
 			points.push_back(b5);
 			
-			Point* c5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(j+1 / div), (float)(i / div)); //A
+			Point* c5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(i +1 / div), (float)(j / div)); //A
 			points.push_back(c5);
 			
-			Point* d5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(j+1 / div), (float)(i / div)); //A
-			points.push_back(d5);
+			//Point* d5 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(i +1 / div), (float)(j / div)); //A
+			points.push_back(c5);
 			
-			Point* e5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z, normalFrontV, (float)(j / div), (float)(i+1 / div)); //D
-			points.push_back(e5);
+			//Point* e5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), z, normalFrontV, (float)(i / div), (float)(j +1 / div)); //D
+			points.push_back(b5);
 			
-			Point* f5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(j+1 / div), (float)(i+1 / div)); //B
+			Point* f5 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * (j + 1)), z, normalFrontV, (float)(i +1 / div), (float)(j+1 / div)); //B
 			points.push_back(f5);
 
 			// back
@@ -130,11 +130,11 @@ void Box::generateBox() {
 			Point* c6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), -z, normalBackV, (float)(i+1 / div), (float)(j / div)); //D
 			points.push_back(c6);
 			
-			Point* d6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), -z, normalBackV, (float)(i+1 / div), (float)(j / div)); //D
-			points.push_back(d6);
+			//Point* d6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * j), -z, normalBackV, (float)(i+1 / div), (float)(j / div)); //D
+			points.push_back(c6);
 			
-			Point* e6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), -z, normalBackV, (float)(i / div), (float)(j+1 / div)); //A
-			points.push_back(e6);
+			//Point* e6 = new Point(-x + (div_increment_x * i), -y + (div_increment_y * (j + 1)), -z, normalBackV, (float)(i / div), (float)(j+1 / div)); //A
+			points.push_back(b6);
 			
 			Point* f6 = new Point(-x + (div_increment_x * (i + 1)), -y + (div_increment_y * (j + 1)), -z, normalBackV, (float)(i+1 / div), (float)(j+1 / div)); //B
 			points.push_back(f6);

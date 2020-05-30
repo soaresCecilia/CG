@@ -25,7 +25,7 @@ void Sphere::generateSphere() {
     //incremento das texturas
 
     
-    std::vector<float> vector {0,0,0};
+
 	float incrementoX = 1.0 / slices;
 	float incrementoY = 1.0 / stacks;
 	float textura_y ;
@@ -65,29 +65,29 @@ void Sphere::generateSphere() {
             
             // desenha um quadrado apenas
             // desenho triangulo baixo
-            Point *a = new Point(x1,y1,z1,vector,textura_x_Next,textura_y);
+            Point *a = new Point(x1,y1,z1,0,0,0,textura_x_Next,textura_y);
 			a->normalizeCoordPoint();
             points.push_back(a);
             
-            Point *b = new Point(x2,y2,z2, vector, textura_x,textura_y);
+            Point *b = new Point(x2,y2,z2, 0,0,0, textura_x,textura_y);
             b->normalizeCoordPoint();
             points.push_back(b);
             
-            Point *c = new Point(x4,y4,z4, vector, textura_x,textura_y_Next);
+            Point *c = new Point(x4,y4,z4, 0,0,0, textura_x,textura_y_Next);
             c->normalizeCoordPoint();
             points.push_back(c);
             
             // desenho triangulo cima
             //este ponto é igual ao a -> porque não pôr points.push_back(a)???;
-         //   Point *d = new Point(x1,y1,z1, vector, textura_x, textura_y_Next);
+         //   Point *d = new Point(x1,y1,z1, 0,0,0, textura_x, textura_y_Next);
            // d->normalizeCoordPoint();
             points.push_back(a);
             
-            //Point *e = new Point(x4,y4,z4, vector, textura_x_Next, textura_y);
+            //Point *e = new Point(x4,y4,z4, 0,0,0, textura_x_Next, textura_y);
             //e->normalizeCoordPoint();
             points.push_back(c);
             
-            Point *f = new Point(x3,y3,z3, vector, textura_x_Next, textura_y_Next);
+            Point *f = new Point(x3,y3,z3, 0,0,0, textura_x_Next, textura_y_Next);
             f->normalizeCoordPoint();
             points.push_back(f);
             

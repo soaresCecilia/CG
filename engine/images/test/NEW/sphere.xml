@@ -1,6 +1,7 @@
 <scene>
     <group>
         <colour R="0.9" G="0.6" B="0.2" />
+	<scale x="10" y="10" z="10" />
         <models>
             <model file="sphere.3d" />
         </models>

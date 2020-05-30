@@ -24,8 +24,7 @@ void Cone::generateCone() {
 
 	const float theta = radius / stacks; // valor do raio a cada stack, começando por cima
 
-	std::vector<float> normalDownV{ 0.0f, -1.0f, 0.0f };  //vetor normal da base
-	std::vector<float> vector{ 0,0,0 };
+
 	int k = stacks;
 	for (int i = 0; i < stacks; i++) {// y
 		for (int j = 0; j < slices; j++) {//x
@@ -55,30 +54,30 @@ void Cone::generateCone() {
 				// desenhar a base;
                
 
-				Point* d = new Point(px_base_ant, 0.0, pz_base_ant,normalDownV,0.5 +0.5*cosf(_alpha*j),0.5+0.5*sinf(_alpha*j));
+				Point* d = new Point(px_base_ant, 0.0, pz_base_ant, 0.0f, -1.0f, 0.0f,0.5 +0.5*cosf(_alpha*j),0.5+0.5*sinf(_alpha*j));
 				points.push_back(d);
 
-				Point* e = new Point(0.0, 0.0, 0.0,normalDownV,0.5,0.5);
+				Point* e = new Point(0.0, 0.0, 0.0, 0.0f, -1.0f, 0.0f,0.5,0.5);
 				points.push_back(e);
 
 
-				Point* f = new Point(px_base, 0.0, pz_base,normalDownV, 0.5 + 0.5 * cosf(_alpha * (j + 1)) , 0.5 + 0.5 * sinf( _alpha * ( j + 1)));
+				Point* f = new Point(px_base, 0.0, pz_base, 0.0f, -1.0f, 0.0f, 0.5 + 0.5 * cosf(_alpha * (j + 1)) , 0.5 + 0.5 * sinf( _alpha * ( j + 1)));
 				points.push_back(f);
 			}
 
 			if (i == stacks - 1) {
 				// desenhar a ultima stack, que é so um triangulo
 				
-				Point* a = new Point(0.0, height, 0.0,vector,0.5,0.5);
+				Point* a = new Point(0.0, height, 0.0,0,0,0 ,0.5,0.5);
 				a->normalizeCoordPoint();
 				points.push_back(a);
 
-				Point* b = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j),vector,buscaXAnt,buscaYAnt);
+				Point* b = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j),0,0,0 ,buscaXAnt,buscaYAnt);
 				b->normalizeCoordPoint();
 				points.push_back(b);
 
 
-				Point* c = new Point((radius - (theta * i)), i * _stack, (radius - (theta * i)) * cos(_alpha * (j + 1)),vector,buscaX,buscaY);
+				Point* c = new Point((radius - (theta * i)), i * _stack, (radius - (theta * i)) * cos(_alpha * (j + 1)),0,0,0 ,buscaX,buscaY);
 				c->normalizeCoordPoint();
 				points.push_back(c);
 			}
@@ -88,29 +87,29 @@ void Cone::generateCone() {
 				
 				
 				//A
-				Point* g = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j), vector,buscaXAnt , buscaYAnt);
+				Point* g = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j), 0,0,0 ,buscaXAnt , buscaYAnt);
 				g->normalizeCoordPoint();
 				points.push_back(g);
 				//D
-				Point* h = new Point((radius - (theta * (i))) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * (i))) * cos(_alpha * (j + 1)), vector, buscaX, buscaY);
+				Point* h = new Point((radius - (theta * (i))) * sin(_alpha * (j + 1)), i * _stack, (radius - (theta * (i))) * cos(_alpha * (j + 1)), 0,0,0 , buscaX, buscaY);
 				h->normalizeCoordPoint();
 				points.push_back(h);
 				//c
-				Point* k = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)), vector, buscaXCima, buscaYCima);
+				Point* k = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)), 0,0,0 , buscaXCima, buscaYCima);
 				k->normalizeCoordPoint();
 				points.push_back(k);
 
 
 				//c
-			//	Point* l = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)), vector, 0, 0);
+			//	Point* l = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j + 1)), (i + 1) * _stack, (radius - (theta * (i + 1))) * cos(_alpha * (j + 1)), 0,0,0 , 0, 0);
 			//	l->normalizeCoordPoint();
 				points.push_back(k);
 				//B
-				Point* m = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j)), (i + 1) * _stack, (radius - (theta * (i+1))) * cos(_alpha * (j)), vector, buscaXAntCima, buscaYAntCima);
+				Point* m = new Point((radius - (theta * (i + 1))) * sin(_alpha * (j)), (i + 1) * _stack, (radius - (theta * (i+1))) * cos(_alpha * (j)), 0,0,0 , buscaXAntCima, buscaYAntCima);
 				m->normalizeCoordPoint();
 				points.push_back(m);
 				//A
-			//	Point* n = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j), vector, 0, 0);
+			//	Point* n = new Point((radius - (theta * i)) * sin(_alpha * j), i * _stack, (radius - (theta * i)) * cos(_alpha * j), 0,0,0 , 0, 0);
 			//	n->normalizeCoordPoint();
 				points.push_back(g);
 				k--;

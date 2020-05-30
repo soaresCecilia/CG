@@ -141,10 +141,10 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
         int nVertices = stoi(line);
     
         FormaGeo *formaGeo = new FormaGeo(nVertices);
-
+		int jj = 0;
         while (getline(infile, line)) {
             sscanf(line.c_str(),"(%f, %f, %f, %f, %f, %f, %f, %f)", &x, &y, &z, &xl, &yl, &zl, &xt, &yt);
-            printf("li o ponto: %f,%f,%f, %f,%f,%f, %f,%f\n", x, y, z, xl, yl, zl, xt, yt);
+            printf("li o ponto %d: %f,%f,%f, %f,%f,%f, %f,%f\n",jj++, x, y, z, xl, yl, zl, xt, yt);
             Point p(x,y,z,xl,yl,zl,xt,yt);
   
             formaGeo->addCoordinates(p);

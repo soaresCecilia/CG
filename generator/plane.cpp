@@ -5,12 +5,10 @@
 
 void Plane::generatePlane() {
     
-    std::vector<float> normalVector {0.0f, 1.0f, 0.0f};
-
-    Point *c = new Point(-dim/2, 0.0f, dim/2, normalVector, 0, 1);
-    Point *b = new Point(dim/2, 0.0f, dim/2, normalVector, 1, 1);
-    Point *a = new Point(dim/2, 0.0f, -dim/2, normalVector, 1, 0);
-    Point *d = new Point(-dim/2, 0.0f, -dim/2, normalVector, 0, 0);
+    Point *c = new Point(-dim/2, 0.0f, dim/2, 0.0f, 1.0f, 0.0f, 0, 1);
+    Point *b = new Point(dim/2, 0.0f, dim/2, 0.0f, 1.0f, 0.0f, 1, 1);
+    Point *a = new Point(dim/2, 0.0f, -dim/2, 0.0f, 1.0f, 0.0f, 1, 0);
+    Point *d = new Point(-dim/2, 0.0f, -dim/2, 0.0f, 1.0f, 0.0f, 0, 0);
     
     
     //push_back - Add element at the end of the vector

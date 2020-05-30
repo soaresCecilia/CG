@@ -92,21 +92,16 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 }
             }
             
-//--------------------------------------------------------------
-
-            if (!strcmp(ptrElement->Name(), "ligths")) {
-                parseDoc(ptrGroup, ptrNode);
-            }
-
-
+            
             if (!strcmp(ptrElement->Name(), "light")) {
-                
-                Lights *light = parseLight(ptrElement);
-                ptrGroup->addLights(light);
+                Lights* l{ parseLight(ptrElement) };
+                ptrGroup->addLights(l);
             }
-//-------------------------------------------------------------------------            
 
 
+            if (!strcmp(ptrElement->Name(), "lights"))
+                parseDoc(ptrGroup, ptrNode);
+            
         }
 
 }
@@ -289,7 +284,7 @@ Lights *parseLight(XMLElement *ptrElement) {
 
     printf("entrou no parseligt\n");
 
-    //if (ptrElement->Attribute("light")) {
+    if (!strcmp(ptrElement->Name(), "light")) {
 
         printf("entrou no parseligt 2\n");
 
@@ -336,7 +331,7 @@ Lights *parseLight(XMLElement *ptrElement) {
         */
 
 
-   // }
+    }
 
     printf("epassou no parseligt\n");
 

@@ -6,26 +6,41 @@
 
 class Point{
 private:
+    //points coordinates
     float x;
     float y;
     float z;
-    std::vector<float> normal;
+
+    // ligth normals coordinates
+    float xl;
+    float yl;
+    float zl;
+
+    // texture coordinates
     float textureX;
     float textureY;
     
 public:
     Point();
     Point(float x, float y, float z);
-    Point(float x, float y, float z, std::vector<float> normal, float textureX, float textureY);
+    Point(float x, float y, float z, float xl, float yl, float zl, float textureX, float textureY);
     ~Point();
+    
     float getX() const;
     float getY() const;
     float getZ() const;
     void setX(float x);
     void setY(float y);
     void setZ(float z);
-    std::vector<float> getNormal() const;
-    void setNormal(std::vector<float> normal);
+   
+    float getXl() const;
+    float getYl() const;
+    float getZl() const;
+    void setXl(float x);
+    void setYl(float y);
+    void setZl(float z);
+
+
     float getTextureX() const;
     float getTextureY() const;
     void setTexture(float textureX, float textureY);

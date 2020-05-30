@@ -92,11 +92,12 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 }
             }
             
-            
+            /*
             if (!strcmp(ptrElement->Name(), "light")) {
                 Lights *light = parseLight(ptrElement);
                 //ptrGroup->addLight(light);
             }
+            */
         }
 
 }
@@ -127,7 +128,8 @@ void Parser::ReadXML(Group *ptrGroup, const char *xml) {
 FormaGeo * parseFile(const XMLElement *ptrElement) {
         string namefile = ptrElement->Attribute("file");
         ifstream infile(namefile);
-        float x, y, z;
+        float x, y, z, xl, yl, zl, xt, yt;
+        
 
         if (!infile) {
                 cerr << "Cannot open input file.\n";
@@ -141,9 +143,14 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
         FormaGeo *formaGeo = new FormaGeo(nVertices);
 
         while (getline(infile, line)) {
-            sscanf(line.c_str(),"(%f, %f, %f)", &x, &y, &z);
-            Point p(x,y,z);
+            sscanf(line.c_str(),"(%f, %f, %f, %f, %f, %f, %f, %f)", &x, &y, &z, &xl, &yl, &zl, &xt, &yt);
+            printf("li o ponto: %f,%f,%f, %f,%f,%f, %f,%f\n", x, y, z, xl, yl, zl, xt, yt);
+            Point p(x,y,z,xl,yl,zl,xt,yt);
+  
             formaGeo->addCoordinates(p);
+            formaGeo->addLigthNormals(p);
+            formaGeo->addVerticesTexture(p);
+
         }
     
         infile.close();
@@ -275,13 +282,45 @@ Lights *parseLight(XMLElement *ptrElement) {
         if(!strcmp(ptrElement->Attribute("type" , "POINT"), "POINT")){
             if (ptrElement->Attribute("posX"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
+                
+            printf("PX_________>>>>>> %d\n", posX);
             
             if (ptrElement->Attribute("posY"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
+
+            printf("PX_________>>>>>> %d\n", posX);
             
             if (ptrElement->Attribute("posZ"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
+            printf("PX_________>>>>>> %d\n", posX);
         }
+
+        /*
+        if (!strcmp(ptrElement->Attribute("type", " DIRECTIONAL"), " DIRECTIONAL")) {
+            if (ptrElement->Attribute("posX"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
+
+            if (ptrElement->Attribute("posY"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
+
+            if (ptrElement->Attribute("posZ"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
+        }
+        
+
+        if (!strcmp(ptrElement->Attribute("type", "SPOT"), "SPOT")) {
+            if (ptrElement->Attribute("posX"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
+
+            if (ptrElement->Attribute("posY"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
+
+            if (ptrElement->Attribute("posZ"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
+        }
+        */
+
+
     }
     
     Point *pointLight = new Point(posX, posY, posZ);

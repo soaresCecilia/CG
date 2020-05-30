@@ -17,12 +17,16 @@ class FormaGeo {
     private:
         size_t nPoints;
         std::vector<float> coordinates;
-        GLuint buffer[3]; //texturas, normais e vertices
+        std::vector<float> ligthNormals;
+        std::vector<float> verticesTexture;
+        GLuint buffer[3]; // vertices,  ligth normals , texturas
 
     public:
         FormaGeo(int);
         ~FormaGeo();
         void addCoordinates(const Point &p);
+        void addLigthNormals(const Point& p);
+        void addVerticesTexture(const Point& p);
         size_t getNPoint();
         void draw();
         void buffering();

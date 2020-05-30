@@ -28,6 +28,19 @@ void FormaGeo::addCoordinates(const Point &p) {
     
 }
 
+void FormaGeo::addLigthNormals(const Point& p) {
+    this->ligthNormals.push_back(p.getXl());
+    this->ligthNormals.push_back(p.getYl());
+    this->ligthNormals.push_back(p.getZl());
+
+}
+
+void FormaGeo::addVerticesTexture(const Point& p) {
+    this->verticesTexture.push_back(p.getTextureX());
+    this->verticesTexture.push_back(p.getTextureY());
+
+}
+
 size_t FormaGeo::getNPoint(){
     return (this->nPoints);
 }

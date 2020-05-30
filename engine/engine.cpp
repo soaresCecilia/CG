@@ -176,7 +176,7 @@ void printInfo() {
 	printf("Version: %s\n", glGetString(GL_VERSION));
 
 	printf("\nUse Arrows to move the camera up/down and left/right\n");
-	printf("Home and End control the distance from the camera to the origin");
+	printf("Home and End control the distance from the camera to the origin\n");
 }
 
 void initiatingGLUT(int argc, char **argv) {

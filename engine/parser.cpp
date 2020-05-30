@@ -92,12 +92,21 @@ void parseDoc(Group *ptrGroup, XMLNode *ptrN) {
                 }
             }
             
-            /*
-            if (!strcmp(ptrElement->Name(), "light")) {
-                Lights *light = parseLight(ptrElement);
-                //ptrGroup->addLight(light);
+//--------------------------------------------------------------
+
+            if (!strcmp(ptrElement->Name(), "ligths")) {
+                parseDoc(ptrGroup, ptrNode);
             }
-            */
+
+
+            if (!strcmp(ptrElement->Name(), "light")) {
+                
+                Lights *light = parseLight(ptrElement);
+                ptrGroup->addLights(light);
+            }
+//-------------------------------------------------------------------------            
+
+
         }
 
 }
@@ -144,7 +153,7 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
 		int jj = 0;
         while (getline(infile, line)) {
             sscanf(line.c_str(),"(%f, %f, %f, %f, %f, %f, %f, %f)", &x, &y, &z, &xl, &yl, &zl, &xt, &yt);
-            printf("li o ponto %d: %f,%f,%f, %f,%f,%f, %f,%f\n",jj++, x, y, z, xl, yl, zl, xt, yt);
+            //printf("li o ponto %d: %f,%f,%f, %f,%f,%f, %f,%f\n",jj++, x, y, z, xl, yl, zl, xt, yt);
             Point p(x,y,z,xl,yl,zl,xt,yt);
   
             formaGeo->addCoordinates(p);
@@ -277,22 +286,28 @@ Lights *parseLight(XMLElement *ptrElement) {
     float posX = 0;
     float posY = 0;
     float posZ = 0;
-    
-    if (ptrElement->Attribute("type")) {
-        if(!strcmp(ptrElement->Attribute("type" , "POINT"), "POINT")){
-            if (ptrElement->Attribute("posX"))
-                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
-                
-            printf("PX_________>>>>>> %d\n", posX);
-            
-            if (ptrElement->Attribute("posY"))
-                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
 
-            printf("PX_________>>>>>> %d\n", posX);
+    printf("entrou no parseligt\n");
+
+    //if (ptrElement->Attribute("light")) {
+
+        printf("entrou no parseligt 2\n");
+
+        if(!strcmp(ptrElement->Attribute("type" , "POINT"), "POINT")){
+            if (ptrElement->Attribute("posX")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
+                printf("PX : %f\n", posX);
+            }
             
-            if (ptrElement->Attribute("posZ"))
+            if (ptrElement->Attribute("posY")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posY);
+                printf("PX : %f\n", posY);
+            }
+            
+            if (ptrElement->Attribute("posZ")) {
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
-            printf("PX_________>>>>>> %d\n", posX);
+                printf("PX : %f\n", posZ);
+            }
         }
 
         /*
@@ -321,9 +336,14 @@ Lights *parseLight(XMLElement *ptrElement) {
         */
 
 
-    }
+   // }
+
+    printf("epassou no parseligt\n");
+
     
     Point *pointLight = new Point(posX, posY, posZ);
+    printf("Ponto de luz : %f, %f, %f\n",posX,posY,posZ);
+
     
     float colour[4] = {0,0,0,0};
     

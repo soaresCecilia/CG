@@ -1,0 +1,8 @@
+<scene>
+    <group>
+        <colour R="0.9" G="0.6" B="0.2" />
+        <models>
+            <model file="sphere.3d" />
+        </models>
+     </group>
+</scene>

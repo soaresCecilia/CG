@@ -56,49 +56,55 @@ size_t FormaGeo::getNPoint(){
 
 void FormaGeo::buffering() { // aka prepare
 
-   
-    glGenBuffers(3, this->buffer);
+	glGenTextures(1, &this->texture->textBuffer);
+	this->texture->loadImage();
+	glGenBuffers(3, this->buffer);
+	glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
+	int n{ (int)this->nPoints * 3 }; // 3 coords x y z
+	float* v{ new float[n] };
+	int i{ 0 };
 
-    // pontos
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
-    int allcoordinates = this->getNPoint() * 3;
-    
-    //normals
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[1]);
-    int allnormals = this->getNPoint() * 3;
+	for (auto& p : this->coordinates) {
+		v[i++] = p;
+	}
 
-    //textura
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[2]);
-    int allTexturePoints = this->getNPoint() * 2;
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (n), v, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, this->buffer[1]);
+	v = new float[n];
+	i = 0;
 
-    
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * allcoordinates , coordinates.data(), GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * allnormals, ligthNormals.data(), GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * allTexturePoints, verticesTexture.data(), GL_STATIC_DRAW);
-    
+	for (auto& p : this->ligthNormals) {
+		v[i++] = p;
+	}
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * (n), v, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, this->buffer[2]);
+	v = new float[n/3*2];
+	i = 0;
+
+	for (auto& p : this->verticesTexture) {
+		v[i++] = p;
+	}
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) *(n/3 * 2), v, GL_STATIC_DRAW);
+
 }
 
 
 void FormaGeo::draw() {
-    int allcoordinates  = this->getNPoint() * 3;
-    int allnormals = this->getNPoint() * 3;
-    int allallTexturePoints = this->getNPoint() * 2;
-    this->texture->setup();
-    
-    glBindTexture(GL_TEXTURE_2D, this->texture->textBuffer);
-
-    //points
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);    
-    glVertexPointer(3, GL_FLOAT, 0, 0);
-    //normals
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[1]);
-    glNormalPointer(GL_FLOAT, 0, 0);
-    //textur
-    glBindBuffer(GL_ARRAY_BUFFER, this->buffer[2]);
-    glTexCoordPointer(2, GL_FLOAT, 0, 0);
-
-    glDrawArrays(GL_TRIANGLES, 0, allcoordinates);
-    glBindTexture(GL_TEXTURE_2D, 0);
+  this->texture->setup();
+        glBindTexture(GL_TEXTURE_2D, this->texture->textBuffer);
+        // Vertex Buffer
+        glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
+        glVertexPointer(3, GL_FLOAT, 0, 0);
+        // Normal Buffer
+        glBindBuffer(GL_ARRAY_BUFFER, this->buffer[1]);
+        glNormalPointer(GL_FLOAT, 0, 0);
+        // Text Buffer
+        glBindBuffer(GL_ARRAY_BUFFER, this->buffer[2]);
+        glTexCoordPointer(2, GL_FLOAT, 0, 0);
+        glDrawArrays(GL_TRIANGLES, 0, this->nPoints * 3);
+        glBindTexture(GL_TEXTURE_2D, 0);
 
 }
 

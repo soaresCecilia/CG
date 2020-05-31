@@ -201,15 +201,17 @@ void initiatingGLUT(int argc, char **argv) {
 #ifndef __APPLE__
     glewInit();
 #endif
-
-    // OpenGL settings
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
-    glEnable(GL_LIGHTING);
-    glPolygonMode(GL_FRONT, GL_LINE);
-	
-    // Setup Buffers
-    glEnableClientState(GL_VERTEX_ARRAY);
+	// OpenGL settings
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_LIGHTING);
+	glPolygonMode(GL_FRONT, GL_LINE);
+	// Setup Buffers
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_NORMAL_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+   
 }
 
 
@@ -218,7 +220,7 @@ int main(int argc, char **argv) {
                 initiatingGLUT(argc, argv);
                 Parser().ReadXML(&group, argv[1]);
                 // enter GLUT's main cycle
-			
+
                 glutMainLoop();
                 return 0;
         }

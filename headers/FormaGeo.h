@@ -27,8 +27,10 @@ class FormaGeo {
         GLuint buffer[3]; // vertices,  ligth normals , texturas
         FormaGeo(int);
         ~FormaGeo();
+        
         void addCoordinates(const Point &p);
         void addLigthNormals(const Point& p);
+        void addTexture(Texture*);
         void addVerticesTexture(const Point& p);
         size_t getNPoint();
         void draw();

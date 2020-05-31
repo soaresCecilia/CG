@@ -151,25 +151,34 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
 		int jj = 0;
         while (getline(infile, line)) {
             sscanf(line.c_str(),"(%f, %f, %f, %f, %f, %f, %f, %f)", &x, &y, &z, &xl, &yl, &zl, &xt, &yt);
-            //printf("li o ponto %d: %f,%f,%f, %f,%f,%f, %f,%f\n",jj++, x, y, z, xl, yl, zl, xt, yt);
+            printf("li o ponto %d: %f,%f,%f, %f,%f,%f, %f,%f\n",jj++, x, y, z, xl, yl, zl, xt, yt);
             Point p(x,y,z,xl,yl,zl,xt,yt);
   
             formaGeo->addCoordinates(p);
             formaGeo->addLigthNormals(p);
             formaGeo->addVerticesTexture(p);
+            //printf("Pus no ponot p %d: %f,%f,%f, %f,%f,%f, %f,%f\n", jj++, p.getX(), p.getY(), p.getZ(), p.getXl(),p.getYl(), p.getZl(), p.getTextureX(), p.getTextureY());
 
         }
-
+        
         //parse à restante informacao do objeto
+        printf("vou ler a textura: \n");
 
         Material* material{ new Material() };
         Texture* texture{ new Texture() };
 
+        printf("vou ler a textura: \n");
+
+
         if (ptrElement->Attribute("texture")) {
+
+            printf("encontrei textura: \n");
+
             string filename{ ptrElement->Attribute("texture") };
             texture->addFile(filename);
         }
 
+        printf("vou ler os tipos: \n");
         if (ptrElement->Attribute("type")) {
             float r= 0;
             float g= 0;
@@ -217,8 +226,8 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
 
 
 
-    
         infile.close();
+        
 
         return formaGeo;
 }

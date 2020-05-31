@@ -137,7 +137,7 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
         ifstream infile(namefile);
         float x, y, z, xl, yl, zl, xt, yt;
         
-
+        //parse do ficheiro do objeto
         if (!infile) {
                 cerr << "Cannot open input file.\n";
                 exit(1);
@@ -159,6 +159,64 @@ FormaGeo * parseFile(const XMLElement *ptrElement) {
             formaGeo->addVerticesTexture(p);
 
         }
+
+        //parse à restante informacao do objeto
+
+        Material* material{ new Material() };
+        Texture* texture{ new Texture() };
+
+        if (ptrElement->Attribute("texture")) {
+            string filename{ ptrElement->Attribute("texture") };
+            texture->addFile(filename);
+        }
+
+        if (ptrElement->Attribute("type")) {
+            float r= 0;
+            float g= 0;
+            float b= 0;
+            int flC= 0;
+
+            if (ptrElement->Attribute("r")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("r"), &r);
+                flC = 1;
+            }
+
+            if (ptrElement->Attribute("g")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("g"), &g);
+                flC = 1;
+            }
+
+            if (ptrElement->Attribute("b")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("b"), &b);
+                flC = 1;
+            }
+
+            if (flC)
+                material->addColor(r, g, b);
+
+            string type{ ptrElement->Attribute("type") };
+
+            if (type.compare("diffuse") == 0)
+                material->addType(DIFFUSE);
+
+            if (type.compare("specular") == 0)
+                material->addType(SPECULAR);
+
+            if (type.compare("emissive") == 0)
+                material->addType(EMISSIVE);
+
+            if (type.compare("ambiente") == 0)
+                material->addType(AMBIENTE);
+        }
+
+        texture->addMaterial(material);
+        formaGeo->addTexture(texture);
+        
+
+
+
+
+
     
         infile.close();
 

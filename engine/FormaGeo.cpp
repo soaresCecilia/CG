@@ -16,6 +16,7 @@
 
 FormaGeo::FormaGeo(int n) {
         this->nPoints = n;
+     //   this->texture = new Texture();
 }
 
 FormaGeo::~FormaGeo() {
@@ -40,13 +41,17 @@ void FormaGeo::addVerticesTexture(const Point& p) {
     this->verticesTexture.push_back(p.getTextureY());
 
 }
-
+/*
+void FormaGeo::addPointTexture(Point* p) {
+    this->textPoints.push_back(p);
+}
+*/
 size_t FormaGeo::getNPoint(){
     return (this->nPoints);
 }
 
 
-void FormaGeo::buffering() {
+void FormaGeo::buffering() { // aka prepare
     glGenBuffers(1, this->buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->buffer[0]);
     int allcoordinates = this->getNPoint() * 3;

@@ -205,6 +205,7 @@ void initiatingGLUT(int argc, char **argv) {
     // OpenGL settings
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
+    glEnable(GL_LIGHTING);
     glPolygonMode(GL_FRONT, GL_LINE);
 	
     // Setup Buffers

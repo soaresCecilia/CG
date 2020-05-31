@@ -38,7 +38,7 @@ void Group::addLights(Lights *light) {
 void Group::drawSub() {
     glPushMatrix();
     
-    for (auto& l : this->lights)
+    for (auto &l : this->lights)
         l->draw();
     
     for(auto &form: this->formsOperations)

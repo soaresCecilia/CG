@@ -12,6 +12,7 @@
 #include "point.h"
 #include "translation.h"
 #include <vector>
+#include "texture.h"
 
 class FormaGeo {
     private:
@@ -19,9 +20,11 @@ class FormaGeo {
         std::vector<float> coordinates;
         std::vector<float> ligthNormals;
         std::vector<float> verticesTexture;
-        GLuint buffer[3]; // vertices,  ligth normals , texturas
+        Texture* texture;
+       
 
     public:
+        GLuint buffer[3]; // vertices,  ligth normals , texturas
         FormaGeo(int);
         ~FormaGeo();
         void addCoordinates(const Point &p);

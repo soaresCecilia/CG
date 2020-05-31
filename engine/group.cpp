@@ -7,6 +7,10 @@ Group::Group() {
 }
 
 Group::~Group() {
+
+    for (auto& l : this->lights)
+        l->draw();
+
     for (auto &fg : this->formsGeoCollection)
             delete fg;
     
@@ -26,12 +30,16 @@ void Group::saveOperation(Operation *op) {
 }
 
 void Group::addLights(Lights *light) {
+    int i = lights.size();
+    light->setIndex(i + 1);
     lights.push_back(light);
 }
 
 void Group::drawSub() {
     glPushMatrix();
     
+    for (auto& l : this->lights)
+        l->draw();
     
     for(auto &form: this->formsOperations)
         form->transform();

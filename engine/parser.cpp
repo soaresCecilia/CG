@@ -19,6 +19,9 @@
 #include "../headers/color.h"
 #include "../headers/catmull.h"
 #include "../headers/lights.h"
+#include "../headers/pointLight.h"
+#include "../headers/directionalLight.h"
+#include "../headers/spotLight.h"
 
 
 using namespace tinyxml2;
@@ -281,6 +284,12 @@ Lights *parseLight(XMLElement *ptrElement) {
     float posX = 0;
     float posY = 0;
     float posZ = 0;
+    float quad_att = 0;
+
+    float posXSpotDir = 0;
+    float posYSpotDir = 0;
+    float posZSpotDir = 0;
+
 
     printf("entrou no parseligt\n");
 
@@ -303,9 +312,27 @@ Lights *parseLight(XMLElement *ptrElement) {
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
                 printf("PX : %f\n", posZ);
             }
-        }
 
-        /*
+            if (ptrElement->Attribute("quad_att")) {
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("quad_att"), &quad_att);
+                printf("PX : %f\n", quad_att);
+            }
+
+                       
+            //printf("Ponto de luz : %f, %f, %f\n", posX, posY, posZ);
+
+            float colour[4] = { 0,0,0,0 };
+
+            PointLight* light = new PointLight();
+            light->setPos(posX,posY,posZ);
+            light->setColour(colour);
+            light->setQuad_att(quad_att);
+            
+            return light;
+
+        }
+        
+        
         if (!strcmp(ptrElement->Attribute("type", " DIRECTIONAL"), " DIRECTIONAL")) {
             if (ptrElement->Attribute("posX"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
@@ -315,10 +342,23 @@ Lights *parseLight(XMLElement *ptrElement) {
 
             if (ptrElement->Attribute("posZ"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
+
+            
+            printf("Ponto de luz : %f, %f, %f\n", posX, posY, posZ);
+
+
+            float colour[4] = { 0,0,0,0 };
+
+            DirectionalLight* light = new DirectionalLight();
+            light->setColour(colour);
+            light->setPos(posX,posY,posZ);
+
+            return light;
         }
         
-
+        
         if (!strcmp(ptrElement->Attribute("type", "SPOT"), "SPOT")) {
+            //pos
             if (ptrElement->Attribute("posX"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posX);
 
@@ -327,22 +367,28 @@ Lights *parseLight(XMLElement *ptrElement) {
 
             if (ptrElement->Attribute("posZ"))
                 tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZ);
-        }
-        */
 
+            //spotDir
+            if (ptrElement->Attribute("posXSpotDir"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posX"), &posXSpotDir);
+
+            if (ptrElement->Attribute("posYSpotDir"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posY"), &posYSpotDir);
+
+            if (ptrElement->Attribute("posZSpotDir"))
+                tinyxml2::XMLUtil::ToFloat(ptrElement->Attribute("posZ"), &posZSpotDir);
+
+            float colour[4] = { 0,0,0,0 };
+            SpotLight* light = new SpotLight();
+            light->setPos(posX, posY, posZ);
+            light->setSpotDirLight(posXSpotDir, posYSpotDir, posZSpotDir);
+
+            return light;
+
+        }
 
     }
-
-    printf("epassou no parseligt\n");
-
     
-    Point *pointLight = new Point(posX, posY, posZ);
-    printf("Ponto de luz : %f, %f, %f\n",posX,posY,posZ);
-
-    
-    float colour[4] = {0,0,0,0};
-    
-    Lights *light = new Lights(pointLight, colour);
-    
-    return light;
+    return nullptr;
+   
 }
